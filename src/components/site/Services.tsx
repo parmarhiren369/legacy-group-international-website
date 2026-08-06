@@ -344,10 +344,10 @@ export function Services() {
                 key={h.label}
                 className="group relative overflow-hidden rounded-2xl border border-white/60 bg-white/70 p-5 shadow-sm backdrop-blur-xl transition-all hover:-translate-y-1 hover:shadow-(--shadow-elegant)"
               >
-                
+
                 <div className="flex items-center gap-3">
                   <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#377589] text-white">
-  <stat.icon className="h-5 w-5" />
+  <h.icon className="h-5 w-5" />
 </div>
                   <div className="text-2xl font-semibold text-navy">{h.k}</div>
                 </div>
@@ -381,7 +381,7 @@ export function Services() {
 
       {/* WHY LEGACY */}
       <section className="relative overflow-hidden bg-background py-28">
-        
+
         <div className={PAGE_X}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -426,7 +426,7 @@ export function Services() {
                 transition={{ delay: i * 0.1, duration: 0.6, ease }}
                 className="group relative overflow-hidden rounded-2xl border border-white/20 bg-white p-8 shadow-(--shadow-elegant) transition-all hover:-translate-y-1 hover:border-gold"
               >
-                
+
                 <div
                   aria-hidden
                   className="absolute inset-x-0 top-0 h-[3px] scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100"
@@ -459,7 +459,7 @@ export function Services() {
             transition={{ duration: 0.7, ease }}
             className="relative"
           >
-            
+
             <div className="relative flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
               <div>
                 <div className="text-xs uppercase tracking-[0.28em] text-gold">Ready when you are</div>
@@ -522,7 +522,7 @@ function CategoryBlock({ category, index }: { category: Category; index: number 
     {category.headline}
   </h2>
 </div>
-          
+
         </motion.div>
 
         <div className="mt-12 flex flex-col gap-10 lg:flex-row lg:items-stretch">
