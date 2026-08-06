@@ -2,13 +2,7 @@ import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import { ScrollToTop } from "./ScrollToTop";
 import usaStatesImg from "../../assets/usa-states.png";
-
-/**
- * Shared horizontal page padding — matches Services.tsx exactly
- * (full-width, no max-w cap, padding scales up by breakpoint).
- */
-const PAGE_X =
-  "w-full max-w-[1440px] mx-auto px-6 sm:px-10 md:px-16 lg:px-16 xl:px-20 2xl:px-36";
+import { PAGE_X } from "@/lib/utils";
 
 export function AboutUs() {
   return (
