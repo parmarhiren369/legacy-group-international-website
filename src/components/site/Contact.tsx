@@ -14,6 +14,7 @@ import {
   Award,
 } from "lucide-react";
 import contactHero from "@/assets/images/contact-hero.webp";
+import { PAGE_X } from "@/lib/utils";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -75,7 +76,7 @@ export function Contact() {
 
         {/* HERO */}
         <section className="relative overflow-hidden py-24 lg:py-32 w-full">
-          <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 md:px-16 lg:px-16 xl:px-20 2xl:px-36">
+          <div className={PAGE_X}>
             <div className="grid items-center gap-16 lg:grid-cols-2">
 
               {/* LEFT */}
@@ -88,7 +89,7 @@ export function Contact() {
                   CONTACT US
                 </p>
 
-                <h1 className="mt-6 text-5xl font-bold leading-tight md:text-5xl xl:text-6xl">
+                <h1 className="mt-6 text-4xl font-bold leading-tight sm:text-5xl md:text-5xl xl:text-6xl">
                   Let's Start
                   <br />
                   a Conversation.
@@ -143,7 +144,7 @@ export function Contact() {
 
         {/* CONTACT INFO */}
         <section className="py-20 bg-white w-full">
-          <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 md:px-16 lg:px-16 xl:px-20 2xl:px-36">
+          <div className={PAGE_X}>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 xl:gap-8">
 
               {contactCards.map((card, index) => {
@@ -188,7 +189,7 @@ export function Contact() {
 
                     {isPhoneCard ? (
                       <a href="tel:+12159394490" className="relative block">
-                        <div className="text-4xl text-[#EE8021] transition-transform duration-500 group-hover:scale-110">
+                        <div className="text-3xl text-[#EE8021] transition-transform duration-500 group-hover:scale-110 sm:text-4xl">
                           {Icon ? <Icon className="h-8 w-8" /> : card.emoji}
                         </div>
 
@@ -202,7 +203,7 @@ export function Contact() {
                       </a>
                     ) : (
                       <>
-                        <div className="relative text-4xl text-[#EE8021] transition-transform duration-500 group-hover:scale-110">
+                        <div className="relative text-3xl text-[#EE8021] transition-transform duration-500 group-hover:scale-110 sm:text-4xl">
                           {Icon ? <Icon className="h-8 w-8" /> : card.emoji}
                         </div>
 
@@ -225,7 +226,7 @@ export function Contact() {
 
         {/* CONTACT FORM */}
         <section className="py-24 bg-[#FAFAF8] w-full">
-          <div className="w-full grid gap-16 max-w-[1440px] mx-auto px-6 sm:px-10 md:px-16 lg:px-16 xl:px-20 2xl:px-36 lg:grid-cols-2">
+          <div className={`grid gap-16 lg:grid-cols-2 ${PAGE_X}`}>
 
             {/* FORM */}
             <motion.div
@@ -239,7 +240,7 @@ export function Contact() {
                 CONTACT US
               </p>
 
-              <h2 className="mt-4 text-5xl font-bold leading-tight text-[#071330]">
+              <h2 className="mt-4 text-3xl font-bold leading-tight text-[#071330] sm:text-4xl lg:text-5xl">
                 Let's Build
                 <br />
                 Something Great.
@@ -400,7 +401,7 @@ export function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.6, ease }}
-                className="text-4xl font-bold"
+                className="text-3xl font-bold sm:text-4xl"
               >
                 Why Partner With Legacy?
               </motion.h2>
@@ -484,7 +485,7 @@ hover:shadow-2xl
 
         {/* GOOGLE MAP */}
         <section className="py-24 bg-white w-full">
-          <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 md:px-16 lg:px-16 xl:px-20 2xl:px-36">
+          <div className={PAGE_X}>
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -496,7 +497,7 @@ hover:shadow-2xl
                 OUR LOCATION
               </p>
 
-              <h2 className="mt-4 text-5xl font-bold text-[#071330]">
+              <h2 className="mt-4 text-3xl font-bold text-[#071330] sm:text-4xl lg:text-5xl">
                 Visit Our Office
               </h2>
 
@@ -523,7 +524,7 @@ hover:shadow-2xl
 
         {/* CTA */}
         <section className="py-24 bg-[#071330] w-full">
-          <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 md:px-16 lg:px-16 xl:px-20 2xl:px-36">
+          <div className={PAGE_X}>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -535,7 +536,7 @@ hover:shadow-2xl
                 LET'S BUILD TOGETHER
               </p>
 
-              <h2 className="relative mt-6 text-5xl font-bold">
+              <h2 className="relative mt-6 text-3xl font-bold sm:text-4xl lg:text-5xl">
                 Ready to Transform
                 <br />
                 Your Business?
