@@ -8,6 +8,7 @@ import client2Video from "@/assets/videos/clint2.mp4";
 import heroImage from "@/assets/images/testimonial.webp";
 import { ArrowRight } from "lucide-react";
 import { CountUp } from "./Stat";
+import { PAGE_X } from "@/lib/utils";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -74,7 +75,7 @@ export function Testimonials() {
           />
         </div>
 
-        <div className="w-full grid grid-cols-1 items-center gap-16 max-w-[1440px] mx-auto px-6 sm:px-10 md:px-16 lg:px-16 xl:px-20 2xl:px-36 pt-32 pb-24 lg:grid-cols-2 lg:gap-10 xl:gap-16">
+        <div className={`grid grid-cols-1 items-center gap-16 pt-32 pb-24 lg:grid-cols-2 lg:gap-10 xl:gap-16 ${PAGE_X}`}>
 
           {/* LEFT */}
           <motion.div
@@ -86,7 +87,7 @@ export function Testimonials() {
 
             <motion.h1
               variants={fadeUp}
-              className="mt-6 text-5xl text-navy-deep sm:text-6xl"
+              className="mt-6 text-4xl text-navy-deep sm:text-5xl md:text-6xl"
             >
               Real Experiences.
               <br />
@@ -156,7 +157,7 @@ export function Testimonials() {
   className="py-24 bg-background w-full"
 >
 
-  <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 md:px-16 lg:px-16 xl:px-20 2xl:px-36">
+  <div className={PAGE_X}>
 
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -170,7 +171,7 @@ export function Testimonials() {
         Success Stories
       </div>
 
-      <h2 className="mt-4 text-5xl text-navy-deep">
+      <h2 className="mt-4 text-3xl text-navy-deep sm:text-4xl lg:text-5xl">
         Real Voices.
         <br />
         Genuine Experiences.
@@ -239,7 +240,7 @@ export function Testimonials() {
 
       {/* INTRO */}
 <section className="relative py-24 bg-white w-full">
-  <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 md:px-16 lg:px-16 xl:px-20 2xl:px-36">
+  <div className={PAGE_X}>
 
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -321,7 +322,7 @@ export function Testimonials() {
     {/* STATS */}
 <section className="relative py-24 bg-white w-full">
 
-  <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 md:px-16 lg:px-16 xl:px-20 2xl:px-36">
+  <div className={PAGE_X}>
 
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -334,14 +335,14 @@ export function Testimonials() {
         Our Impact
       </div>
 
-      <h2 className="mt-4 text-5xl text-navy-deep">
+      <h2 className="mt-4 text-3xl text-navy-deep sm:text-4xl lg:text-5xl">
         Delivering Results for
         <br />
         More Than Two Decades
       </h2>
     </motion.div>
 
-    <div className="mt-16 grid grid-cols-2 gap-6 lg:grid-cols-4">
+    <div className="mt-16 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
 
       {[
         { value:20, suffix:"+", label:"Years Experience"},
@@ -356,7 +357,7 @@ export function Testimonials() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ delay: i * 0.08, duration: 0.6, ease }}
           whileHover={{ y:-8 }}
-          className="group relative overflow-hidden rounded-[28px] border border-border bg-background p-10 text-center shadow-sm transition-shadow duration-500 hover:shadow-(--shadow-elegant)"
+          className="group relative overflow-hidden rounded-[28px] border border-border bg-background p-5 text-center shadow-sm transition-shadow duration-500 hover:shadow-(--shadow-elegant) sm:p-8 lg:p-10"
         >
           <div
             aria-hidden
@@ -364,7 +365,7 @@ export function Testimonials() {
             style={{ backgroundImage: "var(--gradient-gold)" }}
           />
 
-          <div className="text-5xl font-semibold text-navy">
+          <div className="text-3xl font-semibold text-navy sm:text-4xl lg:text-5xl">
 
             <CountUp
               to={item.value}
@@ -373,7 +374,7 @@ export function Testimonials() {
 
           </div>
 
-          <div className="mt-4 uppercase tracking-wider text-muted-foreground">
+          <div className="mt-4 text-xs uppercase tracking-wider text-muted-foreground sm:text-sm lg:text-base">
             {item.label}
           </div>
 
@@ -390,7 +391,7 @@ export function Testimonials() {
 
 <section className="pb-28 w-full">
 
-<div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 md:px-16 lg:px-16 xl:px-20 2xl:px-36">
+<div className={PAGE_X}>
 
 <motion.div
 initial={{ opacity: 0, y: 30 }}
@@ -419,7 +420,7 @@ background:
 Let's Build Together
 </div>
 
-<h2 className="relative mt-5 text-5xl">
+<h2 className="relative mt-5 text-3xl sm:text-4xl lg:text-5xl">
 Ready to be our next
 <br />
 success story?
@@ -434,7 +435,7 @@ and sustainable business growth.
 
 </p>
 
-<div className="relative mt-12 flex justify-center gap-5">
+<div className="relative mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-5">
 
 <a
   href="https://calendly.com/raj-kapoor"
@@ -460,7 +461,7 @@ Contact Us
 
       {/* FOOTER */}
       <footer className="border-t border-border py-10 w-full">
-        <div className="w-full flex flex-col items-center gap-2 text-center max-w-[1440px] mx-auto px-6 sm:px-10 md:px-16 lg:px-16 xl:px-20 2xl:px-36 text-sm text-muted-foreground sm:flex-row sm:justify-between sm:text-left">
+        <div className={`flex flex-col items-center gap-2 text-center text-sm text-muted-foreground sm:flex-row sm:justify-between sm:text-left ${PAGE_X}`}>
           <div>© {new Date().getFullYear()} Legacy Group International</div>
           <div>Built for enterprise growth</div>
         </div>
