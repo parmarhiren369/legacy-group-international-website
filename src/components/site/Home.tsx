@@ -294,13 +294,17 @@ xl:h-[640px]
                     className="absolute inset-x-0 top-0 h-[3px] scale-x-0 transition-transform duration-500 group-hover:scale-x-100"
                     style={{ backgroundImage: "var(--gradient-gold)", transformOrigin: "left" }}
                   />
-                  <div className="relative inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#2E6476] text-white">
-                    <p.icon className="h-5 w-5" />
-                  </div>
-                 <h3 className="relative mt-6 text-xl text-navy">
-                   </h3>
-                  <p className="relative mt-3 text-sm leading-relaxed text-muted-foreground">
-                    </p>
+                  <div className="relative inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#377589] text-white">
+  <p.icon className="h-5 w-5" />
+</div>
+
+<h3 className="relative mt-6 text-xl text-navy">
+  {p.title}
+</h3>
+
+<p className="relative mt-3 text-sm leading-relaxed text-muted-foreground">
+  {p.body}
+</p>
                 </motion.div>
               ))}
               <motion.div
