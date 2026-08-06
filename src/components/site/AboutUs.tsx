@@ -98,8 +98,8 @@ export function AboutUs() {
                 className="w-full rounded-[24px] shadow-xl sm:rounded-[32px]"
               />
 
-              <div className="absolute -bottom-6 -right-4 max-w-[75%] rounded-2xl bg-[#071330] p-5 text-white shadow-xl sm:-bottom-8 sm:-right-8 sm:max-w-none sm:rounded-3xl sm:p-8">
-                <div className="text-2xl font-bold text-[#E8A62C] sm:text-4xl">Since 2004</div>
+              <div className="absolute -bottom-6 -right-4 max-w-[75%] rounded-2xl bg-[#377589] p-5 text-white shadow-xl sm:-bottom-8 sm:-right-8 sm:max-w-none sm:rounded-3xl sm:p-8">
+                <div className="text-2xl font-bold text-[#EE7F23] sm:text-4xl">Since 2005</div>
                 <p className="mt-2 text-sm text-white/80 sm:text-base">
                   Delivering business excellence worldwide.
                 </p>
@@ -185,7 +185,7 @@ export function AboutUs() {
               </div>
 
               {/* Vision */}
-              <div className="rounded-[24px] bg-[#071330] p-7 text-white shadow-lg transition duration-300 hover:-translate-y-2 sm:rounded-[32px] sm:p-10">
+              <div className="rounded-[24px] bg-[#377589] p-7 text-white shadow-lg transition duration-300 hover:-translate-y-2 sm:rounded-[32px] sm:p-10">
                 <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#E8A62C] text-2xl sm:h-16 sm:w-16 sm:text-3xl">
                   🚀
                 </div>
