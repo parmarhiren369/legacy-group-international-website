@@ -1,168 +1,277 @@
-import { Link, useRouterState } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
-import logoUrl from "@/assets/logo.png";
-import { scrollToHash, PAGE_X } from "@/lib/utils";
-type NavLink = {
-  label: string;
-  href: string;
-  route?:
-    | "/"
-    | "/about"
-    | "/services"
-    | "/industries"
-    | "/testimonials"
-    | "/contact";
-};
-const links: NavLink[] = [
-  { label: "About", href: "", route: "/about" },
-  { label: "Services", href: "", route: "/services" },
-  { label: "Industries", href: "", route: "/industries" },
-  { label: "Testimonials", href: "", route: "/testimonials" },
-  { label: "Contact", href: "", route: "/contact" },
-];
-export function Nav() {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const pathname = useRouterState({ select: (s) => s.location.pathname });
+import { motion } from "framer-motion";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { Nav } from "./Nav";
+import { ScrollToTop } from "./ScrollToTop";
+import { industries } from "@/data/industries";
+import { PAGE_X } from "@/lib/utils";
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+const ease = [0.22, 1, 0.36, 1];
 
-  // Close the mobile menu whenever the route changes
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [pathname]);
+// Keep a stable, alphabetically-sorted copy so the grid always renders A → Z
+// regardless of the order items are defined in the data file.
+const sortedIndustries = [...industries].sort((a, b) =>
+  a.name.localeCompare(b.name)
+);
 
-  // Prevent background scroll while the mobile menu is open
-  useEffect(() => {
-    document.body.style.overflow = mobileOpen ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [mobileOpen]);
-
-  const renderLink = (l: NavLink, cls: string, onClick?: () => void) => {
-    if (l.href && l.route === "/" && pathname === "/") {
-      return (
-        <a
-          key={l.label}
-          href={l.href}
-          onClick={(event) => {
-            event.preventDefault();
-            scrollToHash(l.href);
-            window.history.pushState(null, "", l.href);
-            onClick?.();
-          }}
-          className={cls}
-        >
-          {l.label}
-        </a>
-      );
-    }
-    return (
-      <Link
-        key={l.label}
-        to={l.route ?? "/"}
-        hash={l.href ? l.href.replace("#", "") : undefined}
-        className={cls}
-        onClick={onClick}
-      >
-        {l.label}
-      </Link>
-    );
-  };
-
+export function Industries() {
   return (
-    <motion.header
-      initial={{ y: -60, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className={`fixed inset-x-0 top-0 z-50 border-b border-border/40 bg-background/95 backdrop-blur-xl transition-all duration-500 ${
-        scrolled ? "shadow-[0_8px_30px_-15px_rgba(15,23,42,0.18)]" : ""
-      }`}
-    >
-      <div className={`flex items-center justify-between py-3 ${PAGE_X}`}>
-        <Link to="/" className="flex items-center gap-3">
-          <img
-  src={logoUrl}
-  alt="Legacy Group International"
-  className="h-10 w-auto sm:h-12 md:h-14 lg:h-16 xl:h-20 transition-all duration-300"
-  loading="eager"
-/>
-        </Link>
+    <div className="min-h-screen w-full overflow-x-hidden bg-background text-foreground">
+      <Nav />
 
-        {/* Desktop nav */}
-        <nav className="hidden items-center gap-9 lg:flex">
-          {links.map((l) =>
-            renderLink(
-              l,
-              "text-sm font-medium tracking-wide text-foreground/80 transition-colors hover:text-navy"
-            )
-          )}
-        </nav>
-
-        <div className="flex items-center gap-3">
-          <a
-            href="https://calendly.com/raj-kapoor"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden lg:inline-flex items-center rounded-full px-6 py-3 text-sm font-semibold text-navy-deep shadow-(--shadow-gold) transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-            style={{ backgroundImage: "var(--gradient-gold)" }}
-          >
-            Get in Touch
-          </a>
-
-          {/* Mobile / tablet menu toggle */}
-          <button
-            type="button"
-            aria-label={mobileOpen ? "Close menu" : "Open menu"}
-            aria-expanded={mobileOpen}
-            onClick={() => setMobileOpen((v) => !v)}
-            className="inline-flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-navy/10 text-navy transition-colors hover:bg-navy/5 lg:hidden"
-          >
-            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
+      {/* HERO */}
+      <section className="relative isolate overflow-hidden pt-32 pb-20 lg:pt-40">
+        <div className="absolute inset-0 -z-10 bg-background">
+          <div
+            aria-hidden
+            className="absolute -right-40 top-1/2 h-[560px] w-[560px] rounded-full opacity-20 blur-3xl"
+            style={{ background: "radial-gradient(circle, var(--navy) 0%, transparent 70%)" }}
+          />
+          <div
+            aria-hidden
+            className="absolute -left-32 -bottom-32 h-[500px] w-[500px] rounded-full opacity-15 blur-3xl"
+            style={{ background: "radial-gradient(circle, var(--gold) 0%, transparent 70%)" }}
+          />
         </div>
-      </div>
 
-      {/* Mobile / tablet menu panel */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.nav
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden border-t border-border bg-background/98 backdrop-blur-xl lg:hidden"
+        <div className={`text-center ${PAGE_X}`}>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.8, ease }}
+            className="mt-6 text-4xl leading-[1.05] text-navy-deep sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl"
           >
-            <div className="flex flex-col gap-2 px-5 py-5 sm:px-8">
-              {links.map((l) =>
-                renderLink(
-                  l,
-                  "rounded-xl px-4 py-3 text-base font-medium text-foreground/85 transition-all duration-300 hover:bg-navy/5 hover:text-navy",
-                  () => setMobileOpen(false)
-                )
-              )}
-              <a
-                href="https://calendly.com/raj-kapoor"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setMobileOpen(false)}
-                className="mt-3 inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold text-navy-deep shadow-(--shadow-gold)"
+            Industries we{" "}
+            <span
+              className="bg-clip-text text-transparent"
+              style={{ backgroundImage: "var(--gradient-gold)" }}
+            >
+              power
+            </span>
+            .
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.8, ease }}
+            className="mx-auto mt-6 max-w-3xl text-justify text-lg leading-relaxed text-muted-foreground"
+          >
+            At Legacy India, we serve a range of industries with expertise and commitment. From
+            recruitment and market research outsourcing to business process support, we tailor our
+            services to meet the specific needs of each sector. With years of experience and a deep
+            understanding of industry demands, we help organizations streamline processes, improve
+            performance, and achieve growth. Explore how our specialized solutions can benefit your
+            industry.
+          </motion.p>
+        </div>
+      </section>
+
+      {/* GRID (alphabetically sorted A → Z) */}
+      <section className="pb-28">
+        <div className={PAGE_X}>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8">
+            {sortedIndustries.map((ind, i) => (
+              <Link
+                key={ind.slug}
+                to="/industries/$slug"
+                params={{ slug: ind.slug }}
+                className="block"
+              >
+                <motion.article
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ delay: (i % 6) * 0.05, duration: 0.6, ease }}
+                  className="group relative overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-blue-400/60 hover:shadow-(--shadow-elegant)"
+                >
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0 -z-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(135deg, rgba(59,130,246,0.35), rgba(255,255,255,0.95))",
+                    }}
+                  />
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={ind.image}
+                      alt={ind.name}
+                      loading="lazy"
+                      className="h-52 w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/60 via-transparent to-transparent" />
+                  </div>
+                  <div className="relative flex items-center justify-between p-6">
+                    <h3 className="font-sans text-lg font-semibold tracking-tight text-navy">{ind.name}</h3>
+                    <ArrowUpRight className="h-5 w-5 text-navy/30 transition-all duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-navy" />
+                  </div>
+                </motion.article>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TRUSTED ACROSS INDUSTRIES */}
+      <section className="bg-white py-20">
+        <div className={PAGE_X}>
+          <div className="text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.35em] text-[#E8A62C]">
+              Trusted Across Industries
+            </p>
+
+            <h2 className="mt-4 text-4xl font-bold text-[#071330] lg:text-5xl">
+              Delivering Results Across Every Sector
+            </h2>
+
+            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-600">
+              From engineering and manufacturing to healthcare, finance,
+              energy and technology, Legacy Group International helps
+              organizations build stronger teams and accelerate business growth.
+            </p>
+          </div>
+
+          <div className="mt-16 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4 lg:gap-8">
+            <div className="rounded-3xl border border-gray-200 bg-white p-5 text-center shadow-lg transition hover:-translate-y-2 hover:shadow-2xl sm:p-6 lg:p-8">
+              <h3 className="text-3xl font-bold text-[#071330] sm:text-4xl lg:text-5xl">20+</h3>
+              <p className="mt-3 text-xs uppercase tracking-[0.12em] text-gray-500 sm:tracking-[0.18em] lg:text-sm lg:tracking-[0.25em]">Industries</p>
+            </div>
+
+            <div className="rounded-3xl border border-gray-200 bg-white p-5 text-center shadow-lg transition hover:-translate-y-2 hover:shadow-2xl sm:p-6 lg:p-8">
+              <h3 className="text-3xl font-bold text-[#071330] sm:text-4xl lg:text-5xl">150+</h3>
+              <p className="mt-3 text-xs uppercase tracking-[0.12em] text-gray-500 sm:tracking-[0.18em] lg:text-sm lg:tracking-[0.25em]">Global Clients</p>
+            </div>
+
+            <div className="rounded-3xl border border-gray-200 bg-white p-5 text-center shadow-lg transition hover:-translate-y-2 hover:shadow-2xl sm:p-6 lg:p-8">
+              <h3 className="text-3xl font-bold text-[#071330] sm:text-4xl lg:text-5xl">98%</h3>
+              <p className="mt-3 text-xs uppercase tracking-[0.12em] text-gray-500 sm:tracking-[0.18em] lg:text-sm lg:tracking-[0.25em]">Client Retention</p>
+            </div>
+
+            <div className="rounded-3xl border border-gray-200 bg-white p-5 text-center shadow-lg transition hover:-translate-y-2 hover:shadow-2xl sm:p-6 lg:p-8">
+              <h3 className="text-3xl font-bold text-[#071330] sm:text-4xl lg:text-5xl">30+</h3>
+              <p className="mt-3 text-xs uppercase tracking-[0.12em] text-gray-500 sm:tracking-[0.18em] lg:text-sm lg:tracking-[0.25em]">Countries</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SCROLLING INDUSTRIES (alphabetically sorted A → Z) */}
+      <section className="overflow-hidden border-y border-gray-200 bg-[#071330] py-6">
+        <div className="flex whitespace-nowrap">
+          <div className="animate-[marquee_28s_linear_infinite] flex items-center gap-12 text-lg font-semibold uppercase tracking-[0.25em] text-white">
+            <span>Automotive</span>
+            <span className="text-[#E8A62C]">✦</span>
+
+            <span>Chemical</span>
+            <span className="text-[#E8A62C]">✦</span>
+
+            <span>Construction</span>
+            <span className="text-[#E8A62C]">✦</span>
+
+            <span>Cybersecurity</span>
+            <span className="text-[#E8A62C]">✦</span>
+
+            <span>Energy</span>
+            <span className="text-[#E8A62C]">✦</span>
+
+            <span>Engineering</span>
+            <span className="text-[#E8A62C]">✦</span>
+
+            <span>Finance</span>
+            <span className="text-[#E8A62C]">✦</span>
+
+            <span>Healthcare</span>
+            <span className="text-[#E8A62C]">✦</span>
+
+            <span>Insurance</span>
+            <span className="text-[#E8A62C]">✦</span>
+
+            <span>Legal</span>
+            <span className="text-[#E8A62C]">✦</span>
+
+            <span>Manufacturing</span>
+            <span className="text-[#E8A62C]">✦</span>
+
+            <span>Oil & Gas</span>
+            <span className="text-[#E8A62C]">✦</span>
+
+            <span>Printing</span>
+            <span className="text-[#E8A62C]">✦</span>
+
+            <span>Sales</span>
+            <span className="text-[#E8A62C]">✦</span>
+
+            <span>Service Industry</span>
+            <span className="text-[#E8A62C]">✦</span>
+
+            <span>Solar Energy</span>
+            <span className="text-[#E8A62C]">✦</span>
+
+            <span>Steel</span>
+            <span className="text-[#E8A62C]">✦</span>
+
+            {/* Duplicate for seamless looping */}
+            <span>Automotive</span>
+            <span className="text-[#E8A62C]">✦</span>
+
+            <span>Chemical</span>
+            <span className="text-[#E8A62C]">✦</span>
+
+            <span>Construction</span>
+            <span className="text-[#E8A62C]">✦</span>
+
+            <span>Cybersecurity</span>
+            <span className="text-[#E8A62C]">✦</span>
+
+            <span>Energy</span>
+            <span className="text-[#E8A62C]">✦</span>
+
+            <span>Engineering</span>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="relative overflow-hidden py-20">
+        <div className={PAGE_X}>
+          <div className="relative overflow-hidden rounded-3xl border border-white/60 bg-white/70 p-10 shadow-(--shadow-elegant) backdrop-blur-xl md:p-14">
+            <div
+              aria-hidden
+              className="absolute -right-24 -top-24 h-64 w-64 rounded-full opacity-40 blur-3xl"
+              style={{ backgroundImage: "var(--gradient-gold)" }}
+            />
+            <div className="relative flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+              <div>
+                <div className="text-xs uppercase tracking-[0.28em] text-gold">
+                  Don't see your industry?
+                </div>
+                <h3 className="mt-3 max-w-xl font-display text-3xl leading-tight text-navy-deep sm:text-4xl">
+                  We adapt our operating layer to your sector.
+                </h3>
+              </div>
+              <Link
+                to="/"
+                hash="contact"
+                className="group inline-flex shrink-0 items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-navy-deep shadow-(--shadow-gold) transition-transform hover:-translate-y-0.5"
                 style={{ backgroundImage: "var(--gradient-gold)" }}
               >
-                Get in Touch
-              </a>
+                Talk to our team
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
             </div>
-          </motion.nav>
-        )}
-      </AnimatePresence>
-    </motion.header>
+          </div>
+        </div>
+      </section>
+
+      <footer className="border-t border-border bg-background py-10">
+        <div className={`flex flex-col items-center justify-between gap-4 text-sm text-muted-foreground md:flex-row ${PAGE_X}`}>
+          <div>© {new Date().getFullYear()} Legacy Digitronics Pvt. Ltd. All rights reserved.</div>
+          <div className="tracking-wide">Crafted with precision · Since 2004</div>
+        </div>
+      </footer>
+
+      <ScrollToTop />
+    </div>
   );
 }
