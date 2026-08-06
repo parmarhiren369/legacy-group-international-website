@@ -133,7 +133,7 @@ xl:text-7xl
   href="https://calendly.com/raj-kapoor"
   target="_blank"
   rel="noopener noreferrer"
-  className="group inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-navy-deep shadow-(--shadow-gold) transition-transform hover:-translate-y-0.5"
+  className="group inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white shadow-(--shadow-gold) transition-transform hover:-translate-y-0.5"
   style={{ backgroundImage: "var(--gradient-gold)" }}
 >
   Start a conversation
