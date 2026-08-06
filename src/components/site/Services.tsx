@@ -518,14 +518,11 @@ function CategoryBlock({ category, index }: { category: Category; index: number 
           className="flex flex-wrap items-end justify-between gap-6"
         >
           <div>
-            <div className="text-xs uppercase tracking-[0.28em] text-gold">{category.eyebrow}</div>
-            <h2 className="mt-3 max-w-2xl font-display text-4xl leading-tight text-navy sm:text-5xl">
-              {category.headline}
-            </h2>
-          </div>
-          <div className="hidden shrink-0 rounded-full border border-navy/10 bg-white px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-navy/70 md:inline-flex">
-            {category.label}
-          </div>
+  <h2 className="max-w-2xl font-display text-4xl leading-tight text-navy sm:text-5xl">
+    {category.headline}
+  </h2>
+</div>
+          
         </motion.div>
 
         <div className="mt-12 flex flex-col gap-10 lg:flex-row lg:items-stretch">
