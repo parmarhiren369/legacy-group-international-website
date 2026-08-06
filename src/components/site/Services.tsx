@@ -23,6 +23,7 @@ import {
 import { Nav } from "./Nav";
 import { Link } from "@tanstack/react-router";
 import { ScrollToTop } from "./ScrollToTop";
+import { PAGE_X } from "@/lib/utils";
 
 type Service = {
   key: string;
@@ -269,7 +270,7 @@ export function Services() {
   const yGrid = useTransform(scrollYProgress, [0, 1], [0, -80]);
 
   return (
-    <div className="min-h-screen w-full bg-background text-foreground">
+    <div className="min-h-screen w-full overflow-x-hidden bg-background text-foreground">
       <Nav />
 
       {/* HERO */}
@@ -298,7 +299,7 @@ export function Services() {
           </motion.div>
         </div>
 
-        <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 md:px-16 lg:px-16 xl:px-20 2xl:px-36">
+        <div className={PAGE_X}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -306,7 +307,7 @@ export function Services() {
             className="max-w-4xl"
           >
 
-            <h1 className="mt-6 text-5xl leading-[1.02] text-navy-deep sm:text-6xl lg:text-6xl xl:text-7xl">
+            <h1 className="mt-6 text-4xl leading-[1.05] text-navy-deep sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl">
               Nine service lines.{" "}
               <span className="text-[#EE8021]">
                 One operating partner.
@@ -369,7 +370,7 @@ export function Services() {
 
       {/* CATEGORY NAV (sticky-ish anchor) */}
       <section id="catalog" className="scroll-mt-28 border-y border-border bg-white/60 backdrop-blur-xl lg:scroll-mt-32">
-        <div className="flex w-full gap-2 overflow-x-auto max-w-[1440px] mx-auto px-6 sm:px-10 md:px-16 lg:px-16 xl:px-20 2xl:px-36 py-4">
+        <div className={`flex gap-2 overflow-x-auto py-4 ${PAGE_X}`}>
           {categories.map((c) => (
             <a
               key={c.id}
@@ -394,7 +395,7 @@ export function Services() {
           className="absolute -right-40 top-1/2 -z-10 h-[560px] w-[560px] -translate-y-1/2 rounded-full opacity-30 blur-3xl"
           style={{ backgroundImage: "var(--gradient-gold)" }}
         />
-        <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 md:px-16 lg:px-16 xl:px-20 2xl:px-36">
+        <div className={PAGE_X}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -467,13 +468,13 @@ export function Services() {
           aria-hidden
           className="absolute inset-0 -z-10 bg-gradient-to-b from-slate-50 to-white"
         />
-        <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 md:px-16 lg:px-16 xl:px-20 2xl:px-36">
+        <div className={PAGE_X}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.7, ease }}
-            className="flex items-end justify-between gap-6"
+            className="relative"
           >
             <div
               aria-hidden
@@ -507,7 +508,7 @@ export function Services() {
       </section>
 
       <footer className="border-t border-border bg-background py-10">
-        <div className="flex w-full flex-col items-center justify-between gap-4 max-w-[1440px] mx-auto px-6 sm:px-10 md:px-16 lg:px-16 xl:px-20 2xl:px-36 text-sm text-muted-foreground md:flex-row">
+        <div className={`flex flex-col items-center justify-between gap-4 text-sm text-muted-foreground md:flex-row ${PAGE_X}`}>
           <div>© {new Date().getFullYear()} Legacy Digitronics Pvt. Ltd. All rights reserved.</div>
           <div className="tracking-wide">Crafted with precision · Since 2004</div>
         </div>
@@ -529,7 +530,7 @@ function CategoryBlock({ category, index }: { category: Category; index: number 
         aria-hidden
         className="absolute inset-0 -z-10 bg-gradient-to-br from-slate-50 via-white to-slate-100"
       />
-      <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 md:px-16 lg:px-16 xl:px-20 2xl:px-36">
+      <div className={PAGE_X}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
