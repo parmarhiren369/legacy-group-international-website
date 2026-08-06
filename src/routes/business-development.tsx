@@ -1,6 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { PAGE_X } from "@/lib/utils";
+import { Nav } from "@/components/site/Nav";
+import { Footer } from "@/components/site/Footer";
+import { ScrollToTop } from "@/components/site/ScrollToTop";
 
 export const Route = createFileRoute("/business-development")({
   component: BusinessDevelopment,
@@ -64,7 +68,7 @@ function DealsClosedCard() {
         Complex Deals Progressed
       </p>
 
-      <h3 className="relative mt-2 font-sans text-5xl font-bold text-gold">
+      <h3 className="relative mt-2 font-sans text-3xl font-bold text-gold sm:text-4xl lg:text-5xl">
         {count}+
       </h3>
 
@@ -110,47 +114,48 @@ const stats = [
 
 function BusinessDevelopment() {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen w-full overflow-x-hidden bg-background">
+      <Nav />
       {/* HERO */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden pt-32 pb-16 lg:pt-40 lg:pb-24">
         <div className="absolute inset-0 bg-white" />
         <div className="absolute -left-40 top-10 h-[480px] w-[480px] rounded-full bg-navy/10 blur-[140px]" />
         <div className="absolute -right-32 bottom-0 h-[420px] w-[420px] rounded-full bg-gold/15 blur-[140px]" />
 
-        <div className="relative z-10 mx-auto grid min-h-[85vh] w-full max-w-7xl items-center gap-16 px-6 py-24 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className={`relative z-10 grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 ${PAGE_X}`}>
           {/* LEFT */}
           <div className="max-w-3xl">
             <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-gold">
               Business Development
             </p>
 
-            <h1 className="max-w-4xl font-display text-5xl leading-[1.05] tracking-tight text-foreground lg:text-7xl">
+            <h1 className="max-w-4xl font-display text-4xl leading-[1.08] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
               Named accounts.
               <span className="block text-gold">Open doors.</span>
             </h1>
 
-            <p className="mt-8 max-w-2xl text-xl leading-9 text-foreground">
+            <p className="mt-6 max-w-2xl text-base leading-8 text-foreground sm:mt-8 sm:text-lg sm:leading-9 lg:text-xl">
               Dedicated BD teams that target your highest-value accounts,
               build relationships with real decision-makers, and progress
               complex, multi-stakeholder deals — not just book meetings.
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center gap-3">
-              <div className="rounded-full border border-gold/40 bg-gold/10 px-4 py-2 text-sm font-medium text-gold">
+            <div className="mt-8 flex flex-wrap items-center gap-2 sm:mt-10 sm:gap-3">
+              <div className="rounded-full border border-gold/40 bg-gold/10 px-4 py-2 text-xs font-medium text-gold sm:text-sm">
                 ✓ Named-Account Targeting
               </div>
-              <div className="rounded-full border border-gold/40 bg-gold/10 px-4 py-2 text-sm font-medium text-gold">
+              <div className="rounded-full border border-gold/40 bg-gold/10 px-4 py-2 text-xs font-medium text-gold sm:text-sm">
                 ✓ Multi-Stakeholder Deal Management
               </div>
-              <div className="rounded-full border border-gold/40 bg-gold/10 px-4 py-2 text-sm font-medium text-gold">
+              <div className="rounded-full border border-gold/40 bg-gold/10 px-4 py-2 text-xs font-medium text-gold sm:text-sm">
                 ✓ Senior BD Reps, Not Bots
               </div>
             </div>
 
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-wrap gap-4 sm:mt-10">
               <button
                 type="button"
-                className="rounded-full px-8 py-4 font-semibold text-navy-deep transition-all duration-300 hover:-translate-y-1"
+                className="rounded-full px-6 py-3.5 text-sm font-semibold text-navy-deep transition-all duration-300 hover:-translate-y-1 sm:px-8 sm:py-4 sm:text-base"
                 style={{
                   background: "var(--gradient-gold)",
                   boxShadow: "var(--shadow-gold)",
@@ -160,7 +165,7 @@ function BusinessDevelopment() {
               </button>
               <button
                 type="button"
-                className="rounded-full border border-border bg-transparent px-8 py-4 font-semibold text-foreground transition-all duration-300 hover:border-gold hover:text-gold"
+                className="rounded-full border border-border bg-transparent px-6 py-3.5 text-sm font-semibold text-foreground transition-all duration-300 hover:border-gold hover:text-gold sm:px-8 sm:py-4 sm:text-base"
               >
                 See Our Playbook
               </button>
@@ -238,10 +243,10 @@ function BusinessDevelopment() {
 
       {/* STATS STRIP */}
       <section className="border-y border-border bg-secondary/50 py-12">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-6 sm:grid-cols-3">
+        <div className={`grid grid-cols-1 gap-8 sm:grid-cols-3 ${PAGE_X}`}>
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
-              <p className="font-sans text-4xl font-bold text-navy">
+              <p className="font-sans text-3xl font-bold text-navy sm:text-4xl">
                 {stat.value}
               </p>
               <p className="mt-2 text-sm text-muted-foreground">
@@ -253,7 +258,7 @@ function BusinessDevelopment() {
       </section>
 
       {/* PROCESS */}
-      <section className="mx-auto max-w-6xl px-6 py-24">
+      <section className={`py-24 ${PAGE_X}`}>
         <p className="mb-3 text-sm font-semibold uppercase tracking-[0.35em] text-gold">
           How It Works
         </p>
@@ -302,7 +307,8 @@ function BusinessDevelopment() {
         <div className="absolute inset-0 bg-white" />
         <div className="absolute -left-40 top-0 h-[420px] w-[420px] rounded-full bg-navy/10 blur-[140px]" />
         <div className="absolute -right-32 bottom-0 h-[380px] w-[380px] rounded-full bg-gold/15 blur-[140px]" />
-        <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
+        <div className={`relative z-10 text-center ${PAGE_X}`}>
+          <div className="mx-auto max-w-4xl">
           <h2 className="font-display text-4xl text-foreground lg:text-5xl">
             Ready to open doors that stay open?
           </h2>
@@ -322,8 +328,11 @@ function BusinessDevelopment() {
               Get in Touch
             </Link>
           </div>
+          </div>
         </div>
       </section>
+      <Footer />
+      <ScrollToTop />
     </main>
   );
 }
