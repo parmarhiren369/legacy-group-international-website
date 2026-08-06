@@ -1,6 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { PAGE_X } from "@/lib/utils";
+import { Nav } from "@/components/site/Nav";
+import { Footer } from "@/components/site/Footer";
+import { ScrollToTop } from "@/components/site/ScrollToTop";
 
 export const Route = createFileRoute("/lead-generation")({
   component: LeadGeneration,
@@ -50,7 +54,7 @@ function RevenueGrowthCard() {
     >
       <p className="text-sm font-medium text-slate-500">Revenue Growth</p>
 
-      <h3 className="mt-2 font-sans text-5xl font-semibold text-[#EE8021]">
+      <h3 className="mt-2 font-sans text-3xl font-semibold text-[#EE8021] sm:text-4xl lg:text-5xl">
         +{count}%
       </h3>
 
@@ -63,45 +67,46 @@ function RevenueGrowthCard() {
 
 function LeadGeneration() {
   return (
-    <main className="min-h-screen bg-white">
-      <section className="relative h-screen overflow-hidden">
+    <main className="min-h-screen w-full overflow-x-hidden bg-white">
+      <Nav />
+      <section className="relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-24">
         {/* Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100" />
         <div className="absolute -right-32 bottom-0 h-[450px] w-[450px] rounded-full bg-blue-400/15 blur-[140px]" />
 
         {/* Content */}
-        <div className="relative z-10 flex h-full items-center justify-center">
-          <div className="mx-auto grid min-h-[85vh] w-full max-w-7xl items-center gap-20 px-6 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="relative z-10">
+          <div className={`grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20 ${PAGE_X}`}>
             {/* LEFT SIDE */}
             <div className="max-w-3xl text-slate-900">
               <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-[#EE8021]">
                 Lead Generation
               </p>
 
-              <h1 className="max-w-4xl text-5xl font-extrabold leading-[1.05] tracking-tight text-slate-900 lg:text-7xl">
+              <h1 className="max-w-4xl text-4xl font-extrabold leading-[1.08] tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-7xl">
                 Build a
                 <span className="block bg-gradient-to-r from-[#EE8021] to-orange-500 bg-clip-text text-transparent">
                   Predictable Revenue Engine
                 </span>
               </h1>
 
-              <div className="mt-10 flex flex-wrap items-center gap-3">
-                <div className="rounded-full border border-orange-200 bg-orange-50 px-4 py-2 text-sm font-medium text-[#EE8021]">
+              <div className="mt-8 flex flex-wrap items-center gap-2 sm:mt-10 sm:gap-3">
+                <div className="rounded-full border border-orange-200 bg-orange-50 px-4 py-2 text-xs font-medium text-[#EE8021] sm:text-sm">
                   ✓ AI-Powered Outreach
                 </div>
-                <div className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700">
+                <div className="rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-medium text-slate-700 sm:text-sm">
                   ✓ Multi-Channel Campaigns
                 </div>
-                <div className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700">
+                <div className="rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-medium text-slate-700 sm:text-sm">
                   ✓ Qualified Decision Makers
                 </div>
               </div>
 
-              <div className="mt-20">
+              <div className="mt-12 sm:mt-20">
                 <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
                   Trusted by teams using
                 </p>
-                <div className="mt-8 flex flex-wrap items-center gap-10 text-lg font-medium text-black">
+                <div className="mt-6 flex flex-wrap items-center gap-6 text-base font-medium text-black sm:mt-8 sm:gap-10 sm:text-lg">
                   <span>Microsoft</span>
                   <span>Google</span>
                   <span>Salesforce</span>
@@ -110,22 +115,22 @@ function LeadGeneration() {
                 </div>
               </div>
 
-              <p className="mt-8 max-w-2xl text-xl leading-9 text-slate-600">
+              <p className="mt-8 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg sm:leading-9 lg:text-xl">
                 Generate qualified leads, accelerate your sales pipeline, and
                 connect with decision-makers through AI-powered research,
                 precision targeting, and multi-channel outreach campaigns.
               </p>
 
-              <div className="mt-10 flex flex-wrap gap-4">
+              <div className="mt-8 flex flex-wrap gap-4 sm:mt-10">
                 <button
                   type="button"
-                  className="rounded-full bg-[#EE8021] px-8 py-4 font-semibold text-white shadow-lg shadow-orange-500/30 transition-all duration-300 hover:-translate-y-1 hover:bg-[#d96f1d] hover:shadow-xl hover:shadow-orange-500/40"
+                  className="rounded-full bg-[#EE8021] px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-orange-500/30 transition-all duration-300 hover:-translate-y-1 hover:bg-[#d96f1d] hover:shadow-xl hover:shadow-orange-500/40 sm:px-8 sm:py-4 sm:text-base"
                 >
                   Schedule Strategy Call
                 </button>
                 <button
                   type="button"
-                  className="rounded-full border border-slate-300 bg-white px-8 py-4 font-semibold text-slate-800 transition-all duration-300 hover:border-[#EE8021] hover:bg-orange-50 hover:text-[#EE8021]"
+                  className="rounded-full border border-slate-300 bg-white px-6 py-3.5 text-sm font-semibold text-slate-800 transition-all duration-300 hover:border-[#EE8021] hover:bg-orange-50 hover:text-[#EE8021] sm:px-8 sm:py-4 sm:text-base"
                 >
                   View Our Process
                 </button>
@@ -172,6 +177,8 @@ function LeadGeneration() {
           </div>
         </div>
       </section>
+      <Footer />
+      <ScrollToTop />
     </main>
   );
 }
