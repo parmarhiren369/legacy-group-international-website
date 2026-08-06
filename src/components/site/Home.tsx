@@ -88,13 +88,7 @@ export function Home() {
             variants={{ show: { transition: { staggerChildren: 0.08 } } }}
             className="w-full max-w-[760px] xl:max-w-[820px] 2xl:max-w-[900px]"
           >
-            <motion.div
-              variants={fadeUp}
-              className="inline-flex items-center rounded-full border border-navy/10 bg-white/70 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-navy shadow-sm backdrop-blur"
-            >
-              <span className="mr-2 h-1.5 w-1.5 rounded-full bg-gold" />
-              Legacy Digitronics Pvt. Ltd.
-            </motion.div>
+            
 
             <motion.h1
               variants={fadeUp}
