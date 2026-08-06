@@ -22,14 +22,10 @@ export function AboutUs() {
             <div className="relative z-10">
               
               <h1 className="text-4xl font-normal leading-[1.15] text-[#071330] sm:text-5xl lg:text-5xl lg:leading-[1.1] xl:text-6xl">
-  Building
-  <br />
-  Exceptional Teams.
-  <br className="hidden sm:block" />
-  <br className="hidden sm:block" />
-  Powering
-  <br />
-  Business Growth.
+  <span className="block">Building</span>
+  <span className="block">Exceptional Teams.</span>
+  <span className="mt-2 block text-[#E8A62C] sm:mt-3">Powering</span>
+  <span className="block text-[#E8A62C]">Business Growth.</span>
 </h1>
 
               <div className="mt-6 inline-flex items-center gap-3 rounded-full border border-gray-200 bg-white px-5 py-3 shadow-lg sm:mt-8 sm:px-6 sm:py-4">
