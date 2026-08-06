@@ -562,6 +562,23 @@ function CategoryBlock({ category, index }: { category: Category; index: number 
   );
 }
 
+function TitleWithAmpersand({ title }: { title: string }) {
+  const parts = title.split("&");
+  if (parts.length === 1) return <>{title}</>;
+  return (
+    <>
+      {parts.map((part, i) => (
+        <span key={i}>
+          {part}
+          {i < parts.length - 1 && (
+            <span className="mx-1 font-serif italic text-navy/70">&</span>
+          )}
+        </span>
+      ))}
+    </>
+  );
+}
+
 function ServiceCard({ service, delay }: { service: Service; delay: number }) {
   const [open, setOpen] = useState(false);
   const Icon = service.icon;
@@ -588,7 +605,7 @@ function ServiceCard({ service, delay }: { service: Service; delay: number }) {
           <ArrowUpRight className="h-5 w-5 text-navy/30 transition-all duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-navy" />
         </div>
 
-        <h3 className="mt-6 font-display text-2xl text-navy">{service.title}</h3>
+        <h3 className="mt-6 font-display text-2xl text-navy"><TitleWithAmpersand title={service.title} /></h3>
         <p className="mt-3 whitespace-pre-line text-sm leading-relaxed text-muted-foreground">{service.short}</p>
 
         <div className="mt-auto">
