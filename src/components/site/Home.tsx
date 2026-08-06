@@ -79,12 +79,14 @@ export function Home() {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.85),transparent_65%)]" />
         </div>
 
-        <div className={`grid grid-cols-1 items-center gap-12 pt-28 pb-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 lg:pt-36 xl:gap-20 ${PAGE_X}`}>
+        <div className={`grid grid-cols-1 items-center gap-12 pt-28 pb-12 lg:grid-cols-[1fr_1fr]
+2xl:grid-cols-[1.1fr_1fr] lg:gap-14 lg:pt-36 xl:gap-24
+2xl:gap-32 ${PAGE_X}`}>
           <motion.div
             initial="hidden"
             animate="show"
             variants={{ show: { transition: { staggerChildren: 0.08 } } }}
-            className="max-w-3xl"
+            className="w-full max-w-[760px] xl:max-w-[820px] 2xl:max-w-[900px]"
           >
             <motion.div
               variants={fadeUp}
@@ -96,7 +98,16 @@ export function Home() {
 
             <motion.h1
               variants={fadeUp}
-              className="mt-6 text-4xl leading-[1.02] text-navy-deep sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-8xl"
+              className="mt-6
+text-4xl
+leading-[0.98]
+text-navy-deep
+sm:text-5xl
+md:text-6xl
+lg:text-6xl
+xl:text-7xl
+2xl:text-[6rem]
+3xl:text-[7rem]"
             >
               Bridging enterprises to their{" "}
               <span
@@ -149,7 +160,16 @@ export function Home() {
               <img
                 src={bridgeUrl}
                 alt="Golden Gate Bridge — bridging enterprises"
-                className="h-[260px] w-full object-cover sm:h-[360px] md:h-[460px] lg:h-[520px] xl:h-[560px] 2xl:h-[620px]"
+                className="
+w-full
+rounded-[28px]
+object-cover
+h-[260px]
+sm:h-[360px]
+md:h-[460px]
+lg:h-[560px]
+xl:h-[640px]
+2xl:h-[760px]"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-deep/70 via-navy-deep/20 to-transparent p-6">
                 <div className="text-[11px] uppercase tracking-[0.28em] text-gold"></div>
