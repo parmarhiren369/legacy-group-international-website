@@ -59,7 +59,7 @@ export function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen w-full overflow-x-hidden bg-background text-foreground">
       <Nav />
 
       {/* HERO */}
@@ -208,13 +208,13 @@ export function Home() {
                 <ArrowRight className="h-4 w-4" />
               </div>
 
-              <div className="mt-10 grid grid-cols-6 gap-4">
+              <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-6">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
-                  className="col-span-4 overflow-hidden rounded-2xl shadow-(--shadow-elegant)"
+                  className="col-span-2 overflow-hidden rounded-2xl shadow-(--shadow-elegant) sm:col-span-4"
                 >
                   <img
                     src={story1}
@@ -222,7 +222,7 @@ export function Home() {
                     loading="lazy"
                     width={1024}
                     height={1024}
-                    className="h-56 w-full object-cover transition-transform duration-700 hover:scale-105"
+                    className="h-44 w-full object-cover transition-transform duration-700 hover:scale-105 sm:h-56"
                   />
                 </motion.div>
                 <motion.div
@@ -230,7 +230,7 @@ export function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.1, duration: 0.6 }}
-                  className="col-span-2 overflow-hidden rounded-2xl shadow-(--shadow-elegant)"
+                  className="col-span-2 overflow-hidden rounded-2xl shadow-(--shadow-elegant) sm:col-span-2"
                 >
                   <img
                     src={story3}
@@ -238,7 +238,7 @@ export function Home() {
                     loading="lazy"
                     width={1024}
                     height={1024}
-                    className="h-56 w-full object-cover transition-transform duration-700 hover:scale-105"
+                    className="h-44 w-full object-cover transition-transform duration-700 hover:scale-105 sm:h-56"
                   />
                 </motion.div>
                 <motion.div
@@ -246,7 +246,7 @@ export function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2, duration: 0.6 }}
-                  className="col-span-6 overflow-hidden rounded-2xl shadow-(--shadow-elegant)"
+                  className="col-span-2 overflow-hidden rounded-2xl shadow-(--shadow-elegant)"
                 >
                   <img
                     src={story2}
