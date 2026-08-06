@@ -526,8 +526,8 @@ function CategoryBlock({ category, index }: { category: Category; index: number 
         </motion.div>
 
         <div className="mt-12 flex flex-col gap-10 lg:flex-row lg:items-stretch">
-        <div
-  className={`flex-1 grid auto-rows-fr gap-6 ${
+          <div
+            className={`flex-1 grid gap-6 ${
               category.services.length === 1
                 ? "grid-cols-1"
                 : category.services.length === 2
@@ -535,11 +535,9 @@ function CategoryBlock({ category, index }: { category: Category; index: number 
                 : "sm:grid-cols-2 2xl:grid-cols-3"
             }`}
           >
-           {category.services.map((s, i) => (
-  <div key={s.key} className="h-full">
-    <ServiceCard service={s} delay={i * 0.08} />
-  </div>
-))}
+            {category.services.map((s, i) => (
+              <ServiceCard key={s.key} service={s} delay={i * 0.08} />
+            ))}
           </div>
 
           {categoryFeature[category.id] && (
@@ -569,7 +567,7 @@ function ServiceCard({ service, delay }: { service: Service; delay: number }) {
   const Icon = service.icon;
   const href = SERVICE_ROUTES[service.key] ?? "#";
   return (
-    <Link to={href} className="block">
+    <Link to={href} className="block h-full">
       <motion.article
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -593,10 +591,11 @@ function ServiceCard({ service, delay }: { service: Service; delay: number }) {
         <h3 className="mt-6 font-display text-2xl text-navy">{service.title}</h3>
         <p className="mt-3 whitespace-pre-line text-sm leading-relaxed text-muted-foreground">{service.short}</p>
 
+        <div className="mt-auto">
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="mt-6 pt-6 inline-flex items-center gap-1.5 self-start rounded-full border border-navy/15 bg-white/60 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-navy transition-colors hover:border-gold hover:bg-gold/10"
+          className="mt-6 inline-flex items-center gap-1.5 self-start rounded-full border border-navy/15 bg-white/60 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-navy transition-colors hover:border-gold hover:bg-gold/10"
           aria-expanded={open}
         >
           {open ? "Show less" : "Learn more"}
@@ -622,6 +621,7 @@ function ServiceCard({ service, delay }: { service: Service; delay: number }) {
             ))}
           </ul>
         </motion.div>
+        </div>
       </motion.article>
     </Link>
   );
