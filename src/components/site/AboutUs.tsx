@@ -81,27 +81,7 @@ export function AboutUs() {
                 />
               </div>
 
-              {/* KPI CARDS */}
-              <div className="relative -mt-4 grid grid-cols-2 gap-3 px-2 sm:absolute sm:-bottom-10 sm:left-1/2 sm:mt-0 sm:w-[92%] sm:-translate-x-1/2 sm:gap-4 sm:px-0 md:w-[85%] xl:-bottom-12 xl:w-[80%] xl:gap-5">
-                {[
-                  { value: "20+", label: "Years Experience" },
-                  { value: "150+", label: "Global Clients" },
-                  { value: "12", label: "Industries Served" },
-                  { value: "30+", label: "Countries Reached" },
-                ].map((kpi) => (
-                  <div
-                    key={kpi.label}
-                    className="rounded-2xl border border-white/10 bg-white/95 p-4 text-center shadow-[0_20px_40px_rgba(0,0,0,0.15)] backdrop-blur transition duration-300 hover:-translate-y-1 sm:p-5"
-                  >
-                    <div className="text-xl font-bold text-[#071330] sm:text-2xl sm:sm:text-3xl">
-                      {kpi.value}
-                    </div>
-                    <p className="mt-1 text-xs font-medium text-gray-600 sm:text-sm">
-                      {kpi.label}
-                    </p>
-                  </div>
-                ))}
-              </div>
+              
             </div>
           </div>
         </section>
