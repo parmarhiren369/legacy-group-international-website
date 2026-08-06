@@ -7,7 +7,7 @@ import story1 from "@/assets/story-1.jpg";
 import story2 from "@/assets/story-2.jpg";
 import story3 from "@/assets/story-3.jpg";
 import growthIllustration from "@/assets/growth-illustration.png";
-import { scrollToHash } from "@/lib/utils";
+import { scrollToHash, PAGE_X } from "@/lib/utils";
 import { useEffect } from "react";
 import { ScrollToTop } from "./ScrollToTop";
 import { Footer } from "./Footer";
@@ -79,7 +79,7 @@ export function Home() {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.85),transparent_65%)]" />
         </div>
 
-        <div className="mx-auto grid w-full max-w-[1700px] grid-cols-1 items-center gap-12 px-5 pt-28 pb-12 sm:px-8 md:px-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 lg:px-16 lg:pt-36 xl:gap-20 xl:px-24 2xl:px-32">
+        <div className={`grid grid-cols-1 items-center gap-12 pt-28 pb-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 lg:pt-36 xl:gap-20 ${PAGE_X}`}>
           <motion.div
             initial="hidden"
             animate="show"
@@ -162,7 +162,7 @@ export function Home() {
         </div>
 
         {/* Stats strip */}
-        <div className="mx-auto w-full max-w-[1440px] px-6 pt-10 pb-24 sm:px-10 md:px-16 lg:px-16 lg:pt-14 xl:px-20 2xl:px-36">
+        <div className={`pt-10 pb-24 lg:pt-14 ${PAGE_X}`}>
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -186,7 +186,7 @@ export function Home() {
 
       {/* PILLARS */}
       <section id="about" className="relative scroll-mt-28 py-28 lg:scroll-mt-32">
-       <div className="mx-auto w-full max-w-[1440px] px-6 sm:px-10 md:px-16 lg:px-16 xl:px-20 2xl:px-36">
+       <div className={PAGE_X}>
           <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-14 xl:gap-20">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -332,7 +332,7 @@ export function Home() {
   className="relative scroll-mt-28 overflow-hidden bg-background py-14 lg:scroll-mt-32"
 >
         
-        <div className="mx-auto flex w-full max-w-[1440px] flex-col items-start justify-between gap-8 px-6 sm:px-10 md:px-16 lg:flex-row lg:items-center lg:px-16 xl:px-20 2xl:px-36">
+        <div className={`flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center ${PAGE_X}`}>
           <div>
             <div className="text-sm font-semibold uppercase tracking-[0.28em] text-black">
               Ready when you are
