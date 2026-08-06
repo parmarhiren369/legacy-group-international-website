@@ -158,7 +158,7 @@ export function Industries() {
       </section>
 
       {/* SCROLLING INDUSTRIES (alphabetically sorted A → Z) */}
-      <section className="overflow-hidden border-y border-gray-200 bg-[#071330] py-6">
+      <section className="overflow-hidden border-y border-gray-200 bg-[#377589] py-6">
         <div className="flex whitespace-nowrap">
           <div className="animate-[marquee_28s_linear_infinite] flex items-center gap-12 text-lg font-semibold uppercase tracking-[0.25em] text-white">
             <span>Automotive</span>
