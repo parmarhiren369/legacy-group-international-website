@@ -296,11 +296,6 @@ export function Testimonials() {
             className="absolute inset-x-0 top-0 h-[3px] scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100"
             style={{ backgroundImage: "var(--gradient-gold)" }}
           />
-          <div
-            aria-hidden
-            className="absolute -right-14 -top-14 h-32 w-32 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-30"
-            style={{ backgroundImage: "var(--gradient-gold)" }}
-          />
 
           <div className="relative mb-4 text-3xl transition-transform duration-500 group-hover:scale-110">
             ✓
@@ -404,17 +399,6 @@ background:
 "linear-gradient(135deg,var(--navy-deep),var(--navy))",
 }}
 >
-
-<div
-  aria-hidden
-  className="absolute -right-24 -top-24 h-64 w-64 rounded-full opacity-30 blur-3xl"
-  style={{ backgroundImage: "var(--gradient-gold)" }}
-/>
-<div
-  aria-hidden
-  className="absolute -left-24 -bottom-24 h-64 w-64 rounded-full opacity-20 blur-3xl"
-  style={{ backgroundImage: "var(--gradient-gold)" }}
-/>
 
 <div className="relative text-sm uppercase tracking-[0.3em] text-gold">
 Let's Build Together
