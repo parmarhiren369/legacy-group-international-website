@@ -112,7 +112,7 @@ export function Nav() {
             href="https://calendly.com/raj-kapoor"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden lg:inline-flex items-center rounded-full px-6 py-3 text-sm font-semibold text-navy-deep shadow-(--shadow-gold) transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+            className="hidden lg:inline-flex items-center rounded-full px-6 py-3 text-sm font-semibold text-white shadow-(--shadow-gold) transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             style={{ backgroundImage: "var(--gradient-gold)" }}
           >
             Get in Touch
@@ -154,7 +154,7 @@ export function Nav() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileOpen(false)}
-                className="mt-3 inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold text-navy-deep shadow-(--shadow-gold)"
+                className="mt-3 inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold text-white shadow-(--shadow-gold)"
                 style={{ backgroundImage: "var(--gradient-gold)" }}
               >
                 Get in Touch
