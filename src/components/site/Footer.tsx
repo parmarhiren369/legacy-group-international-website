@@ -10,7 +10,7 @@ export function Footer() {
         </div>
 
         <div className="tracking-wide">
-          Crafted with precision · Since 2004
+          Crafted with precision · Since 2005
         </div>
       </div>
     </footer>
