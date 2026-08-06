@@ -156,8 +156,10 @@ export function AboutUs() {
               </p>
 
               <h2 className="mt-4 text-3xl font-bold text-[#071330] sm:mt-5 sm:text-4xl lg:text-5xl">
-                Mission & Vision
-              </h2>
+  Mission{" "}
+  <span className="font-sans font-bold">&</span>{" "}
+  Vision
+</h2>
 
               <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-gray-600 sm:mt-6 sm:text-lg sm:leading-8">
                 We are committed to helping organizations build stronger teams,
