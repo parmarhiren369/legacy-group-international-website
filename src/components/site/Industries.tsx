@@ -4,6 +4,7 @@ import { Link } from "@tanstack/react-router";
 import { Nav } from "./Nav";
 import { ScrollToTop } from "./ScrollToTop";
 import { industries } from "@/data/industries";
+import { PAGE_X } from "@/lib/utils";
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -15,7 +16,7 @@ const sortedIndustries = [...industries].sort((a, b) =>
 
 export function Industries() {
   return (
-    <div className="min-h-screen w-full bg-background text-foreground">
+    <div className="min-h-screen w-full overflow-x-hidden bg-background text-foreground">
       <Nav />
 
       {/* HERO */}
@@ -33,13 +34,13 @@ export function Industries() {
           />
         </div>
 
-        <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 md:px-16 lg:px-16 xl:px-20 2xl:px-36 text-center">
+        <div className={`text-center ${PAGE_X}`}>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.8, ease }}
-            className="mt-6 text-5xl leading-[1.02] text-navy-deep sm:text-6xl lg:text-6xl xl:text-7xl"
+            className="mt-6 text-4xl leading-[1.05] text-navy-deep sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl"
           >
             Industries we{" "}
             <span
@@ -68,7 +69,7 @@ export function Industries() {
 
       {/* GRID (alphabetically sorted A → Z) */}
       <section className="pb-28">
-        <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 md:px-16 lg:px-16 xl:px-20 2xl:px-36">
+        <div className={PAGE_X}>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8">
             {sortedIndustries.map((ind, i) => (
               <Link
@@ -114,7 +115,7 @@ export function Industries() {
 
       {/* TRUSTED ACROSS INDUSTRIES */}
       <section className="bg-white py-20">
-        <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 md:px-16 lg:px-16 xl:px-20 2xl:px-36">
+        <div className={PAGE_X}>
           <div className="text-center">
             <p className="text-sm font-semibold uppercase tracking-[0.35em] text-[#E8A62C]">
               Trusted Across Industries
@@ -131,25 +132,25 @@ export function Industries() {
             </p>
           </div>
 
-          <div className="mt-16 grid grid-cols-2 gap-8 lg:grid-cols-4">
-            <div className="rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-lg transition hover:-translate-y-2 hover:shadow-2xl">
-              <h3 className="text-5xl font-bold text-[#071330]">20+</h3>
-              <p className="mt-3 text-sm uppercase tracking-[0.25em] text-gray-500">Industries</p>
+          <div className="mt-16 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4 lg:gap-8">
+            <div className="rounded-3xl border border-gray-200 bg-white p-5 text-center shadow-lg transition hover:-translate-y-2 hover:shadow-2xl sm:p-6 lg:p-8">
+              <h3 className="text-3xl font-bold text-[#071330] sm:text-4xl lg:text-5xl">20+</h3>
+              <p className="mt-3 text-xs uppercase tracking-[0.12em] text-gray-500 sm:tracking-[0.18em] lg:text-sm lg:tracking-[0.25em]">Industries</p>
             </div>
 
-            <div className="rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-lg transition hover:-translate-y-2 hover:shadow-2xl">
-              <h3 className="text-5xl font-bold text-[#071330]">150+</h3>
-              <p className="mt-3 text-sm uppercase tracking-[0.25em] text-gray-500">Global Clients</p>
+            <div className="rounded-3xl border border-gray-200 bg-white p-5 text-center shadow-lg transition hover:-translate-y-2 hover:shadow-2xl sm:p-6 lg:p-8">
+              <h3 className="text-3xl font-bold text-[#071330] sm:text-4xl lg:text-5xl">150+</h3>
+              <p className="mt-3 text-xs uppercase tracking-[0.12em] text-gray-500 sm:tracking-[0.18em] lg:text-sm lg:tracking-[0.25em]">Global Clients</p>
             </div>
 
-            <div className="rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-lg transition hover:-translate-y-2 hover:shadow-2xl">
-              <h3 className="text-5xl font-bold text-[#071330]">98%</h3>
-              <p className="mt-3 text-sm uppercase tracking-[0.25em] text-gray-500">Client Retention</p>
+            <div className="rounded-3xl border border-gray-200 bg-white p-5 text-center shadow-lg transition hover:-translate-y-2 hover:shadow-2xl sm:p-6 lg:p-8">
+              <h3 className="text-3xl font-bold text-[#071330] sm:text-4xl lg:text-5xl">98%</h3>
+              <p className="mt-3 text-xs uppercase tracking-[0.12em] text-gray-500 sm:tracking-[0.18em] lg:text-sm lg:tracking-[0.25em]">Client Retention</p>
             </div>
 
-            <div className="rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-lg transition hover:-translate-y-2 hover:shadow-2xl">
-              <h3 className="text-5xl font-bold text-[#071330]">30+</h3>
-              <p className="mt-3 text-sm uppercase tracking-[0.25em] text-gray-500">Countries</p>
+            <div className="rounded-3xl border border-gray-200 bg-white p-5 text-center shadow-lg transition hover:-translate-y-2 hover:shadow-2xl sm:p-6 lg:p-8">
+              <h3 className="text-3xl font-bold text-[#071330] sm:text-4xl lg:text-5xl">30+</h3>
+              <p className="mt-3 text-xs uppercase tracking-[0.12em] text-gray-500 sm:tracking-[0.18em] lg:text-sm lg:tracking-[0.25em]">Countries</p>
             </div>
           </div>
         </div>
@@ -233,7 +234,7 @@ export function Industries() {
 
       {/* CTA */}
       <section className="relative overflow-hidden py-20">
-        <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 md:px-16 lg:px-16 xl:px-20 2xl:px-36">
+        <div className={PAGE_X}>
           <div className="relative overflow-hidden rounded-3xl border border-white/60 bg-white/70 p-10 shadow-(--shadow-elegant) backdrop-blur-xl md:p-14">
             <div
               aria-hidden
@@ -264,7 +265,7 @@ export function Industries() {
       </section>
 
       <footer className="border-t border-border bg-background py-10">
-        <div className="flex w-full flex-col items-center justify-between gap-4 max-w-[1440px] mx-auto px-6 sm:px-10 md:px-16 lg:px-16 xl:px-20 2xl:px-36 text-sm text-muted-foreground md:flex-row">
+        <div className={`flex flex-col items-center justify-between gap-4 text-sm text-muted-foreground md:flex-row ${PAGE_X}`}>
           <div>© {new Date().getFullYear()} Legacy Digitronics Pvt. Ltd. All rights reserved.</div>
           <div className="tracking-wide">Crafted with precision · Since 2004</div>
         </div>
