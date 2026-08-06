@@ -582,9 +582,9 @@ function ServiceCard({ service, delay }: { service: Service; delay: number }) {
         />
 
         <div className="flex items-start justify-between">
-          <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-navy text-gold shadow-(--shadow-elegant) transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-105">
-            <Icon className="h-6 w-6" />
-          </div>
+          <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#377589] text-white shadow-(--shadow-elegant) transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-105">
+  <Icon className="h-6 w-6" />
+</div>
           <ArrowUpRight className="h-5 w-5 text-navy/30 transition-all duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-navy" />
         </div>
 
