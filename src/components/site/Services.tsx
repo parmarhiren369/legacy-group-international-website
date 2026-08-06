@@ -525,7 +525,7 @@ function CategoryBlock({ category, index }: { category: Category; index: number 
 
         </motion.div>
 
-        <div className="mt-12 flex flex-col gap-10 lg:flex-row lg:items-stretch">
+        <div className="mt-12 flex flex-col gap-10 lg:flex-row lg:items-start">
           <div
             className={`flex-1 grid gap-6 ${
               category.services.length === 1
