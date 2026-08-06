@@ -71,6 +71,7 @@ export function AboutUs() {
   className="h-64 w-full object-cover sm:h-72 lg:h-80"
   loading="lazy"
 />
+       </div>         
 
               {/* Main Image */}
              <div className="mx-auto max-w-[680px] overflow-hidden rounded-[28px] border border-white/10 shadow-[0_40px_80px_rgba(0,0,0,0.35)] sm:rounded-[36px]">
