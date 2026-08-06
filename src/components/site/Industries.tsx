@@ -55,7 +55,7 @@ export function Industries() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8, ease }}
-            className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground"
+            className="mx-auto mt-6 max-w-3xl text-justify text-lg leading-relaxed text-muted-foreground"
           >
             At Legacy India, we serve a range of industries with expertise and commitment. From
             recruitment and market research outsourcing to business process support, we tailor our
