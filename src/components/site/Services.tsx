@@ -433,9 +433,9 @@ export function Services() {
                   style={{ backgroundImage: "var(--gradient-gold)" }}
                 />
                 <div className="relative">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-navy text-gold">
-                    <f.icon className="h-5 w-5" />
-                  </div>
+                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#377589] text-white">
+  <f.icon className="h-5 w-5" />
+</div>
                   <h3 className="mt-6 font-sans font-semibold text-xl text-navy-deep">{f.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{f.body}</p>
                 </div>
