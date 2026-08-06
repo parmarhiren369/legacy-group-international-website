@@ -276,16 +276,11 @@ export function Services() {
       {/* HERO */}
       <section ref={heroRef} className="relative isolate overflow-hidden pt-32 pb-24 lg:pt-40 lg:pb-32">
         <div aria-hidden className="absolute inset-0 -z-10">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            poster={HERO_POSTER}
-            className="absolute inset-0 h-full w-full object-cover"
-          >
-            <source src={HERO_VIDEO} type="video/mp4" />
-          </video>
+         <img
+  src={HERO_POSTER}
+  alt="Services"
+  className="absolute inset-0 h-full w-full object-cover"
+/>
           <div className="absolute inset-0 bg-gradient-to-b from-white/55 via-white/65 to-white" />
           <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-transparent to-transparent" />
           <motion.div
@@ -349,11 +344,7 @@ export function Services() {
                 key={h.label}
                 className="group relative overflow-hidden rounded-2xl border border-white/60 bg-white/70 p-5 shadow-sm backdrop-blur-xl transition-all hover:-translate-y-1 hover:shadow-(--shadow-elegant)"
               >
-                <div
-                  aria-hidden
-                  className="absolute inset-x-0 top-0 h-[2px] scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100"
-                  style={{ backgroundImage: "var(--gradient-gold)" }}
-                />
+                
                 <div className="flex items-center gap-3">
                   <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-navy text-gold">
                     <h.icon className="h-4 w-4" />
@@ -439,11 +430,7 @@ export function Services() {
                 transition={{ delay: i * 0.1, duration: 0.6, ease }}
                 className="group relative overflow-hidden rounded-2xl border border-white/20 bg-white p-8 shadow-(--shadow-elegant) transition-all hover:-translate-y-1 hover:border-gold"
               >
-                <div
-                  aria-hidden
-                  className="absolute -right-16 -top-16 h-40 w-40 rounded-full opacity-30 blur-2xl transition-opacity duration-500 group-hover:opacity-60"
-                  style={{ backgroundImage: "var(--gradient-gold)" }}
-                />
+                
                 <div
                   aria-hidden
                   className="absolute inset-x-0 top-0 h-[3px] scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100"
@@ -476,11 +463,7 @@ export function Services() {
             transition={{ duration: 0.7, ease }}
             className="relative"
           >
-            <div
-              aria-hidden
-              className="absolute -right-24 -top-24 h-64 w-64 rounded-full opacity-40 blur-3xl"
-              style={{ backgroundImage: "var(--gradient-gold)" }}
-            />
+            
             <div className="relative flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
               <div>
                 <div className="text-xs uppercase tracking-[0.28em] text-gold">Ready when you are</div>
