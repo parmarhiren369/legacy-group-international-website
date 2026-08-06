@@ -321,13 +321,11 @@ xl:h-[640px]
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ delay: 0.3, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                 className="relative overflow-hidden rounded-2xl p-8 text-white sm:col-span-2"
-                style={{ background: "linear-gradient(135deg, var(--navy-deep), var(--navy))" }}
+                style={{
+  background: "linear-gradient(135deg, #377589, #377589)",
+}}
               >
-                <div
-                  aria-hidden
-                  className="absolute -right-16 -top-16 h-52 w-52 rounded-full opacity-40 blur-3xl"
-                  style={{ backgroundImage: "var(--gradient-gold)" }}
-                />
+                
                 <div className="relative">
                   <div className="text-xs uppercase tracking-[0.28em] text-gold">
                     Since 2005 · 20+ Years
