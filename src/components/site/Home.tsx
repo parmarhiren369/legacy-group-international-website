@@ -288,7 +288,7 @@ xl:h-[640px]
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-80px" }}
                   transition={{ delay: i * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                  className="group relative isolate overflow-hidden rounded-2xl border border-[#377589] bg-[#377589] p-8 transition-all hover:-translate-y-1 hover:shadow-(--shadow-elegant)"
+                  className="group relative isolate overflow-hidden rounded-2xl border border-border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-(--shadow-elegant)"
                 >
                   <div
                     className="absolute inset-x-0 top-0 h-[3px] scale-x-0 transition-transform duration-500 group-hover:scale-x-100"
