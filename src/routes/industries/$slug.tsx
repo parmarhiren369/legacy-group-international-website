@@ -4,6 +4,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Nav } from "@/components/site/Nav";
 import { ScrollToTop } from "@/components/site/ScrollToTop";
 import { getIndustryBySlug, industries } from "@/data/industries";
+import { PAGE_X } from "@/lib/utils";
 
 export const Route = createFileRoute("/industries/$slug")({
   component: IndustryPage,
@@ -17,13 +18,13 @@ function IndustryPage() {
 
   if (!industry) {
     return (
-      <div className="min-h-screen w-full bg-background text-foreground">
+      <div className="min-h-screen w-full overflow-x-hidden bg-background text-foreground">
         <Nav />
         <section className="flex min-h-[70vh] flex-col items-center justify-center px-6 pt-32 text-center">
           <p className="text-xs uppercase tracking-[0.28em] text-gold">
             Industry not found
           </p>
-          <h1 className="mt-4 font-display text-4xl text-navy-deep">
+          <h1 className="mt-4 font-display text-3xl text-navy-deep sm:text-4xl">
             We couldn't find that industry.
           </h1>
           <p className="mt-4 max-w-md text-muted-foreground">
@@ -51,7 +52,7 @@ function IndustryPage() {
   const related = industries.filter((i) => i.slug !== industry.slug).slice(0, 3);
 
   return (
-    <div className="min-h-screen w-full bg-background text-foreground">
+    <div className="min-h-screen w-full overflow-x-hidden bg-background text-foreground">
       <Nav />
 
       {/* HERO */}
@@ -68,7 +69,7 @@ function IndustryPage() {
           />
         </div>
 
-        <div className="w-full px-[1in] lg:px-[1.5in]">
+        <div className={PAGE_X}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -81,12 +82,12 @@ function IndustryPage() {
               ← All Industries
             </Link>
 
-            <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.22em] text-gold-soft backdrop-blur">
+            <div className="mt-6 flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.22em] text-gold-soft backdrop-blur">
               <span className="h-1.5 w-1.5 rounded-full bg-gold" />
               {industry.eyebrow}
             </div>
 
-            <h1 className="mt-6 max-w-3xl font-display text-5xl leading-[1.05] text-primary-foreground sm:text-6xl lg:text-7xl">
+            <h1 className="mt-6 max-w-3xl font-display text-4xl leading-[1.08] text-primary-foreground sm:text-5xl md:text-6xl lg:text-7xl">
               {industry.name}
             </h1>
 
@@ -120,7 +121,7 @@ function IndustryPage() {
 
       {/* FOCUS AREAS */}
       <section className="py-24">
-        <div className="w-full px-[1in] lg:px-[1.5in]">
+        <div className={PAGE_X}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -131,7 +132,7 @@ function IndustryPage() {
             <p className="text-xs uppercase tracking-[0.28em] text-gold">
               What we do
             </p>
-            <h2 className="mt-4 font-display text-4xl leading-tight text-navy sm:text-5xl">
+            <h2 className="mt-4 font-display text-3xl leading-tight text-navy sm:text-4xl lg:text-5xl">
               Built for {industry.name}
             </h2>
           </motion.div>
@@ -161,7 +162,7 @@ function IndustryPage() {
 
       {/* WHY LEGACY (shared across all industry pages) */}
       <section className="border-y border-border bg-secondary/40 py-24">
-        <div className="w-full px-[1in] lg:px-[1.5in]">
+        <div className={PAGE_X}>
           <div className="grid gap-8 md:grid-cols-3">
             {[
               {
@@ -189,7 +190,7 @@ function IndustryPage() {
                 className="rounded-2xl border border-border bg-card p-8"
                 style={{ boxShadow: "var(--shadow-elegant)" }}
               >
-                <p className="font-display text-4xl font-bold text-navy">
+                <p className="font-display text-3xl font-bold text-navy sm:text-4xl">
                   {f.k}
                 </p>
                 <p className="mt-3 text-sm font-semibold text-navy">
@@ -206,7 +207,7 @@ function IndustryPage() {
 
       {/* RELATED INDUSTRIES */}
       <section className="py-24">
-        <div className="w-full px-[1in] lg:px-[1.5in]">
+        <div className={PAGE_X}>
           <p className="text-xs uppercase tracking-[0.28em] text-gold">
             Explore more
           </p>
@@ -244,7 +245,7 @@ function IndustryPage() {
 
       {/* CTA */}
       <section className="relative overflow-hidden py-20">
-        <div className="w-full px-[1in] lg:px-[1.5in]">
+        <div className={PAGE_X}>
           <div
             className="relative overflow-hidden rounded-3xl border border-white/60 bg-white/70 p-10 backdrop-blur-xl md:p-14"
             style={{ boxShadow: "var(--shadow-elegant)" }}
@@ -281,7 +282,7 @@ function IndustryPage() {
       </section>
 
       <footer className="border-t border-border bg-background py-10">
-        <div className="flex w-full flex-col items-center justify-between gap-4 px-[1in] text-sm text-muted-foreground md:flex-row lg:px-[1.5in]">
+        <div className={`flex flex-col items-center justify-between gap-4 text-center text-sm text-muted-foreground md:flex-row md:text-left ${PAGE_X}`}>
           <div>
             © {new Date().getFullYear()} Legacy Digitronics Pvt. Ltd. All
             rights reserved.
@@ -294,4 +295,3 @@ function IndustryPage() {
     </div>
   );
 }
-
