@@ -381,11 +381,7 @@ export function Services() {
 
       {/* WHY LEGACY */}
       <section className="relative overflow-hidden bg-background py-28">
-        <div
-          aria-hidden
-          className="absolute -right-40 top-1/2 -z-10 h-[560px] w-[560px] -translate-y-1/2 rounded-full opacity-30 blur-3xl"
-          style={{ backgroundImage: "var(--gradient-gold)" }}
-        />
+        
         <div className={PAGE_X}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -585,11 +581,6 @@ function ServiceCard({ service, delay }: { service: Service; delay: number }) {
         <div
           aria-hidden
           className="absolute inset-x-0 top-0 h-[3px] scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100"
-          style={{ backgroundImage: "var(--gradient-gold)" }}
-        />
-        <div
-          aria-hidden
-          className="absolute -right-20 -top-20 h-44 w-44 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-40"
           style={{ backgroundImage: "var(--gradient-gold)" }}
         />
 
