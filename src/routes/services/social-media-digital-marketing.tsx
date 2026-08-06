@@ -4,6 +4,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Nav } from "@/components/site/Nav";
 import { ScrollToTop } from "@/components/site/ScrollToTop";
 import marketingTechImage from "@/assets/images/exploring-social-media-technology.webp";
+import { PAGE_X } from "@/lib/utils";
 
 export const Route = createFileRoute(
   "/services/social-media-digital-marketing"
@@ -64,7 +65,7 @@ const stats = [
 
 function SocialMediaDigitalMarketing() {
   return (
-    <div className="min-h-screen w-full bg-background text-foreground">
+    <div className="min-h-screen w-full overflow-x-hidden bg-background text-foreground">
       <Nav />
 
       {/* HERO */}
@@ -82,7 +83,7 @@ function SocialMediaDigitalMarketing() {
           />
         </div>
 
-        <div className="w-full px-[1in] lg:px-[1.5in]">
+        <div className={PAGE_X}>
           <div className="grid items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
             {/* LEFT: content */}
             <motion.div
@@ -97,12 +98,12 @@ function SocialMediaDigitalMarketing() {
                 ← All Services
               </Link>
 
-              <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-navy/10 bg-white/70 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.22em] text-navy shadow-sm backdrop-blur">
+              <div className="mt-6 flex w-fit items-center gap-2 rounded-full border border-navy/10 bg-white/70 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.22em] text-navy shadow-sm backdrop-blur">
                 <span className="h-1.5 w-1.5 rounded-full bg-gold" />
                 Attention → Action
               </div>
 
-              <h1 className="mt-6 max-w-2xl text-5xl leading-[1.02] text-navy-deep sm:text-6xl lg:text-7xl">
+              <h1 className="mt-6 max-w-2xl text-4xl leading-[1.05] text-navy-deep sm:text-5xl md:text-6xl lg:text-7xl">
                 Digital growth,{" "}
                 <span
                   className="bg-clip-text text-transparent"
@@ -145,7 +146,7 @@ function SocialMediaDigitalMarketing() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.8, ease }}
-                className="mt-16 grid grid-cols-3 gap-4 max-w-xl"
+                className="mt-16 grid grid-cols-1 gap-4 max-w-xl sm:grid-cols-3"
               >
                 {stats.map((s) => (
                   <div
@@ -192,7 +193,7 @@ function SocialMediaDigitalMarketing() {
 
       {/* CAPABILITIES */}
       <section className="py-24">
-        <div className="w-full px-[1in] lg:px-[1.5in]">
+        <div className={PAGE_X}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -240,7 +241,7 @@ function SocialMediaDigitalMarketing() {
 
       {/* WHY LEGACY */}
       <section className="border-y border-border bg-secondary/40 py-24">
-        <div className="w-full px-[1in] lg:px-[1.5in]">
+        <div className={PAGE_X}>
           <div className="max-w-2xl">
             <p className="text-xs uppercase tracking-[0.28em] text-gold">
               Why Legacy
@@ -288,7 +289,7 @@ function SocialMediaDigitalMarketing() {
 
       {/* CTA */}
       <section className="relative overflow-hidden py-24">
-        <div className="w-full px-[1in] lg:px-[1.5in]">
+        <div className={PAGE_X}>
           <div
             className="relative overflow-hidden rounded-3xl border border-white/60 bg-white/70 p-10 backdrop-blur-xl md:p-14"
             style={{ boxShadow: "var(--shadow-elegant)" }}
@@ -325,7 +326,7 @@ function SocialMediaDigitalMarketing() {
       </section>
 
       <footer className="border-t border-border bg-background py-10">
-        <div className="flex w-full flex-col items-center justify-between gap-4 px-[1in] text-sm text-muted-foreground md:flex-row lg:px-[1.5in]">
+        <div className={`flex flex-col items-center justify-between gap-4 text-center text-sm text-muted-foreground md:flex-row md:text-left ${PAGE_X}`}>
           <div>
             © {new Date().getFullYear()} Legacy Digitronics Pvt. Ltd. All
             rights reserved.
