@@ -1,7 +1,7 @@
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import { ScrollToTop } from "./ScrollToTop";
-import usaStatesImg from "../../assets/usa-states.png";
+import worldTeamImg from "../../assets/group-people-with-world-map.jpg";
 import { PAGE_X } from "@/lib/utils";
 
 export function AboutUs() {
@@ -66,11 +66,11 @@ export function AboutUs() {
               {/* USA NETWORK */}
               <div className="mb-8 mx-auto max-w-[680px] overflow-hidden rounded-[28px] shadow-[0_25px_80px_rgba(7,19,48,0.35)] sm:rounded-[32px]">
                 <img
-                  src={usaStatesImg}
-                  alt="Map of the United States showing nationwide presence"
-                  className="h-56 w-full object-cover sm:h-64"
-                />
-              </div>
+  src={worldTeamImg}
+  alt="Global team with world map"
+  className="h-64 w-full object-cover sm:h-72 lg:h-80"
+  loading="lazy"
+/>
 
               {/* Main Image */}
              <div className="mx-auto max-w-[680px] overflow-hidden rounded-[28px] border border-white/10 shadow-[0_40px_80px_rgba(0,0,0,0.35)] sm:rounded-[36px]">
