@@ -297,8 +297,8 @@ xl:h-[640px]
                   <div className="relative inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#2E6476] text-white">
                     <p.icon className="h-5 w-5" />
                   </div>
-                  <h3 className="relative mt-6 text-xl text-white">{p.title}</h3>
-                  <p className="relative mt-3 text-sm leading-relaxed text-white/80">{p.body}</p>
+                 <h3 className="relative mt-6 text-xl text-navy">
+                  <p className="relative mt-3 text-sm leading-relaxed text-muted-foreground">
                 </motion.div>
               ))}
               <motion.div
