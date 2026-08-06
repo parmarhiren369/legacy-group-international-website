@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import logoUrl from "@/assets/logo.png";
-import { scrollToHash } from "@/lib/utils";
+import { scrollToHash, PAGE_X } from "@/lib/utils";
 type NavLink = {
   label: string;
   href: string;
@@ -87,7 +87,7 @@ export function Nav() {
         scrolled ? "shadow-[0_8px_30px_-15px_rgba(15,23,42,0.18)]" : ""
       }`}
     >
-      <div className="mx-auto flex w-full max-w-[1600px] items-center justify-between px-4 py-3 sm:px-6 md:px-10 lg:px-16 xl:px-24 2xl:px-32">
+      <div className={`flex items-center justify-between py-3 ${PAGE_X}`}>
         <Link to="/" className="flex items-center gap-3">
           <img
   src={logoUrl}
