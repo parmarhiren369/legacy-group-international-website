@@ -346,9 +346,9 @@ export function Services() {
               >
                 
                 <div className="flex items-center gap-3">
-                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-navy text-gold">
-                    <h.icon className="h-4 w-4" />
-                  </div>
+                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#377589] text-white">
+  <Stat.icon className="h-5 w-5" />
+</div>
                   <div className="text-2xl font-semibold text-navy">{h.k}</div>
                 </div>
                 <div className="mt-3 text-sm font-medium text-navy">{h.label}</div>
