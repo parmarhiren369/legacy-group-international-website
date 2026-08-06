@@ -5,6 +5,7 @@ import { Nav } from "./Nav";
 import { ScrollToTop } from "./ScrollToTop";
 import { industries } from "@/data/industries";
 import { PAGE_X } from "@/lib/utils";
+import industriesHero from "@/assets/industries-hero.jpg";
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -34,8 +35,8 @@ export function Industries() {
           />
         </div>
 
-        <div className={PAGE_X}>
-          <div className="max-w-4xl">
+        <div className={`grid grid-cols-1 items-center gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-16 ${PAGE_X}`}>
+          <div className="max-w-2xl">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -65,6 +66,21 @@ export function Industries() {
               industry.
             </motion.p>
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.3, duration: 0.9, ease }}
+            className="relative"
+          >
+            <div className="relative overflow-hidden rounded-[1.75rem] border border-white/60">
+              <img
+                src={industriesHero}
+                alt="Industries we power"
+                className="h-[260px] w-full rounded-[28px] object-cover sm:h-[340px] md:h-[400px] lg:h-[460px]"
+              />
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -237,11 +253,6 @@ export function Industries() {
       <section className="relative overflow-hidden py-20">
         <div className={PAGE_X}>
           <div className="relative overflow-hidden rounded-3xl border border-white/60 bg-white/70 p-10 shadow-(--shadow-elegant) backdrop-blur-xl md:p-14">
-            <div
-              aria-hidden
-              className="absolute -right-24 -top-24 h-64 w-64 rounded-full opacity-40 blur-3xl"
-              style={{ backgroundImage: "var(--gradient-gold)" }}
-            />
             <div className="relative flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
               <div>
                 <div className="text-xs uppercase tracking-[0.28em] text-gold">
