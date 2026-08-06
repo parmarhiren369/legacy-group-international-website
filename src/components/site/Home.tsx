@@ -299,6 +299,7 @@ xl:h-[640px]
                   </div>
                  <h3 className="relative mt-6 text-xl text-navy">
                   <p className="relative mt-3 text-sm leading-relaxed text-muted-foreground">
+                    </p>
                 </motion.div>
               ))}
               <motion.div
