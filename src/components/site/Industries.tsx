@@ -34,36 +34,37 @@ export function Industries() {
           />
         </div>
 
-        <div className={`text-center ${PAGE_X}`}>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.8, ease }}
-            className="mt-6 text-4xl leading-[1.05] text-navy-deep sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl"
-          >
-            Industries we{" "}
-            <span
-              className="bg-clip-text text-transparent"
-              style={{ backgroundImage: "var(--gradient-gold)" }}
+        <div className={PAGE_X}>
+          <div className="max-w-4xl">
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1, duration: 0.8, ease }}
+              className="mt-6 text-4xl leading-[1.05] text-navy-deep sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl"
             >
-              power
-            </span>
-            .
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.8, ease }}
-            className="mx-auto mt-6 max-w-3xl text-justify text-lg leading-relaxed text-muted-foreground"
-          >
-            At Legacy India, we serve a range of industries with expertise and commitment. From
-            recruitment and market research outsourcing to business process support, we tailor our
-            services to meet the specific needs of each sector. With years of experience and a deep
-            understanding of industry demands, we help organizations streamline processes, improve
-            performance, and achieve growth. Explore how our specialized solutions can benefit your
-            industry.
-          </motion.p>
+              Industries we{" "}
+              <span
+                className="bg-clip-text text-transparent"
+                style={{ backgroundImage: "var(--gradient-gold)" }}
+              >
+                power
+              </span>
+              .
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.8, ease }}
+              className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground"
+            >
+              At Legacy India, we serve a range of industries with expertise and commitment. From
+              recruitment and market research outsourcing to business process support, we tailor our
+              services to meet the specific needs of each sector. With years of experience and a deep
+              understanding of industry demands, we help organizations streamline processes, improve
+              performance, and achieve growth. Explore how our specialized solutions can benefit your
+              industry.
+            </motion.p>
+          </div>
         </div>
       </section>
 
