@@ -22,7 +22,7 @@ const fadeUp = {
 };
 
 const stats = [
-  { value: 19, suffix: "+", label: "Years of excellence" },
+  { value: 20, suffix: "+", label: "Years of excellence" },
   { value: 250, suffix: "+", label: "Enterprise clients" },
   { value: 40, suffix: "M+", label: "Interactions delivered" },
   { value: 98, suffix: "%", label: "Client retention" },
@@ -123,7 +123,7 @@ xl:text-7xl
               variants={fadeUp}
               className="mt-6 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg xl:text-xl"
             >
-             20+ years of outsourcing excellence since 2004 — from RPO and BPO to KPO,
+             20+ years of outsourcing excellence since 2005 — from RPO and BPO to KPO,
               MRO, technical support and digital growth — for the world's most demanding
               organizations.
             </motion.p>
@@ -330,7 +330,7 @@ xl:h-[640px]
                 />
                 <div className="relative">
                   <div className="text-xs uppercase tracking-[0.28em] text-gold">
-                    Since 2004 · 19+ Years
+                    Since 2005 · 20+ Years
                   </div>
                   <p className="mt-4 font-display text-2xl leading-snug">
                     "Legacy doesn't just deliver headcount — they engineer the operating layer that
