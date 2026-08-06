@@ -361,14 +361,16 @@ xl:h-[640px]
               Let's architect the next decade of your operations.
             </h3>
           </div>
-          <a
-            href="mailto:hello@legacydigitronics.com"
-            className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-navy-deep shadow-(--shadow-gold) transition-transform hover:-translate-y-0.5"
-            style={{ backgroundImage: "var(--gradient-gold)" }}
-          >
-            Speak with our team
-            <ArrowRight className="h-4 w-4" />
-          </a>
+         <a
+  href="https://calendly.com/raj-kapoor"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-navy-deep shadow-(--shadow-gold) transition-transform hover:-translate-y-0.5"
+  style={{ backgroundImage: "var(--gradient-gold)" }}
+>
+  Speak with our team
+  <ArrowRight className="h-4 w-4" />
+</a>
         </div>
       </section>
 
