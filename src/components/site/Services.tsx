@@ -526,8 +526,8 @@ function CategoryBlock({ category, index }: { category: Category; index: number 
         </motion.div>
 
         <div className="mt-12 flex flex-col gap-10 lg:flex-row lg:items-stretch">
-          <div
-            className={`flex-1 grid gap-6 ${
+        <div
+  className={`flex-1 grid auto-rows-fr gap-6 ${
               category.services.length === 1
                 ? "grid-cols-1"
                 : category.services.length === 2
@@ -535,9 +535,11 @@ function CategoryBlock({ category, index }: { category: Category; index: number 
                 : "sm:grid-cols-2 2xl:grid-cols-3"
             }`}
           >
-            {category.services.map((s, i) => (
-              <ServiceCard key={s.key} service={s} delay={i * 0.08} />
-            ))}
+           {category.services.map((s, i) => (
+  <div key={s.key} className="h-full">
+    <ServiceCard service={s} delay={i * 0.08} />
+  </div>
+))}
           </div>
 
           {categoryFeature[category.id] && (
@@ -573,7 +575,7 @@ function ServiceCard({ service, delay }: { service: Service; delay: number }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ delay, duration: 0.6, ease }}
-        className="group relative isolate flex flex-col overflow-hidden rounded-2xl border border-border bg-card p-8 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-gold/60 hover:shadow-(--shadow-elegant)"
+        className="group relative isolate flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card p-8 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-gold/60 hover:shadow-(--shadow-elegant)"
       >
         <div
           aria-hidden
