@@ -12,7 +12,7 @@ export function cn(...inputs: ClassValue[]) {
  * max-w/px classes.
  */
 export const PAGE_X =
-  "w-full max-w-[1440px] mx-auto px-6 sm:px-10 md:px-16 lg:px-16 xl:px-20 2xl:px-36";
+"w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16";
 
 export function scrollToHash(hash: string) {
   if (typeof window === "undefined") {
