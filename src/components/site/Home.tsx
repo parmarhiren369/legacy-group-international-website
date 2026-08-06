@@ -298,6 +298,7 @@ xl:h-[640px]
                     <p.icon className="h-5 w-5" />
                   </div>
                  <h3 className="relative mt-6 text-xl text-navy">
+                   </h3>
                   <p className="relative mt-3 text-sm leading-relaxed text-muted-foreground">
                     </p>
                 </motion.div>
