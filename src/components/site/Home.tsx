@@ -365,7 +365,7 @@ xl:h-[640px]
   href="https://calendly.com/raj-kapoor"
   target="_blank"
   rel="noopener noreferrer"
-  className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-navy-deep shadow-(--shadow-gold) transition-transform hover:-translate-y-0.5"
+  className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white shadow-(--shadow-gold) transition-transform hover:-translate-y-0.5"
   style={{ backgroundImage: "var(--gradient-gold)" }}
 >
   Speak with our team
