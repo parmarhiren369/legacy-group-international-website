@@ -288,17 +288,17 @@ xl:h-[640px]
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-80px" }}
                   transition={{ delay: i * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                  className="group relative isolate overflow-hidden rounded-2xl border border-border bg-card p-8 transition-all hover:-translate-y-1 hover:shadow-(--shadow-elegant)"
+                  className="group relative isolate overflow-hidden rounded-2xl border border-[#377589] bg-[#377589] p-8" transition-all hover:-translate-y-1 hover:shadow-(--shadow-elegant)"
                 >
                   <div
                     className="absolute inset-x-0 top-0 h-[3px] scale-x-0 transition-transform duration-500 group-hover:scale-x-100"
                     style={{ backgroundImage: "var(--gradient-gold)", transformOrigin: "left" }}
                   />
-                  <div className="relative inline-flex h-12 w-12 items-center justify-center rounded-xl bg-navy text-gold">
+                  <div className="relative inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#2E6476] text-white">
                     <p.icon className="h-5 w-5" />
                   </div>
-                  <h3 className="relative mt-6 text-xl text-navy">{p.title}</h3>
-                  <p className="relative mt-3 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
+                  <h3 className="relative mt-6 text-xl text-white">{p.title}</h3>
+                  <p className="relative mt-3 text-sm leading-relaxed text-white/80">{p.body}</p>
                 </motion.div>
               ))}
               <motion.div
