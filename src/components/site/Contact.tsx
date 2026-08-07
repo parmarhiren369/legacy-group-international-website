@@ -8,6 +8,7 @@ import {
   MapPin,
   Clock,
   ArrowUpRight,
+  ArrowRight,
   ShieldCheck,
   Globe,
   Users,
@@ -103,7 +104,7 @@ export function Contact() {
                 </p>
 
                 <div className="mt-10 flex gap-4">
-                  <a
+                  
   href="https://calendly.com/raj-kapoor"
   target="_blank"
   rel="noopener noreferrer"
@@ -113,7 +114,7 @@ export function Contact() {
   <ArrowUpRight className="h-4 w-4" />
 </a>
 
-                  <a
+                  
                     href="tel:+12159394490"
                     className="rounded-full border border-[#071330] px-8 py-4 font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#071330] hover:text-white"
                   >
@@ -541,7 +542,7 @@ hover:shadow-2xl
                 stronger operations, and sustainable business growth.
               </p>
 
-              <a
+              
                 href="https://calendly.com/raj-kapoor"
                 target="_blank"
                 rel="noopener noreferrer"
