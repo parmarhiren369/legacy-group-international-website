@@ -515,44 +515,7 @@ hover:shadow-2xl
         </section>
 
         {/* GOOGLE MAP */}
-        <section className="py-24 bg-white w-full">
-          <div className={PAGE_X}>
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6, ease }}
-              className="mb-12 text-center"
-            >
-              <p className="text-sm font-semibold uppercase tracking-[0.35em] text-[#EE8021]">
-                OUR LOCATION
-              </p>
-
-              <h2 className="mt-4 text-3xl font-bold text-[#071330] sm:text-4xl lg:text-5xl">
-                Visit Our Office
-              </h2>
-
-              <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-600">
-                Connect with our team or visit one of our offices to discuss how Legacy Group International can support your business.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.7, ease }}
-              className="overflow-hidden rounded-[32px] border border-gray-200 shadow-xl transition-shadow duration-500 hover:shadow-2xl"
-            >
-              <iframe
-                src="https://www.google.com/maps?q=Detroit,+Michigan&output=embed"
-                className="h-[500px] w-full"
-                loading="lazy"
-              />
-            </motion.div>
-          </div>
-        </section>
-
+        
         {/* CTA */}
        <section className="py-24 bg-[#377589] w-full">
           <div className={PAGE_X}>
