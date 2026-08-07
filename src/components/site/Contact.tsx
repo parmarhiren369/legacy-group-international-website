@@ -58,8 +58,13 @@ export function Contact() {
               </motion.div>
 
               <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.15, ease }} className="relative">
-                <div className="overflow-hidden rounded-[30px] shadow-xl transition-transform duration-500 hover:-translate-y-1">
-                  <img src={contactHero} alt="Contact Legacy Group International" className="h-full w-full object-cover transition-transform duration-700 hover:scale-105" />
+                <div
+                  className="overflow-hidden rounded-[28px] border border-border transition-transform duration-500 hover:-translate-y-1"
+                  style={{ boxShadow: "var(--shadow-elegant)" }}
+                >
+                  <div className="overflow-hidden aspect-video">
+                    <img src={contactHero} alt="Contact Legacy Group International" className="h-full w-full object-cover transition-transform duration-700 hover:scale-105" />
+                  </div>
                 </div>
               </motion.div>
             </div>
@@ -212,7 +217,7 @@ export function Contact() {
           </div>
         </section>
 
-        <section className="py-24 bg-[#377589] w-full">
+        <section className="py-24 w-full">
           <div className={PAGE_X}>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
