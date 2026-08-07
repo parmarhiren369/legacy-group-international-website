@@ -83,7 +83,7 @@ function IndustryPage() {
               {industry.eyebrow}
             </div>
 
-            <h1 className="mt-6 max-w-3xl font-sans text-4xl leading-[1.08] text-primary-foreground sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className="mt-6 max-w-3xl font-sans text-4xl leading-[1.08] text-[#071330]sm:text-5xl md:text-6xl lg:text-7xl">
               {industry.name}
             </h1>
 
