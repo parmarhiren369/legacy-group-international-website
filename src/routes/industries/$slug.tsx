@@ -24,7 +24,7 @@ function IndustryPage() {
           <p className="text-xs uppercase tracking-[0.28em] text-gold">
             Industry not found
           </p>
-          <h1 className="mt-4 font-display text-3xl text-navy-deep sm:text-4xl">
+          <h1 className="mt-4 font-sans text-3xl text-navy-deep sm:text-4xl">
             We couldn't find that industry.
           </h1>
           <p className="mt-4 max-w-md text-muted-foreground">
@@ -87,7 +87,7 @@ function IndustryPage() {
               {industry.eyebrow}
             </div>
 
-            <h1 className="mt-6 max-w-3xl font-display text-4xl leading-[1.08] text-primary-foreground sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className="mt-6 max-w-3xl font-sans text-4xl leading-[1.08] text-primary-foreground sm:text-5xl md:text-6xl lg:text-7xl">
               {industry.name}
             </h1>
 
@@ -132,7 +132,7 @@ function IndustryPage() {
             <p className="text-xs uppercase tracking-[0.28em] text-gold">
               What we do
             </p>
-            <h2 className="mt-4 font-display text-3xl leading-tight text-navy sm:text-4xl lg:text-5xl">
+            <h2 className="mt-4 font-sans text-3xl leading-tight text-navy sm:text-4xl lg:text-5xl">
               Built for {industry.name}
             </h2>
           </motion.div>
@@ -171,7 +171,7 @@ function IndustryPage() {
                 body: "Scaling operations across cycles, geographies and platforms since 2004.",
               },
               {
-                k: "24×7×365",
+                k: "24x7x365",
                 label: "Always-on delivery",
                 body: "True follow-the-sun coverage with governance and escalation you can audit.",
               },
@@ -190,7 +190,7 @@ function IndustryPage() {
                 className="rounded-2xl border border-border bg-card p-8"
                 style={{ boxShadow: "var(--shadow-elegant)" }}
               >
-                <p className="font-display text-3xl font-bold text-navy sm:text-4xl">
+                <p className="font-sans text-3xl font-bold text-navy sm:text-4xl">
                   {f.k}
                 </p>
                 <p className="mt-3 text-sm font-semibold text-navy">
@@ -211,7 +211,7 @@ function IndustryPage() {
           <p className="text-xs uppercase tracking-[0.28em] text-gold">
             Explore more
           </p>
-          <h2 className="mt-4 font-display text-3xl leading-tight text-navy sm:text-4xl">
+          <h2 className="mt-4 font-sans text-3xl leading-tight text-navy sm:text-4xl">
             Other industries we serve
           </h2>
 
@@ -260,7 +260,7 @@ function IndustryPage() {
                 <div className="text-xs uppercase tracking-[0.28em] text-gold">
                   Ready to talk {industry.name.toLowerCase()}?
                 </div>
-                <h3 className="mt-3 max-w-xl font-display text-3xl leading-tight text-navy-deep sm:text-4xl">
+                <h3 className="mt-3 max-w-xl font-sans text-3xl leading-tight text-navy-deep sm:text-4xl">
                   Let's design the right operating layer for your team.
                 </h3>
               </div>
