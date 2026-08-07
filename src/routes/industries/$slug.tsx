@@ -62,15 +62,15 @@ function IndustryPage() {
 
       {/* HERO */}
       <section className="relative overflow-hidden bg-white pt-32 pb-20 lg:pt-40">
-  <div className="absolute inset-0 z-0">
-    <img
-      src={industry.image}
-      alt={industry.name}
-      className="h-full w-full object-cover object-top"
-    />
-  </div>
+        <div className="absolute inset-0 z-0">
+          <img
+            src={industry.image}
+            alt={industry.name}
+            className="h-full w-full object-cover object-top"
+          />
+        </div>
 
-  <div className={PAGE_X}>
+        <div className={PAGE_X}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -82,8 +82,6 @@ function IndustryPage() {
             >
               ← All Industries
             </Link>
-
-            
 
             <h1 className="mt-6 max-w-3xl font-sans text-4xl leading-[1.08] text-[#071330] sm:text-5xl md:text-6xl lg:text-7xl">
               {industry.name}
@@ -163,25 +161,25 @@ function IndustryPage() {
         <div className={PAGE_X}>
           <div className="grid gap-8 md:grid-cols-3">
             {[
-  {
-    k: "19+",
-    icon: CheckCircle2,
-    label: "Years of engineered rigor",
-    body: "A partner that has scaled operations across cycles, geographies and platforms since 2004.",
-  },
-  {
-    k: "24x7x365",
-    icon: Clock3,
-    label: "Always-on delivery",
-    body: "True follow-the-sun coverage with governance and escalation you can audit.",
-  },
-  {
-    k: "3",
-    icon: Globe,
-    label: "Continents",
-    body: "Native-language coverage and regulatory fluency across global delivery centers.",
-  },
-].map((f, i) => (
+              {
+                k: "19+",
+                icon: CheckCircle2,
+                label: "Years of engineered rigor",
+                body: "A partner that has scaled operations across cycles, geographies and platforms since 2004.",
+              },
+              {
+                k: "24x7x365",
+                icon: Clock3,
+                label: "Always-on delivery",
+                body: "True follow-the-sun coverage with governance and escalation you can audit.",
+              },
+              {
+                k: "3",
+                icon: Globe,
+                label: "Continents",
+                body: "Native-language coverage and regulatory fluency across global delivery centers.",
+              },
+            ].map((f, i) => (
               <motion.div
                 key={f.label}
                 initial={{ opacity: 0, y: 30 }}
@@ -192,8 +190,8 @@ function IndustryPage() {
                 style={{ boxShadow: "var(--shadow-elegant)" }}
               >
                 <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#377589]">
-    <CheckCircle2 className="h-6 w-6 text-white" />
-  </div>
+                  <CheckCircle2 className="h-6 w-6 text-white" />
+                </div>
                 <p className="font-sans text-3xl font-bold text-navy sm:text-4xl">
                   {f.k}
                 </p>
@@ -222,27 +220,26 @@ function IndustryPage() {
           <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
             {related.map((ind) => (
               <Link
-  key={ind.slug}
-  to="/industries/$slug"
-  params={{ slug: ind.slug }}
-  className="group relative overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-gold/60"
->
-  <div className="relative overflow-hidden">
-    <img
-      src={ind.image}
-      alt={ind.name}
-      loading="lazy"
-      className="h-40 w-full object-cover transition-transform duration-700 group-hover:scale-110"
-    />
-  </div>
+                key={ind.slug}
+                to="/industries/$slug"
+                params={{ slug: ind.slug }}
+                className="group relative overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-gold/60"
+              >
+                <div className="relative overflow-hidden">
+                  <img
+                    src={ind.image}
+                    alt={ind.name}
+                    loading="lazy"
+                    className="h-40 w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                </div>
 
-  <div className="p-5">
-    <h3 className="font-sans text-base font-semibold text-navy">
-      {ind.name}
-    </h3>
-  </div>
-</Link>
-              
+                <div className="p-5">
+                  <h3 className="font-sans text-base font-semibold text-navy">
+                    {ind.name}
+                  </h3>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -254,8 +251,7 @@ function IndustryPage() {
           <div
             className="relative overflow-hidden rounded-3xl border border-white/60 bg-white/70 p-10 backdrop-blur-xl md:p-14"
             style={{ boxShadow: "var(--shadow-elegant)" }}
-         >
-          </div>
+          >
             <div className="relative flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
               <div>
                 <div className="text-xs uppercase tracking-[0.28em] text-gold">
@@ -268,14 +264,14 @@ function IndustryPage() {
               <Link
                 to="/"
                 hash="contact"
-                className="group inline-flex shrink-0 items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold  text-white transition-transform hover:-translate-y-0.5"
+                className="group inline-flex shrink-0 items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
                 style={{
                   backgroundImage: "var(--gradient-gold)",
                   boxShadow: "var(--shadow-gold)",
                 }}
               >
                 Talk to Our Team
-               <ArrowRight className="h-4 w-4 text-white transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="h-4 w-4 text-white transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
           </div>
