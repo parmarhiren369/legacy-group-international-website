@@ -242,7 +242,7 @@ function IndustryPage() {
     </h3>
   </div>
 </Link>
-              </Link>
+              
             ))}
           </div>
         </div>
@@ -254,7 +254,8 @@ function IndustryPage() {
           <div
             className="relative overflow-hidden rounded-3xl border border-white/60 bg-white/70 p-10 backdrop-blur-xl md:p-14"
             style={{ boxShadow: "var(--shadow-elegant)" }}
-         
+         >
+          </div>
             <div className="relative flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
               <div>
                 <div className="text-xs uppercase tracking-[0.28em] text-gold">
