@@ -234,8 +234,7 @@ function IndustryPage() {
                     loading="lazy"
                     className="h-40 w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/60 via-transparent to-transparent" />
-                </div>
+                 
                 <div className="p-5">
                   <h3 className="font-sans text-base font-semibold text-navy">
                     {ind.name}
@@ -271,7 +270,7 @@ function IndustryPage() {
               <Link
                 to="/"
                 hash="contact"
-                className="group inline-flex shrink-0 items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-navy-deep transition-transform hover:-translate-y-0.5"
+                className="group inline-flex shrink-0 items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold  text-white transition-transform hover:-translate-y-0.5"
                 style={{
                   backgroundImage: "var(--gradient-gold)",
                   boxShadow: "var(--shadow-gold)",
@@ -291,7 +290,7 @@ function IndustryPage() {
             © {new Date().getFullYear()} Legacy Digitronics Pvt. Ltd. All
             rights reserved.
           </div>
-          <div className="tracking-wide">Crafted with precision · Since 2004</div>
+          <div className="tracking-wide">Crafted with precision · Since 2005</div>
         </div>
       </footer>
 
