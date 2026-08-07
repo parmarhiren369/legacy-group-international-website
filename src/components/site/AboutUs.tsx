@@ -24,8 +24,13 @@ export function AboutUs() {
               <h1 className="text-4xl font-normal leading-[1.15] text-[#071330] sm:text-5xl lg:text-5xl lg:leading-[1.1] xl:text-6xl">
   <span className="block">Building</span>
   <span className="block">Exceptional Teams.</span>
-  <span className="mt-2 block text-[#E8A62C] sm:mt-3">Powering</span>
-  <span className="block text-[#E8A62C]">Business Growth.</span>
+  <span className="mt-2 block text-[#F58220] sm:mt-3">
+  Powering
+</span>
+
+<span className="block text-[#F58220]">
+  Business Growth.
+</span>
 </h1>
 
               <div className="mt-6 inline-flex items-center gap-3 rounded-full border border-gray-200 bg-white px-5 py-3 shadow-lg sm:mt-8 sm:px-6 sm:py-4">
@@ -48,9 +53,9 @@ export function AboutUs() {
 
               {/* BUTTONS */}
 <div className="mt-6 flex flex-wrap gap-4 sm:mt-8 sm:gap-5">
-                <button className="rounded-full bg-[#E8A62C] px-7 py-3.5 text-sm font-semibold text-[#071330] transition duration-300 hover:scale-105 hover:shadow-2xl sm:px-9 sm:py-4 sm:text-base">
-                  Explore Services
-                </button>
+               <button className="rounded-full bg-[#F58220] px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#e87416] hover:scale-105 hover:shadow-2xl sm:px-9 sm:py-4 sm:text-base">
+  Explore Services
+</button>
 
                 <a
                   href="tel:+12159394490"
