@@ -105,14 +105,14 @@ export function Contact() {
 
                 <div className="mt-10 flex gap-4">
                   
-  href="https://calendly.com/raj-kapoor"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="rounded-full bg-[#377589] px-7 py-3.5 font-semibold text-white transition-all duration-300 hover:bg-[#2f6572] inline-flex items-center gap-2"
->
-  Schedule Demo
-  <ArrowUpRight className="h-4 w-4" />
-</a>
+                    href="https://calendly.com/raj-kapoor"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full bg-[#377589] px-7 py-3.5 font-semibold text-white transition-all duration-300 hover:bg-[#2f6572] inline-flex items-center gap-2"
+                  >
+                    Schedule Demo
+                    <ArrowUpRight className="h-4 w-4" />
+                  </a>
 
                   
                     href="tel:+12159394490"
