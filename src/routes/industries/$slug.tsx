@@ -57,7 +57,7 @@ function IndustryPage() {
 
       {/* HERO */}
       <section className="relative overflow-hidden bg-white pt-32 pb-20 lg:pt-40">
-  <div className="absolute inset-0 -z-10">
+  <div className="absolute inset-0 z-0">
     <img
       src={industry.image}
       alt={industry.name}
