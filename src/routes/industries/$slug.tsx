@@ -222,24 +222,26 @@ function IndustryPage() {
           <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
             {related.map((ind) => (
               <Link
-                key={ind.slug}
-                to="/industries/$slug"
-                params={{ slug: ind.slug }}
-                className="group relative overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-gold/60"
-              >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={ind.image}
-                    alt={ind.name}
-                    loading="lazy"
-                    className="h-40 w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                 
-                <div className="p-5">
-                  <h3 className="font-sans text-base font-semibold text-navy">
-                    {ind.name}
-                  </h3>
-                </div>
+  key={ind.slug}
+  to="/industries/$slug"
+  params={{ slug: ind.slug }}
+  className="group relative overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-gold/60"
+>
+  <div className="relative overflow-hidden">
+    <img
+      src={ind.image}
+      alt={ind.name}
+      loading="lazy"
+      className="h-40 w-full object-cover transition-transform duration-700 group-hover:scale-110"
+    />
+  </div>
+
+  <div className="p-5">
+    <h3 className="font-sans text-base font-semibold text-navy">
+      {ind.name}
+    </h3>
+  </div>
+</Link>
               </Link>
             ))}
           </div>
@@ -252,12 +254,7 @@ function IndustryPage() {
           <div
             className="relative overflow-hidden rounded-3xl border border-white/60 bg-white/70 p-10 backdrop-blur-xl md:p-14"
             style={{ boxShadow: "var(--shadow-elegant)" }}
-          >
-            <div
-              aria-hidden
-              className="absolute -right-24 -top-24 h-64 w-64 rounded-full opacity-40 blur-3xl"
-              style={{ backgroundImage: "var(--gradient-gold)" }}
-            />
+         
             <div className="relative flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
               <div>
                 <div className="text-xs uppercase tracking-[0.28em] text-gold">
@@ -277,7 +274,7 @@ function IndustryPage() {
                 }}
               >
                 Talk to Our Team
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+               <ArrowRight className="h-4 w-4 text-white transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
           </div>
