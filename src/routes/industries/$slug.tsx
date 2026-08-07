@@ -78,10 +78,7 @@ function IndustryPage() {
               ← All Industries
             </Link>
 
-            <div className="mt-6 flex w-fit items-center gap-2 rounded-full border border-[#EE8021]/20 bg-[#EE8021]/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.22em] text-[#EE8021] backdrop-blur">
-              <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-              {industry.eyebrow}
-            </div>
+            
 
             <h1 className="mt-6 max-w-3xl font-sans text-4xl leading-[1.08] text-[#071330]sm:text-5xl md:text-6xl lg:text-7xl">
               {industry.name}
@@ -144,7 +141,7 @@ function IndustryPage() {
                 className="group flex items-start gap-4 rounded-2xl border border-border bg-card p-6 transition-all duration-500 hover:-translate-y-1 hover:border-gold/60"
                 style={{ boxShadow: "var(--shadow-elegant)" }}
               >
-                <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-navy text-gold">
+                <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#377589] text-white">
                   <CheckCircle2 className="h-5 w-5" />
                 </div>
                 <p className="pt-1.5 text-base leading-relaxed text-foreground">
@@ -162,10 +159,11 @@ function IndustryPage() {
           <div className="grid gap-8 md:grid-cols-3">
             {[
               {
-                k: "19+",
-                label: "Years of engineered rigor",
-                body: "Scaling operations across cycles, geographies and platforms since 2004.",
-              },
+  k: "19+",
+  icon: CheckCircle2,
+  label: "Years of engineered rigor",
+  body: "...",
+},
               {
                 k: "24x7x365",
                 label: "Always-on delivery",
@@ -186,6 +184,9 @@ function IndustryPage() {
                 className="rounded-2xl border border-border bg-card p-8"
                 style={{ boxShadow: "var(--shadow-elegant)" }}
               >
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#377589]">
+    <f.icon className="h-6 w-6 text-white" />
+  </div>
                 <p className="font-sans text-3xl font-bold text-navy sm:text-4xl">
                   {f.k}
                 </p>
