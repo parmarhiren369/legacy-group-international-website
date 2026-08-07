@@ -57,15 +57,15 @@ function IndustryPage() {
 
       {/* HERO */}
       <section className="relative overflow-hidden bg-white pt-32 pb-20 lg:pt-40">
-        <div className="absolute inset-0 -z-10">
-          <img
-  src={industry.image}
-  alt={industry.name}
-  className="h-full w-full object-cover object-top"
-/>
-         
+  <div className="absolute inset-0 -z-10">
+    <img
+      src={industry.image}
+      alt={industry.name}
+      className="h-full w-full object-cover object-top"
+    />
+  </div>
 
-        <div className={PAGE_X}>
+  <div className={PAGE_X}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -73,7 +73,7 @@ function IndustryPage() {
           >
             <Link
               to="/industries"
-              className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.22em] text-gray-6000 transition-colors hover:text-gold-soft"
+              className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.22em] text-gray-600 transition-colors hover:text-gold-soft"
             >
               ← All Industries
             </Link>
