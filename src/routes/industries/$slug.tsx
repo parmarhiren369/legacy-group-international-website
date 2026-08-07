@@ -56,18 +56,14 @@ function IndustryPage() {
       <Nav />
 
       {/* HERO */}
-      <section className="relative isolate overflow-hidden pt-32 pb-20 lg:pt-40">
+      <section className="relative overflow-hidden bg-white pt-32 pb-20 lg:pt-40">
         <div className="absolute inset-0 -z-10">
           <img
   src={industry.image}
   alt={industry.name}
   className="h-full w-full object-cover object-top"
 />
-          <div
-            className="absolute inset-0"
-            style={{ background: "var(--gradient-hero)" }}
-          />
-        </div>
+         
 
         <div className={PAGE_X}>
           <motion.div
@@ -77,12 +73,12 @@ function IndustryPage() {
           >
             <Link
               to="/industries"
-              className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.22em] text-primary-foreground/70 transition-colors hover:text-gold-soft"
+              className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.22em] text-gray-6000 transition-colors hover:text-gold-soft"
             >
               ← All Industries
             </Link>
 
-            <div className="mt-6 flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.22em] text-gold-soft backdrop-blur">
+            <div className="mt-6 flex w-fit items-center gap-2 rounded-full border border-[#EE8021]/20 bg-[#EE8021]/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.22em] text-[#EE8021] backdrop-blur">
               <span className="h-1.5 w-1.5 rounded-full bg-gold" />
               {industry.eyebrow}
             </div>
@@ -91,7 +87,7 @@ function IndustryPage() {
               {industry.name}
             </h1>
 
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-primary-foreground/85">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-gray-600">
               {industry.description}
             </p>
 
@@ -110,7 +106,7 @@ function IndustryPage() {
               </Link>
               <Link
                 to="/services"
-                className="inline-flex items-center gap-2 rounded-full border border-white/30 px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:border-gold-soft hover:text-gold-soft"
+                className="inline-flex items-center gap-2 rounded-full border border-[#071330]/20 px-7 py-3.5 text-sm font-semibold text-[#071330] transition-colors hover:border-gold-soft hover:text-gold-soft"
               >
                 Explore Our Services
               </Link>
