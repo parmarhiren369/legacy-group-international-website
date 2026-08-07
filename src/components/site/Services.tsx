@@ -308,10 +308,10 @@ export function Services() {
                 One operating partner.
               </span>
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-              From talent and growth to data, marketing and technology — Legacy engineers the outsourced
-              operating layer that lets enterprises move faster without breaking.
-            </p>
+           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#071330]">
+  From talent and growth to data, marketing and technology — Legacy engineers the outsourced
+  operating layer that lets enterprises move faster without breaking.
+</p>
 
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <a
