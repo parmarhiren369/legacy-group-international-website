@@ -421,11 +421,14 @@ and sustainable business growth.
   href="https://calendly.com/raj-kapoor"
   target="_blank"
   rel="noopener noreferrer"
-  className="group inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-semibold text-navy-deep transition-transform duration-300 hover:-translate-y-0.5"
-  style={{ backgroundImage: "var(--gradient-gold)", boxShadow: "var(--shadow-gold)" }}
+  className="group inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-semibold text-white transition-transform duration-300 hover:-translate-y-0.5"
+  style={{
+    backgroundImage: "var(--gradient-gold)",
+    boxShadow: "var(--shadow-gold)",
+  }}
 >
   Schedule a Demo
-  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+  <ArrowRight className="h-4 w-4 text-white transition-transform duration-300 group-hover:translate-x-1" />
 </a>
 <button className="rounded-full border border-white px-8 py-4 font-semibold transition-colors duration-300 hover:bg-white hover:text-navy">
 Contact Us
