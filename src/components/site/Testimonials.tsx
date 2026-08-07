@@ -389,15 +389,11 @@ export function Testimonials() {
 <div className={PAGE_X}>
 
 <motion.div
-initial={{ opacity: 0, y: 30 }}
-whileInView={{ opacity: 1, y: 0 }}
-viewport={{ once: true, margin: "-80px" }}
-transition={{ duration: 0.7, ease }}
-className="relative overflow-hidden rounded-[36px] p-20 text-center text-white"
-style={{
-background:
-"linear-gradient(135deg,var(--navy-deep),var(--navy))",
-}}
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, margin: "-80px" }}
+  transition={{ duration: 0.7, ease }}
+  className="relative overflow-hidden rounded-[36px] bg-[#377589] p-20 text-center text-white"
 >
 
 <div className="relative text-sm uppercase tracking-[0.3em] text-gold">
