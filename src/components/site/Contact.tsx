@@ -523,14 +523,14 @@ hover:shadow-2xl
         </section>
 
         {/* CTA */}
-        <section className="py-24 bg-[#071330] w-full">
+       <section className="py-24 bg-[#377589] w-full">
           <div className={PAGE_X}>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.7, ease }}
-              className="relative overflow-hidden rounded-[36px] bg-[#0A1F4F] px-12 py-20 text-center text-white"
+              className="relative overflow-hidden rounded-[36px] bg-[#377589] px-12 py-20 text-center text-white"
             >
               <p className="relative text-sm uppercase tracking-[0.35em] text-[#EE8021]">
                 LET'S BUILD TOGETHER
