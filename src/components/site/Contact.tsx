@@ -107,7 +107,7 @@ export function Contact() {
   href="https://calendly.com/raj-kapoor"
   target="_blank"
   rel="noopener noreferrer"
-  className="rounded-full bg-navy px-7 py-3.5 font-semibold text-white transition-colors duration-300 hover:bg-navy/90 inline-flex items-center gap-2"
+  className="rounded-full bg-[#377589] px-7 py-3.5 font-semibold text-white transition-all duration-300 hover:bg-[#2f6572] inline-flex items-center gap-2"
 >
   Schedule Demo
   <ArrowUpRight className="h-4 w-4" />
@@ -189,9 +189,24 @@ export function Contact() {
 
                     {isPhoneCard ? (
                       <a href="tel:+12159394490" className="relative block">
-                        <div className="text-3xl text-[#EE8021] transition-transform duration-500 group-hover:scale-110 sm:text-4xl">
-                          {Icon ? <Icon className="h-8 w-8" /> : card.emoji}
-                        </div>
+                       <div
+  className="
+    flex
+    h-16
+    w-16
+    items-center
+    justify-center
+    rounded-2xl
+    bg-[#377589]
+    text-white
+    shadow-lg
+    transition-all
+    duration-500
+    group-hover:scale-110
+  "
+>
+  {Icon ? <Icon className="h-8 w-8" /> : card.emoji}
+</div>
 
                         <h3 className="mt-6 text-xl font-semibold">
                           {card.title}
@@ -203,9 +218,25 @@ export function Contact() {
                       </a>
                     ) : (
                       <>
-                        <div className="relative text-3xl text-[#EE8021] transition-transform duration-500 group-hover:scale-110 sm:text-4xl">
-                          {Icon ? <Icon className="h-8 w-8" /> : card.emoji}
-                        </div>
+<div
+  className="
+    relative
+    flex
+    h-16
+    w-16
+    items-center
+    justify-center
+    rounded-2xl
+    bg-[#377589]
+    text-white
+    shadow-lg
+    transition-all
+    duration-500
+    group-hover:scale-110
+  "
+>
+  {Icon ? <Icon className="h-8 w-8" /> : card.emoji}
+</div>
 
                         <h3 className="relative mt-6 text-xl font-semibold">
                           {card.title}
@@ -454,8 +485,8 @@ hover:shadow-2xl
     items-center
     justify-center
     rounded-2xl
-    bg-[#071330]
-    text-[#EE8021]
+    bg-[#377589]
+    text-white
     shadow-lg
     transition-all
     duration-500
