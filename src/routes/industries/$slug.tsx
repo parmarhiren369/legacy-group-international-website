@@ -1,6 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle2,
+  Clock3,
+  Globe,
+} from "lucide-react";
 import { Nav } from "@/components/site/Nav";
 import { ScrollToTop } from "@/components/site/ScrollToTop";
 import { getIndustryBySlug, industries } from "@/data/industries";
@@ -80,7 +85,7 @@ function IndustryPage() {
 
             
 
-            <h1 className="mt-6 max-w-3xl font-sans text-4xl leading-[1.08] text-[#071330]sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className="mt-6 max-w-3xl font-sans text-4xl leading-[1.08] text-[#071330] sm:text-5xl md:text-6xl lg:text-7xl">
               {industry.name}
             </h1>
 
@@ -158,23 +163,25 @@ function IndustryPage() {
         <div className={PAGE_X}>
           <div className="grid gap-8 md:grid-cols-3">
             {[
-              {
-  k: "19+",
-  icon: CheckCircle2,
-  label: "Years of engineered rigor",
-  body: "...",
-},
-              {
-                k: "24x7x365",
-                label: "Always-on delivery",
-                body: "True follow-the-sun coverage with governance and escalation you can audit.",
-              },
-              {
-                k: "3",
-                label: "Continents",
-                body: "Native-language coverage and regulatory fluency across global delivery centers.",
-              },
-            ].map((f, i) => (
+  {
+    k: "19+",
+    icon: CheckCircle2,
+    label: "Years of engineered rigor",
+    body: "A partner that has scaled operations across cycles, geographies and platforms since 2004.",
+  },
+  {
+    k: "24x7x365",
+    icon: Clock3,
+    label: "Always-on delivery",
+    body: "True follow-the-sun coverage with governance and escalation you can audit.",
+  },
+  {
+    k: "3",
+    icon: Globe,
+    label: "Continents",
+    body: "Native-language coverage and regulatory fluency across global delivery centers.",
+  },
+].map((f, i) => (
               <motion.div
                 key={f.label}
                 initial={{ opacity: 0, y: 30 }}
@@ -185,7 +192,7 @@ function IndustryPage() {
                 style={{ boxShadow: "var(--shadow-elegant)" }}
               >
                 <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#377589]">
-    <f.icon className="h-6 w-6 text-white" />
+    <CheckCircle2 className="h-6 w-6 text-white" />
   </div>
                 <p className="font-sans text-3xl font-bold text-navy sm:text-4xl">
                   {f.k}
