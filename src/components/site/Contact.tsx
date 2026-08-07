@@ -219,7 +219,7 @@ export function Contact() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.7, ease }}
-              className="relative overflow-hidden rounded-[36px] bg-[#377589] px-12 py-20 text-center text-white"
+              className="relative overflow-hidden rounded-[40px] bg-[#377589] px-12 py-20 text-center text-white"
             >
               <p className="relative text-sm uppercase tracking-[0.35em] text-[#EE8021]">LET US BUILD TOGETHER</p>
 
