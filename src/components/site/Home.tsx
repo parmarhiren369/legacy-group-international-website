@@ -260,7 +260,7 @@ xl:h-[640px]
   whileInView={{ opacity: 1, y: 0 }}
   viewport={{ once: true }}
   transition={{ delay: 0.2, duration: 0.6 }}
-  className="col-span-2 overflow-hidden rounded-2xl shadow-(--shadow-elegant) sm:col-span-6"
+  className="col-span-2 overflow-hidden rounded-2xl shadow-(--shadow-elegant) sm:col-span-1"
 >
   <img
     src={story2}
