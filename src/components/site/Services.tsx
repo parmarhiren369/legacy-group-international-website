@@ -212,7 +212,7 @@ Key Capabilities
 ];
 
 const highlights = [
-  { icon: Award, k: "19+", label: "Years of excellence", hint: "Trusted since 2004" },
+  { icon: Award, k: "20+", label: "Years of excellence", hint: "Trusted since 2004" },
   { icon: Clock, k: "24×7×365", label: "Always-on operations", hint: "Follow-the-sun delivery" },
   { icon: Globe2, k: "3", label: "Continents", hint: "Global delivery centers" },
   { icon: Sparkles, k: "98%", label: "Client retention", hint: "Outcome-first partnerships" },
