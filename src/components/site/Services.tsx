@@ -359,20 +359,23 @@ export function Services() {
         </div>
       </section>
 
-      {/* CATEGORY NAV (sticky-ish anchor) */}
-      <section id="catalog" className="scroll-mt-28 border-y border-border bg-white/60 backdrop-blur-xl lg:scroll-mt-32">
-        <div className={`flex gap-2 overflow-x-auto py-4 ${PAGE_X}`}>
-          {categories.map((c) => (
-            <a
-              key={c.id}
-              href={`#${c.id}`}
-              className="whitespace-nowrap rounded-full border border-navy/10 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-navy/80 transition-colors hover:border-gold hover:bg-gold/10 hover:text-navy"
-            >
-              {c.label}
-            </a>
-          ))}
-        </div>
-      </section>
+      {/* CATEGORY NAV - STICKY */}
+<section
+  id="catalog"
+  className="sticky top-[80px] z-40 border-y border-border bg-white/95 backdrop-blur-xl shadow-sm"
+>
+  <div className={`flex gap-2 overflow-x-auto py-4 ${PAGE_X}`}>
+    {categories.map((c) => (
+      <a
+        key={c.id}
+        href={`#${c.id}`}
+        className="whitespace-nowrap rounded-full border border-navy/10 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-navy/80 transition-colors hover:border-gold hover:bg-gold/10 hover:text-navy"
+      >
+        {c.label}
+      </a>
+    ))}
+  </div>
+</section>
 
       {/* CATEGORIES */}
       {categories.map((cat, idx) => (
