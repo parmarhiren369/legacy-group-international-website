@@ -256,21 +256,21 @@ xl:h-[640px]
                   />
                 </motion.div>
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2, duration: 0.6 }}
-                  className="col-span-2 overflow-hidden rounded-2xl shadow-(--shadow-elegant)"
-                >
-                  <img
-                    src={story2}
-                    alt="Global operations delivery center"
-                    loading="lazy"
-                    width={1024}
-                    height={1024}
-                    className="h-48 w-full object-cover transition-transform duration-700 hover:scale-105"
-                  />
-                </motion.div>
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ delay: 0.2, duration: 0.6 }}
+  className="col-span-2 overflow-hidden rounded-2xl shadow-(--shadow-elegant) sm:col-span-6"
+>
+  <img
+    src={story2}
+    alt="Global operations delivery center"
+    loading="lazy"
+    width={1024}
+    height={1024}
+    className="h-48 w-full object-cover transition-transform duration-700 hover:scale-105 sm:h-64"
+  />
+</motion.div>
               </div>
             </motion.div>
 
