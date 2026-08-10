@@ -268,7 +268,7 @@ xl:h-[640px]
     loading="lazy"
     width={1024}
     height={1024}
-    className="h-[280px] w-full object-cover transition-transform duration-700 hover:scale-105 sm:h-64"
+    className="h-[300px] w-full object-cover transition-transform duration-700 hover:scale-105 sm:h-64"
   />
 </motion.div>
               </div>
