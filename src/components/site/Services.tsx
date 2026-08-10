@@ -503,7 +503,7 @@ function CategoryBlock({ category, index }: { category: Category; index: number 
   return (
     <section
       id={category.id}
-      className={`relative isolate scroll-mt-28 overflow-hidden py-24 lg:scroll-mt-32 ${alt ? "bg-slate-50/60" : "bg-background"}`}
+     className={`relative isolate scroll-mt-24 overflow-hidden pt-10 pb-24 lg:scroll-mt-28 ${alt ? "bg-slate-50/60" : "bg-background"}`}
     >
       <div
         aria-hidden
