@@ -362,7 +362,7 @@ export function Services() {
       {/* CATEGORY NAV - STICKY */}
 <section
   id="catalog"
-  className="sticky top-[80px] z-40 border-y border-border bg-white/95 backdrop-blur-xl shadow-sm"
+  className="fixed top-[80px] left-0 right-0 z-50 border-y border-border bg-white/95 backdrop-blur-xl shadow-sm"
 >
   <div className={`flex gap-2 overflow-x-auto py-4 ${PAGE_X}`}>
     {categories.map((c) => (
@@ -506,7 +506,7 @@ function CategoryBlock({ category, index }: { category: Category; index: number 
   return (
     <section
       id={category.id}
-     className={`relative isolate scroll-mt-24 overflow-hidden pt-10 pb-24 lg:scroll-mt-28 ${alt ? "bg-slate-50/60" : "bg-background"}`}
+     className={`relative isolate scroll-mt-[150px] overflow-hidden pt-10 pb-24 lg:scroll-mt-[150px] ${alt ? "bg-slate-50/60" : "bg-background"}`}
     >
       <div
         aria-hidden
