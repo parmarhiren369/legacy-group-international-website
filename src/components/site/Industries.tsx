@@ -151,22 +151,24 @@ export function Industries() {
 
           <div className="mt-16 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4 lg:gap-8">
             <div className="rounded-3xl border border-gray-200 bg-white p-5 text-center shadow-lg transition hover:-translate-y-2 hover:shadow-2xl sm:p-6 lg:p-8">
-              <h3 className="text-3xl font-bold text-[#071330] sm:text-4xl lg:text-5xl">20+</h3>
+              <h3 className="font-sans text-3xl font-bold text-[#071330] sm:text-4xl lg:text-5xl">
+  20+
+</h3>
               <p className="mt-3 text-xs uppercase tracking-[0.12em] text-gray-500 sm:tracking-[0.18em] lg:text-sm lg:tracking-[0.25em]">Industries</p>
             </div>
 
             <div className="rounded-3xl border border-gray-200 bg-white p-5 text-center shadow-lg transition hover:-translate-y-2 hover:shadow-2xl sm:p-6 lg:p-8">
-              <h3 className="text-3xl font-bold text-[#071330] sm:text-4xl lg:text-5xl">150+</h3>
+              <h3 className="text-3xl font-sans text-[#071330] sm:text-4xl lg:text-5xl">150+</h3>
               <p className="mt-3 text-xs uppercase tracking-[0.12em] text-gray-500 sm:tracking-[0.18em] lg:text-sm lg:tracking-[0.25em]">Global Clients</p>
             </div>
 
             <div className="rounded-3xl border border-gray-200 bg-white p-5 text-center shadow-lg transition hover:-translate-y-2 hover:shadow-2xl sm:p-6 lg:p-8">
-              <h3 className="text-3xl font-bold text-[#071330] sm:text-4xl lg:text-5xl">98%</h3>
+              <h3 className="text-3xl font-sans text-[#071330] sm:text-4xl lg:text-5xl">98%</h3>
               <p className="mt-3 text-xs uppercase tracking-[0.12em] text-gray-500 sm:tracking-[0.18em] lg:text-sm lg:tracking-[0.25em]">Client Retention</p>
             </div>
 
             <div className="rounded-3xl border border-gray-200 bg-white p-5 text-center shadow-lg transition hover:-translate-y-2 hover:shadow-2xl sm:p-6 lg:p-8">
-              <h3 className="text-3xl font-bold text-[#071330] sm:text-4xl lg:text-5xl">30+</h3>
+              <h3 className="text-3xl font-sans text-[#071330] sm:text-4xl lg:text-5xl">30+</h3>
               <p className="mt-3 text-xs uppercase tracking-[0.12em] text-gray-500 sm:tracking-[0.18em] lg:text-sm lg:tracking-[0.25em]">Countries</p>
             </div>
           </div>
