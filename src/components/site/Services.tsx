@@ -508,7 +508,7 @@ function CategoryBlock({ category, index }: { category: Category; index: number 
   return (
     <section
       id={category.id}
-     className={`relative isolate scroll-mt-[150px] overflow-hidden pt-10 pb-24 lg:scroll-mt-[150px] ${alt ? "bg-slate-50/60" : "bg-background"}`}
+     className={`relative isolate scroll-mt-[150px] overflow-hidden pt-8 pb-24 lg:scroll-mt-[150px] ${alt ? "bg-slate-50/60" : "bg-background"}`}
     >
       <div
         aria-hidden
@@ -523,6 +523,10 @@ function CategoryBlock({ category, index }: { category: Category; index: number 
           className="flex flex-wrap items-end justify-between gap-6"
         >
           <div>
+  <div className="mb-5 inline-flex items-center rounded-full border border-[#377589]/20 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#377589] shadow-sm">
+    {category.label}
+  </div>
+
   <h2 className="max-w-2xl font-display text-4xl leading-tight text-navy sm:text-5xl">
     {category.headline}
   </h2>
