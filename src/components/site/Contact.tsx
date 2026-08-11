@@ -53,7 +53,13 @@ export function Contact() {
                 </p>
 
                 <div className="mt-10 flex gap-4">
-                  <a href="https://calendly.com/raj-kapoor" target="_blank" rel="noopener noreferrer"className="inline-flex items-center gap-2 rounded-full bg-[#EE8021] px-7 py-3.5 font-semibold text-white transition-all duration-300 hover:bg-[#d96f16]"
+                  
+                    href="https://calendly.com/raj-kapoor"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full bg-[#EE8021] px-7 py-3.5 font-semibold text-white transition-all duration-300 hover:bg-[#d96f16]"
+                  >
+                    Schedule a Call
                     <ArrowUpRight className="h-4 w-4" />
                   </a>
 
@@ -78,58 +84,59 @@ export function Contact() {
         </section>
 
         <section className="py-20 bg-white w-full">
-  <div className={PAGE_X}>
-    <div className="grid gap-6 md:grid-cols-2 xl:gap-8">
-      {contactLocations.map((location, index) => {
-        const Icon = location.icon;
+          <div className={PAGE_X}>
+            <div className="grid gap-6 md:grid-cols-2 xl:gap-8">
+              {contactLocations.map((location, index) => {
+                const Icon = location.icon;
 
-        return (
-          <motion.div
-            key={location.title}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.5,
-              delay: index * 0.15,
-              ease,
-            }}
-            viewport={{
-              once: true,
-              margin: "-60px",
-            }}
-            whileHover={{
-              y: -10,
-              scale: 1.02,
-            }}
-            className="group relative min-h-[230px] overflow-hidden rounded-[32px] border border-gray-200 bg-white p-8 shadow-xl transition-all duration-500 hover:border-[#EE8021] hover:shadow-2xl"
-          >
-            {/* Orange hover line */}
-            <div
-              aria-hidden
-              className="absolute inset-x-0 top-0 h-[3px] origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100"
-              style={{ background: "#EE8021" }}
-            />
+                return (
+                  <motion.div
+                    key={location.title}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.5,
+                      delay: index * 0.15,
+                      ease,
+                    }}
+                    viewport={{
+                      once: true,
+                      margin: "-60px",
+                    }}
+                    whileHover={{
+                      y: -10,
+                      scale: 1.02,
+                    }}
+                    className="group relative min-h-[230px] overflow-hidden rounded-[32px] border border-gray-200 bg-white p-8 shadow-xl transition-all duration-500 hover:border-[#EE8021] hover:shadow-2xl"
+                  >
+                    {/* Orange hover line */}
+                    <div
+                      aria-hidden
+                      className="absolute inset-x-0 top-0 h-[3px] origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100"
+                      style={{ background: "#EE8021" }}
+                    />
 
-            {/* Location Icon */}
-            <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-[#377589] text-white shadow-lg transition-all duration-500 group-hover:scale-110">
-              <Icon className="h-8 w-8" />
+                    {/* Location Icon */}
+                    <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-[#377589] text-white shadow-lg transition-all duration-500 group-hover:scale-110">
+                      <Icon className="h-8 w-8" />
+                    </div>
+
+                    {/* Location Title */}
+                    <h3 className="relative mt-6 text-xl font-semibold text-[#071330]">
+                      {location.title}
+                    </h3>
+
+                    {/* Address */}
+                    <p className="relative mt-3 max-w-2xl text-base leading-7 text-gray-600">
+                      {location.address}
+                    </p>
+                  </motion.div>
+                );
+              })}
             </div>
+          </div>
+        </section>
 
-            {/* Location Title */}
-            <h3 className="relative mt-6 text-xl font-semibold text-[#071330]">
-              {location.title}
-            </h3>
-
-            {/* Address */}
-            <p className="relative mt-3 max-w-2xl text-base leading-7 text-gray-600">
-              {location.address}
-            </p>
-          </motion.div>
-        );
-      })}
-    </div>
-  </div>
-</section>
         <section className="py-24 bg-[#FAFAF8] w-full">
           <div className={`grid gap-16 lg:grid-cols-2 ${PAGE_X}`}>
             <motion.div
@@ -256,15 +263,14 @@ export function Contact() {
               </p>
 
               
-               <a
-  href="https://calendly.com/raj-kapoor"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="group relative mt-10 inline-flex items-center gap-2 rounded-full bg-[#EE8021] px-10 py-4 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:scale-105"
->
-  Schedule a Consultation
-  <ArrowRight className="h-4 w-4 text-white transition-transform duration-300 group-hover:translate-x-1" />
-</a>
+                href="https://calendly.com/raj-kapoor"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative mt-10 inline-flex items-center gap-2 rounded-full bg-[#EE8021] px-10 py-4 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:scale-105"
+              >
+                Schedule a Consultation
+                <ArrowRight className="h-4 w-4 text-white transition-transform duration-300 group-hover:translate-x-1" />
+              </a>
             </motion.div>
           </div>
         </section>
