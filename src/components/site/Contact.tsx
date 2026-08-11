@@ -53,8 +53,7 @@ export function Contact() {
                 </p>
 
                 <div className="mt-10 flex gap-4">
-                  <a href="https://calendly.com/raj-kapoor" target="_blank" rel="noopener noreferrer" className="rounded-full bg-[#f58220]px-7 py-3.5 font-semibold text-white transition-all duration-300 hover:bg-[#2f6572] inline-flex items-center gap-2">
-                    Schedule Demo
+                  <a href="https://calendly.com/raj-kapoor" target="_blank" rel="noopener noreferrer"className="inline-flex items-center gap-2 rounded-full bg-[#EE8021] px-7 py-3.5 font-semibold text-white transition-all duration-300 hover:bg-[#d96f16]"
                     <ArrowUpRight className="h-4 w-4" />
                   </a>
 
