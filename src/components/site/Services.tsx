@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
 import marketingImage from "../../assets/images/marketing-team.webp";
+import servicesHero from "../../assets/images/services-hero.jpg";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -252,8 +253,7 @@ const categoryFeature: Record<string, { image: string; caption: string; sub: str
 
 const HERO_VIDEO =
   "https://videos.pexels.com/video-files/3252773/3252773-hd_1920_1080_25fps.mp4";
-const HERO_POSTER =
-  "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80";
+
 
 // Maps each service card's `key` to the route it should navigate to.
 // Add new entries here as you build out more service pages.
@@ -277,7 +277,7 @@ export function Services() {
       <section ref={heroRef} className="relative isolate overflow-hidden pt-32 pb-24 lg:pt-40 lg:pb-32">
         <div aria-hidden className="absolute inset-0 -z-10">
          <img
-  src={HERO_POSTER}
+  src={servicesHero}
   alt="Services"
   className="absolute inset-0 h-full w-full object-cover"
 />
