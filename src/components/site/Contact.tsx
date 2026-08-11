@@ -53,20 +53,23 @@ export function Contact() {
                 </p>
 
                 <div className="mt-10 flex gap-4">
-                  
-                    href="https://calendly.com/raj-kapoor"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-flex items-center gap-2 rounded-full bg-[#EE8021] px-7 py-3.5 font-semibold text-white transition-all duration-300 hover:bg-[#d96f16]"
->
-  Schedule a Call
-  <ArrowUpRight className="h-4 w-4" />
-</a>
+  <a
+    href="https://calendly.com/raj-kapoor"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 rounded-full bg-[#EE8021] px-7 py-3.5 font-semibold text-white transition-all duration-300 hover:bg-[#d96f16]"
+  >
+    Schedule a Call
+    <ArrowUpRight className="h-4 w-4" />
+  </a>
 
-                  <a href="tel:+12159394490" className="rounded-full border border-[#071330] px-8 py-4 font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#071330] hover:text-white">
-                    Call Us
-                  </a>
-                </div>
+  <a
+    href="tel:+12159394490"
+    className="rounded-full border border-[#071330] px-8 py-4 font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#071330] hover:text-white"
+  >
+    Call Us
+  </a>
+</div>
               </motion.div>
 
               <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.15, ease }} className="relative">
