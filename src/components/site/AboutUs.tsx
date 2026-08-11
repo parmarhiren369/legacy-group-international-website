@@ -1,7 +1,7 @@
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import { ScrollToTop } from "./ScrollToTop";
-import worldTeamImg from "../../assets/group-people-with-world-map.jpg";
+import worldTeamImg from "../../assets/group-people-with-world-map.png";
 import { PAGE_X } from "@/lib/utils";
 
 export function AboutUs() {
