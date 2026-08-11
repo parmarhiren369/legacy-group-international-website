@@ -16,7 +16,7 @@ const contactCards = [
 ];
 
 const whyChooseUs = [
-  { icon: ShieldCheck, title: "20+ Years Experience", description: "Trusted outsourcing partner since 2004." },
+  { icon: ShieldCheck, title: "20+ Years Experience", description: "Trusted outsourcing partner since 2005." },
   { icon: Globe, title: "Global Delivery", description: "Serving businesses across multiple industries worldwide." },
   { icon: Users, title: "Expert Team", description: "Recruitment, Research, Technology and BPO specialists." },
   { icon: Award, title: "98% Client Retention", description: "Long-term partnerships built on measurable results." },
