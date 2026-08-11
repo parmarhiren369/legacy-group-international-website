@@ -8,11 +8,18 @@ import { PAGE_X } from "@/lib/utils";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-const contactCards = [
-  { icon: Phone, title: "Call Us", description: "+1 (248) 602-5270" },
-  { icon: Mail, title: "Email", description: "info@legacygi.com" },
-  { icon: MapPin, title: "Office", description: "Global Delivery Centers" },
-  { icon: Clock, title: "Working Hours", description: "Mon - Fri, 9:00 AM - 6:00 PM" },
+const contactLocations = [
+  {
+    title: "USA",
+    address: "1252 Turnbury Lane, North Wales, PA 19477",
+    icon: MapPin,
+  },
+  {
+    title: "India",
+    address:
+      "2nd Floor, Brij Industries, GIDC Rd, Krishna Nagar, Makarpura GIDC, Makarpura, Vadodara, Gujarat 390010",
+    icon: MapPin,
+  },
 ];
 
 const whyChooseUs = [
