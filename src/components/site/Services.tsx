@@ -362,9 +362,11 @@ export function Services() {
       {/* CATEGORY NAV - STICKY */}
 <section
   id="catalog"
-  className="fixed top-[80px] left-0 right-0 z-50 border-y border-border bg-white/95 backdrop-blur-xl shadow-sm"
+  className="sticky top-[80px] z-40 border-y border-border bg-white/95 backdrop-blur-xl shadow-sm"
 >
-  <div className={`flex gap-2 overflow-x-auto py-4 ${PAGE_X}`}>
+  <div
+    className={`flex min-h-[68px] items-center gap-2 overflow-x-auto py-3 ${PAGE_X}`}
+  >
     {categories.map((c) => (
       <a
         key={c.id}
