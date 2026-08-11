@@ -266,14 +266,15 @@ export function Contact() {
               </p>
 
               
-                href="https://calendly.com/raj-kapoor"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative mt-10 inline-flex items-center gap-2 rounded-full bg-[#EE8021] px-10 py-4 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:scale-105"
-              >
-                Schedule a Consultation
-                <ArrowRight className="h-4 w-4 text-white transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
+                <a
+  href="https://calendly.com/raj-kapoor"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="group relative mt-10 inline-flex items-center gap-2 rounded-full bg-[#EE8021] px-10 py-4 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:scale-105"
+>
+  Schedule a Consultation
+  <ArrowRight className="h-4 w-4 text-white transition-transform duration-300 group-hover:translate-x-1" />
+</a>
             </motion.div>
           </div>
         </section>
