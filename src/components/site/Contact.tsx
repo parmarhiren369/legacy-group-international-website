@@ -119,19 +119,27 @@ export function Contact() {
                       style={{ background: "#EE8021" }}
                     />
 
-                    {/* Location Icon */}
-                    <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-[#377589] text-white shadow-lg transition-all duration-500 group-hover:scale-110">
-                      <Icon className="h-8 w-8" />
-                    </div>
+                   <div className="relative flex items-start gap-5">
+  {/* Location Icon */}
+  <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl bg-[#377589] text-white shadow-lg transition-all duration-500 group-hover:scale-110">
+    <Icon className="h-8 w-8" />
+  </div>
 
-                    {/* Label + Title */}
-                    <p className="relative mt-4 text-sm font-medium text-gray-500">Legacy Group International</p>
-                    <h3 className="relative text-xl font-semibold text-[#071330]">{location.title}</h3>
+  {/* Location Information */}
+  <div className="pt-1">
+    <h3 className="text-xl font-semibold text-[#071330]">
+      {location.title}
+    </h3>
 
-                    {/* Address */}
-                    <p className="relative mt-5 max-w-2xl text-base leading-7 text-gray-600">
-                      {location.address}
-                    </p>
+    <p className="mt-1 text-sm font-medium text-gray-500">
+      Legacy Group International
+    </p>
+
+    <p className="mt-4 text-base leading-7 text-gray-600">
+      {location.address}
+    </p>
+  </div>
+</div>
                   </motion.div>
                 );
               })}
