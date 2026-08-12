@@ -11,13 +11,13 @@ const ease = [0.22, 1, 0.36, 1] as const;
 const contactLocations = [
   {
     title: "USA",
-    address: "Legacy Group International, 1252 Turnbury Lane, North Wales, PA 19477",
+    address: "1252 Turnbury Lane, North Wales, PA 19477",
     icon: MapPin,
   },
   {
     title: "India",
     address:
-      "Legacy Group International, 210, Brij Industries Complex, Makarpura GIDC, Vadsar Road, Vadodara - 390010",
+      "210, Brij Industries Complex, Makarpura GIDC, Vadsar Road, Vadodara - 390010",
     icon: MapPin,
   },
 ];
@@ -119,18 +119,20 @@ export function Contact() {
                       style={{ background: "#EE8021" }}
                     />
 
-                    {/* Location Icon */}
-                    <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-[#377589] text-white shadow-lg transition-all duration-500 group-hover:scale-110">
-                      <Icon className="h-8 w-8" />
+                    {/* Icon + Title row */}
+                    <div className="relative flex items-center gap-5">
+                      <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl bg-[#377589] text-white shadow-lg transition-all duration-500 group-hover:scale-110">
+                        <Icon className="h-8 w-8" />
+                      </div>
+
+                      <div>
+                        <p className="text-sm font-medium text-gray-500">Legacy Group International</p>
+                        <h3 className="text-xl font-semibold text-[#071330]">{location.title}</h3>
+                      </div>
                     </div>
 
-                    {/* Location Title */}
-                    <h3 className="relative mt-4 text-xl font-semibold text-[#071330]">
-                      {location.title}
-                    </h3>
-
                     {/* Address */}
-                    <p className="relative mt-2 max-w-2xl text-base leading-7 text-gray-600">
+                    <p className="relative mt-5 max-w-2xl text-base leading-7 text-gray-600">
                       {location.address}
                     </p>
                   </motion.div>
