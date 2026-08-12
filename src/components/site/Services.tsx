@@ -303,7 +303,7 @@ export function Services() {
           >
 
             <h1 className="mt-6 text-4xl leading-[1.05] text-navy-deep sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl">
-              Nine service lines.{" "}
+              Several service lines.{" "}
               <span className="text-[#EE8021]">
                 One operating partner.
               </span>
