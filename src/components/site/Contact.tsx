@@ -11,7 +11,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 const contactLocations = [
   {
     title: "USA",
-    address: "1252 Turnbury Lane, North Wales, PA 19477",
+    address: "Legacy Group International, 1252 Turnbury Lane, North Wales, PA 19477",
     icon: MapPin,
   },
   {
@@ -110,7 +110,7 @@ export function Contact() {
                       y: -10,
                       scale: 1.02,
                     }}
-                    className="group relative min-h-[230px] overflow-hidden rounded-[32px] border border-gray-200 bg-white p-8 shadow-xl transition-all duration-500 hover:border-[#EE8021] hover:shadow-2xl"
+                    className="group relative overflow-hidden rounded-[32px] border border-gray-200 bg-white p-8 pb-6 shadow-xl transition-all duration-500 hover:border-[#EE8021] hover:shadow-2xl"
                   >
                     {/* Orange hover line */}
                     <div
@@ -125,12 +125,12 @@ export function Contact() {
                     </div>
 
                     {/* Location Title */}
-                    <h3 className="relative mt-6 text-xl font-semibold text-[#071330]">
+                    <h3 className="relative mt-4 text-xl font-semibold text-[#071330]">
                       {location.title}
                     </h3>
 
                     {/* Address */}
-                    <p className="relative mt-3 max-w-2xl text-base leading-7 text-gray-600">
+                    <p className="relative mt-2 max-w-2xl text-base leading-7 text-gray-600">
                       {location.address}
                     </p>
                   </motion.div>
