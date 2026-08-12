@@ -17,7 +17,10 @@ const contactLocations = [
   {
     title: "India",
     address:
-      "2nd Floor, Brij Industries, GIDC Rd, Krishna Nagar, Makarpura GIDC, Makarpura, Vadodara, Gujarat 390010",
+      "Legacy Group International
+210, Brij Industries Complex,
+Makarpura GIDC, Vadsar Road,
+Vadodara - 390010",
     icon: MapPin,
   },
 ];
