@@ -141,7 +141,7 @@ Key Capabilities
     id: "marketing",
     label: "Marketing",
     eyebrow: "Attention → action",
-    headline: "Digital growth, engineered.",
+    headline: "Digital Solutions. Built for Growth..",
     services: [
       {
         key: "smm",
