@@ -17,10 +17,7 @@ const contactLocations = [
   {
     title: "India",
     address:
-      "Legacy Group International
-210, Brij Industries Complex,
-Makarpura GIDC, Vadsar Road,
-Vadodara - 390010",
+      "Legacy Group International, 210, Brij Industries Complex, Makarpura GIDC, Vadsar Road, Vadodara - 390010",
     icon: MapPin,
   },
 ];
@@ -56,23 +53,23 @@ export function Contact() {
                 </p>
 
                 <div className="mt-10 flex gap-4">
-  <a
-    href="https://calendly.com/raj-kapoor"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-flex items-center gap-2 rounded-full bg-[#EE8021] px-7 py-3.5 font-semibold text-white transition-all duration-300 hover:bg-[#d96f16]"
-  >
-    Schedule a Call
-    <ArrowUpRight className="h-4 w-4" />
-  </a>
+                  <a
+                    href="https://calendly.com/raj-kapoor"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full bg-[#EE8021] px-7 py-3.5 font-semibold text-white transition-all duration-300 hover:bg-[#d96f16]"
+                  >
+                    Schedule a Call
+                    <ArrowUpRight className="h-4 w-4" />
+                  </a>
 
-  <a
-    href="tel:+12159394490"
-    className="rounded-full border border-[#071330] px-8 py-4 font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#071330] hover:text-white"
-  >
-    Call Us
-  </a>
-</div>
+                  <a
+                    href="tel:+12159394490"
+                    className="rounded-full border border-[#071330] px-8 py-4 font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#071330] hover:text-white"
+                  >
+                    Call Us
+                  </a>
+                </div>
               </motion.div>
 
               <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.15, ease }} className="relative">
@@ -268,16 +265,15 @@ export function Contact() {
                 Partner with Legacy Group International to build smarter teams, stronger operations, and sustainable business growth.
               </p>
 
-              
-                <a
-  href="https://calendly.com/raj-kapoor"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="group relative mt-10 inline-flex items-center gap-2 rounded-full bg-[#EE8021] px-10 py-4 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:scale-105"
->
-  Schedule a Consultation
-  <ArrowRight className="h-4 w-4 text-white transition-transform duration-300 group-hover:translate-x-1" />
-</a>
+              <a
+                href="https://calendly.com/raj-kapoor"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative mt-10 inline-flex items-center gap-2 rounded-full bg-[#EE8021] px-10 py-4 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:scale-105"
+              >
+                Schedule a Consultation
+                <ArrowRight className="h-4 w-4 text-white transition-transform duration-300 group-hover:translate-x-1" />
+              </a>
             </motion.div>
           </div>
         </section>
