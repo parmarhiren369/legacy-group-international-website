@@ -146,7 +146,7 @@ export function Agreements() {
               {/* 3. Customer Responsibilities */}
               <AgreementSection
                 number="3"
-                title="Customer Responsibilities & Logistics"
+                title="Customer Responsibilities and Logistics"
               >
                 <Clause number="3.1">
                   The Customer shall provide all necessary access to job boards,
@@ -175,7 +175,7 @@ export function Agreements() {
               {/* 4. Confidentiality */}
               <AgreementSection
                 number="4"
-                title="Confidentiality & Data Security"
+                title="Confidentiality and Data Security"
               >
                 <Clause number="4.1">
                   Legacy Group shall maintain strict confidentiality regarding
@@ -206,7 +206,7 @@ export function Agreements() {
               {/* 5. Non-Competition */}
               <AgreementSection
                 number="5"
-                title="Non-Competition & Non-Solicitation"
+                title="Non-Competition and Non-Solicitation"
               >
                 <Clause number="5.1">
                   Legacy Group shall not engage in any business activities that
@@ -236,7 +236,7 @@ export function Agreements() {
               {/* 6. Termination */}
               <AgreementSection
                 number="6"
-                title="Subscription Terms & Termination"
+                title="Subscription Terms and Termination"
               >
                 <Clause number="6.1">
                   This Agreement shall become effective on the date of
