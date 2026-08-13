@@ -264,35 +264,6 @@ const SERVICE_ROUTES: Record<string, string> = {
 };
 
 export function Services() {
-  const heroRef = useRef<HTMLDivElement>(null);
-
-  const scrollToCategory = (id: string) => {
-    const element = document.getElementById(id);
-
-    if (!element) return;
-
-    const navbarHeight = 80;
-    const categoryBarHeight = 68;
-    const extraSpacing = 8;
-
-    const offset = navbarHeight + categoryBarHeight + extraSpacing;
-
-    const elementPosition =
-      element.getBoundingClientRect().top + window.scrollY;
-
-    window.scrollTo({
-      top: elementPosition - offset,
-      behavior: "smooth",
-    });
-  };
-
- const { scrollYProgress } = useScroll({
-  const heroRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
-  const yOrb = useTransform(scrollYProgress, [0, 1], [0, 160]);
-  const yGrid = useTransform(scrollYProgress, [0, 1], [0, -80]);
-
-  return (
     <div className="min-h-screen w-full overflow-x-hidden bg-background text-foreground">
       <Nav />
 
