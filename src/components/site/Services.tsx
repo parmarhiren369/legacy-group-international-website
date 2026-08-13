@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import marketingImage from "../../assets/images/marketing-team.webp";
 import servicesHero from "../../assets/images/services-hero.jpg";
 import {
@@ -265,6 +265,29 @@ const SERVICE_ROUTES: Record<string, string> = {
 
 export function Services() {
   const heroRef = useRef<HTMLDivElement>(null);
+
+  const scrollToCategory = (id: string) => {
+    const element = document.getElementById(id);
+
+    if (!element) return;
+
+    const navbarHeight = 80;
+    const categoryBarHeight = 68;
+    const extraSpacing = 8;
+
+    const offset = navbarHeight + categoryBarHeight + extraSpacing;
+
+    const elementPosition =
+      element.getBoundingClientRect().top + window.scrollY;
+
+    window.scrollTo({
+      top: elementPosition - offset,
+      behavior: "smooth",
+    });
+  };
+
+  const { scrollYProgress } = useScroll({export function Services() {
+  const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
   const yOrb = useTransform(scrollYProgress, [0, 1], [0, 160]);
   const yGrid = useTransform(scrollYProgress, [0, 1], [0, -80]);
@@ -368,14 +391,15 @@ export function Services() {
     className={`flex min-h-[68px] items-center gap-2 overflow-x-auto py-3 ${PAGE_X}`}
   >
     {categories.map((c) => (
-      <a
-        key={c.id}
-        href={`#${c.id}`}
-        className="whitespace-nowrap rounded-full border border-navy/10 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-navy/80 transition-colors hover:border-gold hover:bg-gold/10 hover:text-navy"
-      >
-        {c.label}
-      </a>
-    ))}
+  <button
+    key={c.id}
+    type="button"
+    onClick={() => scrollToCategory(c.id)}
+    className="whitespace-nowrap rounded-full border border-navy/10 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-navy/80 transition-colors hover:border-gold hover:bg-gold/10 hover:text-navy"
+  >
+    {c.label}
+  </button>
+))}}
   </div>
 </section>
 
@@ -507,9 +531,11 @@ function CategoryBlock({ category, index }: { category: Category; index: number 
   const bg = categoryBackgrounds[category.id];
   return (
     <section
-      id={category.id}
-     className={`relative isolate scroll-mt-[150px] overflow-hidden pt-8 pb-24 lg:scroll-mt-[150px] ${alt ? "bg-slate-50/60" : "bg-background"}`}
-    >
+  id={category.id}
+  className={`relative isolate scroll-mt-[156px] overflow-hidden pt-2 pb-24 ${
+    alt ? "bg-slate-50/60" : "bg-background"
+  }`}
+>nwext
       <div
         aria-hidden
         className="absolute inset-0 -z-10 bg-gradient-to-br from-slate-50 via-white to-slate-100"
