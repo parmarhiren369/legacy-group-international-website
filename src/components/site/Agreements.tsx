@@ -77,15 +77,18 @@ export function Agreements() {
                   </p>
 
                   <p>
-                    By clicking Click Here to Pay / Subscribe, the Customer
-                    agrees to enter in this Service Agreement Subscription
-                    digitally, and the Customer will key in their preferred
-                    Credit Card information themselves to complete the
-                    agreement. By subscribing to the services of Legacy Group
-                    and completing payment, the Customer expressly acknowledges
-                    and agrees to be bound by the terms and conditions of this
-                    Agreement.
-                  </p>
+  By clicking{" "}
+  <a
+    href="https://buy.stripe.com/5kA9BTczk7mM51eeZW"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="font-semibold text-orange-500 hover:underline"
+  >
+    Click Here to Pay / Subscribe
+  </a>
+  , the Customer agrees to enter into this Service Agreement Subscription
+  digitally...
+</p>
                 </div>
               </div>
 
