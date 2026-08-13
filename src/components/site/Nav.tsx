@@ -7,14 +7,14 @@ import { scrollToHash, PAGE_X } from "@/lib/utils";
 type NavLink = {
   label: string;
   href: string;
-  route?:
-    | "/"
-    | "/about"
-    | "/services"
-    | "/industries"
-    | "/testimonials"
-    | "/contact";|
-    | "/agreements";
+ route?:
+  | "/"
+  | "/about"
+  | "/services"
+  | "/industries"
+  | "/testimonials"
+  | "/contact"
+  | "/agreements";
 };
 const links: NavLink[] = [
   { label: "About", href: "", route: "/about" },
