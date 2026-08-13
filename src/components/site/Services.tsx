@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import marketingImage from "../../assets/images/marketing-team.webp";
 import servicesHero from "../../assets/images/services-hero.jpg";
 import {
@@ -254,7 +254,6 @@ const categoryFeature: Record<string, { image: string; caption: string; sub: str
 const HERO_VIDEO =
   "https://videos.pexels.com/video-files/3252773/3252773-hd_1920_1080_25fps.mp4";
 
-
 // Maps each service card's `key` to the route it should navigate to.
 // Add new entries here as you build out more service pages.
 const SERVICE_ROUTES: Record<string, string> = {
@@ -264,17 +263,33 @@ const SERVICE_ROUTES: Record<string, string> = {
 };
 
 export function Services() {
+  const heroRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+  const yOrb = useTransform(scrollYProgress, [0, 1], [0, 150]);
+
+  const scrollToCategory = (id: string) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const yOffset = -140;
+    const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
+
+  return (
     <div className="min-h-screen w-full overflow-x-hidden bg-background text-foreground">
       <Nav />
 
       {/* HERO */}
       <section ref={heroRef} className="relative isolate overflow-hidden pt-32 pb-24 lg:pt-40 lg:pb-32">
         <div aria-hidden className="absolute inset-0 -z-10">
-         <img
-  src={servicesHero}
-  alt="Services"
-  className="absolute inset-0 h-full w-full object-cover"
-/>
+          <img
+            src={servicesHero}
+            alt="Services"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-white/55 via-white/65 to-white" />
           <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-transparent to-transparent" />
           <motion.div
@@ -295,17 +310,16 @@ export function Services() {
             transition={{ duration: 0.8, ease }}
             className="max-w-4xl"
           >
-
             <h1 className="mt-6 text-4xl leading-[1.05] text-navy-deep sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl">
               Several service lines.{" "}
               <span className="text-[#EE8021]">
                 One operating partner.
               </span>
             </h1>
-           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#071330]">
-  From talent and growth to data, marketing and technology — Legacy engineers the outsourced
-  operating layer that lets enterprises move faster without breaking.
-</p>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#071330]">
+              From talent and growth to data, marketing and technology — Legacy engineers the outsourced
+              operating layer that lets enterprises move faster without breaking.
+            </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <a
@@ -338,11 +352,10 @@ export function Services() {
                 key={h.label}
                 className="group relative overflow-hidden rounded-2xl border border-white/60 bg-white/70 p-5 shadow-sm backdrop-blur-xl transition-all hover:-translate-y-1 hover:shadow-(--shadow-elegant)"
               >
-
                 <div className="flex items-center gap-3">
                   <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#377589] text-white">
-  <h.icon className="h-5 w-5" />
-</div>
+                    <h.icon className="h-5 w-5" />
+                  </div>
                   <div className="text-2xl font-semibold text-navy">{h.k}</div>
                 </div>
                 <div className="mt-3 text-sm font-medium text-navy">{h.label}</div>
@@ -354,25 +367,23 @@ export function Services() {
       </section>
 
       {/* CATEGORY NAV - STICKY */}
-<section
-  id="catalog"
-  className="sticky top-[80px] z-40 border-y border-border bg-white/95 backdrop-blur-xl shadow-sm"
->
-  <div
-    className={`flex min-h-[68px] items-center gap-2 overflow-x-auto py-3 ${PAGE_X}`}
-  >
-    {categories.map((c) => (
-  <button
-    key={c.id}
-    type="button"
-    onClick={() => scrollToCategory(c.id)}
-    className="whitespace-nowrap rounded-full border border-navy/10 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-navy/80 transition-colors hover:border-gold hover:bg-gold/10 hover:text-navy"
-  >
-    {c.label}
-  </button>
-))}}
-  </div>
-</section>
+      <section
+        id="catalog"
+        className="sticky top-[80px] z-40 border-y border-border bg-white/95 backdrop-blur-xl shadow-sm"
+      >
+        <div className={`flex min-h-[68px] items-center gap-2 overflow-x-auto py-3 ${PAGE_X}`}>
+          {categories.map((c) => (
+            <button
+              key={c.id}
+              type="button"
+              onClick={() => scrollToCategory(c.id)}
+              className="whitespace-nowrap rounded-full border border-navy/10 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-navy/80 transition-colors hover:border-gold hover:bg-gold/10 hover:text-navy"
+            >
+              {c.label}
+            </button>
+          ))}
+        </div>
+      </section>
 
       {/* CATEGORIES */}
       {categories.map((cat, idx) => (
@@ -381,7 +392,6 @@ export function Services() {
 
       {/* WHY LEGACY */}
       <section className="relative overflow-hidden bg-background py-28">
-
         <div className={PAGE_X}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -426,7 +436,6 @@ export function Services() {
                 transition={{ delay: i * 0.1, duration: 0.6, ease }}
                 className="group relative overflow-hidden rounded-2xl border border-white/20 bg-white p-8 shadow-(--shadow-elegant) transition-all hover:-translate-y-1 hover:border-gold"
               >
-
                 <div
                   aria-hidden
                   className="absolute inset-x-0 top-0 h-[3px] scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100"
@@ -434,8 +443,8 @@ export function Services() {
                 />
                 <div className="relative">
                   <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#377589] text-white">
-  <f.icon className="h-5 w-5" />
-</div>
+                    <f.icon className="h-5 w-5" />
+                  </div>
                   <h3 className="mt-6 font-sans font-semibold text-xl text-navy-deep">{f.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{f.body}</p>
                 </div>
@@ -459,7 +468,6 @@ export function Services() {
             transition={{ duration: 0.7, ease }}
             className="relative"
           >
-
             <div className="relative flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
               <div>
                 <div className="text-xs uppercase tracking-[0.28em] text-gold">Ready when you are</div>
@@ -499,14 +507,13 @@ export function Services() {
 
 function CategoryBlock({ category, index }: { category: Category; index: number }) {
   const alt = index % 2 === 1;
-  const bg = categoryBackgrounds[category.id];
   return (
     <section
-  id={category.id}
-  className={`relative isolate scroll-mt-[156px] overflow-hidden pt-2 pb-24 ${
-    alt ? "bg-slate-50/60" : "bg-background"
-  }`}
->nwext
+      id={category.id}
+      className={`relative isolate scroll-mt-[156px] overflow-hidden pt-2 pb-24 ${
+        alt ? "bg-slate-50/60" : "bg-background"
+      }`}
+    >
       <div
         aria-hidden
         className="absolute inset-0 -z-10 bg-gradient-to-br from-slate-50 via-white to-slate-100"
@@ -520,15 +527,14 @@ function CategoryBlock({ category, index }: { category: Category; index: number 
           className="flex flex-wrap items-end justify-between gap-6"
         >
           <div>
-  <div className="mb-5 inline-flex items-center rounded-full border border-[#377589]/20 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#377589] shadow-sm">
-    {category.label}
-  </div>
+            <div className="mb-5 inline-flex items-center rounded-full border border-[#377589]/20 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#377589] shadow-sm">
+              {category.label}
+            </div>
 
-  <h2 className="max-w-2xl font-display text-4xl leading-tight text-navy sm:text-5xl">
-    {category.headline}
-  </h2>
-</div>
-
+            <h2 className="max-w-2xl font-display text-4xl leading-tight text-navy sm:text-5xl">
+              {category.headline}
+            </h2>
+          </div>
         </motion.div>
 
         <div className="mt-12 flex flex-col gap-10 lg:flex-row lg:items-start">
@@ -606,8 +612,8 @@ function ServiceCard({ service, delay }: { service: Service; delay: number }) {
 
         <div className="flex items-start justify-between">
           <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#377589] text-white shadow-(--shadow-elegant) transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-105">
-  <Icon className="h-6 w-6" />
-</div>
+            <Icon className="h-6 w-6" />
+          </div>
           <ArrowUpRight className="h-5 w-5 text-navy/30 transition-all duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-navy" />
         </div>
 
@@ -615,35 +621,35 @@ function ServiceCard({ service, delay }: { service: Service; delay: number }) {
         <p className="mt-3 whitespace-pre-line text-sm leading-relaxed text-muted-foreground">{service.short}</p>
 
         <div className="mt-auto">
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          className="mt-6 inline-flex items-center gap-1.5 self-start rounded-full border border-navy/15 bg-white/60 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-navy transition-colors hover:border-gold hover:bg-gold/10"
-          aria-expanded={open}
-        >
-          {open ? "Show less" : "Learn more"}
-          <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-300 ${open ? "rotate-180" : ""}`} />
-        </button>
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            className="mt-6 inline-flex items-center gap-1.5 self-start rounded-full border border-navy/15 bg-white/60 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-navy transition-colors hover:border-gold hover:bg-gold/10"
+            aria-expanded={open}
+          >
+            {open ? "Show less" : "Learn more"}
+            <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-300 ${open ? "rotate-180" : ""}`} />
+          </button>
 
-        <motion.div
-          initial={false}
-          animate={{ height: open ? "auto" : 0, opacity: open ? 1 : 0 }}
-          transition={{ duration: 0.4, ease }}
-          className="overflow-hidden"
-        >
-          <ul className="mt-5 space-y-2.5 border-t border-border pt-5">
-            {service.bullets.map((b) => (
-              <li key={b} className="flex items-start gap-2.5 text-sm text-navy/80">
-                <span
-                  aria-hidden
-                  className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full"
-                  style={{ backgroundImage: "var(--gradient-gold)" }}
-                />
-                {b}
-              </li>
-            ))}
-          </ul>
-        </motion.div>
+          <motion.div
+            initial={false}
+            animate={{ height: open ? "auto" : 0, opacity: open ? 1 : 0 }}
+            transition={{ duration: 0.4, ease }}
+            className="overflow-hidden"
+          >
+            <ul className="mt-5 space-y-2.5 border-t border-border pt-5">
+              {service.bullets.map((b) => (
+                <li key={b} className="flex items-start gap-2.5 text-sm text-navy/80">
+                  <span
+                    aria-hidden
+                    className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full"
+                    style={{ backgroundImage: "var(--gradient-gold)" }}
+                  />
+                  {b}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
         </div>
       </motion.article>
     </Link>
