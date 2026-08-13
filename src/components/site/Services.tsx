@@ -286,7 +286,7 @@ export function Services() {
     });
   };
 
-  const { scrollYProgress } = useScroll({export function Services() {
+ const { scrollYProgress } = useScroll({
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
   const yOrb = useTransform(scrollYProgress, [0, 1], [0, 160]);
