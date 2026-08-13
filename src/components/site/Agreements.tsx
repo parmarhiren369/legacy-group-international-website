@@ -72,8 +72,8 @@ export function Agreements() {
                   <p>
                     This Agreement is entered into by and between Legacy Group
                     International dba as “Legacy Digitronics Pvt. Ltd.” and the
-                    subscribing party “Michael Jackson”, collectively referred
-                    to as the “DG BUILDCO LLC.”
+                    subscribing party “customer”, collectively referred
+                    to as the “parties.”
                   </p>
 
                   <p>
