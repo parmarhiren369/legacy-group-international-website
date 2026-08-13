@@ -68,7 +68,7 @@ export function Agreements() {
             >
               {/* Introduction */}
               <div className="border-b border-gray-200 p-8 md:p-12 lg:p-14">
-                <div className="max-w-5xl space-y-6 text-base leading-8 text-gray-600">
+                <div className="max-w-5xl space-y-6 text-base leading-8 text-[#071330]">
                   <p>
                     This Agreement is entered into by and between Legacy Group
                     International dba as “Legacy Digitronics Pvt. Ltd.” and the
@@ -370,7 +370,7 @@ function AgreementSection({
             {title}
           </h2>
 
-          <div className="mt-6 space-y-6 text-base leading-8 text-gray-600">
+          <div className="mt-6 space-y-6 text-base leading-8 text-[#071330]">
             {children}
           </div>
         </div>
@@ -387,7 +387,7 @@ function Clause({
   children: React.ReactNode;
 }) {
   return (
-    <div className="rounded-2xl border border-gray-100 bg-[#FAFAF8] p-5 md:p-6">
+    <div className="rounded-2xl border border-gray-100 bg-[#FAFAF8] p-5 md:p-6 text-[#071330]">
       <p>
         <span className="mr-2 font-semibold text-[#377589]">{number}</span>
         {children}
@@ -420,7 +420,7 @@ function AgreementContact() {
           <p className="font-semibold text-[#071330]">
             Legacy Group International
           </p>
-          <p className="mt-2 text-sm leading-6 text-gray-600">
+          <p className="mt-2 text-sm leading-6 text-[#071330]">
             Intelligent Business Solutions
             <br />
             1252, Turnbury Lane,
@@ -439,7 +439,7 @@ function AgreementContact() {
 
         <div>
           <p className="font-semibold text-[#071330]">India Office</p>
-          <p className="mt-2 text-sm leading-6 text-gray-600">
+          <p className="mt-2 text-sm leading-6 text-[#071330]">
             201, Brij Industries Complex,
             <br />
             Makarpura GIDC, Vadsar Road,
