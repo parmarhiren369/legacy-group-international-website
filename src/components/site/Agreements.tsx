@@ -103,7 +103,7 @@ export function Agreements() {
               {/* 2. Pricing */}
               <AgreementSection
                 number="2"
-                title="Full-Time Research Support Service, Subscription & Pricing"
+                title="Full-Time Research Support Service, Subscription and Pricing"
               >
                 <Clause number="2.1">
                   The Full-time research support services are non-refundable,
