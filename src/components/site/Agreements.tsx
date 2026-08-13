@@ -141,7 +141,7 @@ export function Agreements() {
                 </Clause>
               </AgreementSection>
 
-              <AgreementContact />
+              
 
               {/* 3. Customer Responsibilities */}
               <AgreementSection
