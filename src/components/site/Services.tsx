@@ -21,7 +21,7 @@ import {
   ChevronDown,
   type LucideIcon,
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Nav } from "./Nav";
 import { Link } from "@tanstack/react-router";
 import { ScrollToTop } from "./ScrollToTop";
@@ -279,6 +279,19 @@ export function Services() {
     offset: ["start start", "end start"],
   });
   const yOrb = useTransform(scrollYProgress, [0, 1], [0, 150]);
+
+  // If a category was clicked (bar hidden), bring the bar back once the
+  // user scrolls back up near the top of the page — whether that's via
+  // the "scroll to top" button or manual scrolling.
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY < 100) {
+        setCategorySelected(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const scrollToCategory = (id: string) => {
     const el = document.getElementById(id);
