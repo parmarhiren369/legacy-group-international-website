@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import marketingImage from "../../assets/images/marketing-team.webp";
 import servicesHero from "../../assets/images/services-hero.jpg";
 import {
@@ -21,6 +21,7 @@ import {
   ChevronDown,
   type LucideIcon,
 } from "lucide-react";
+import { useState } from "react";
 import { Nav } from "./Nav";
 import { Link } from "@tanstack/react-router";
 import { ScrollToTop } from "./ScrollToTop";
@@ -262,9 +263,15 @@ const SERVICE_ROUTES: Record<string, string> = {
   smm: "/services/social-media-digital-marketing",
 };
 
-export function Services() {
-  const [categorySelected, setCategorySelected] = useState(false);
+// Height of the main site Nav (px). Adjust if your Nav's actual height differs.
+const MAIN_NAV_HEIGHT = 80;
+// Height of the sticky category pill bar below the main Nav (px).
+const CATEGORY_BAR_HEIGHT = 68;
+// Combined offset used for scroll-margin-top on each category section,
+// so scrollIntoView() lands flush under both bars with no gap.
+const CATEGORY_SCROLL_OFFSET = MAIN_NAV_HEIGHT + CATEGORY_BAR_HEIGHT;
 
+export function Services() {
   const heroRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -273,25 +280,11 @@ export function Services() {
   const yOrb = useTransform(scrollYProgress, [0, 1], [0, 150]);
 
   const scrollToCategory = (id: string) => {
-  const el = document.getElementById(id);
-  if (!el) return;
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
-  // Hide the category navigation
-  setCategorySelected(true);
-
-  // Main navbar height
-  const headerHeight = 80;
-
-  const y =
-    el.getBoundingClientRect().top +
-    window.scrollY -
-    headerHeight;
-
-  window.scrollTo({
-    top: y,
-    behavior: "smooth",
-  });
-};
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-background text-foreground">
       <Nav />
@@ -380,32 +373,35 @@ export function Services() {
         </div>
       </section>
 
-     {/* CATEGORY NAV */}
-      
-{!categorySelected && (
-<section
-  id="catalog"
-  className="fixed left-0 right-0 top-[80px] z-40 border-y border-border bg-white shadow-sm"
->
- <div className={`flex min-h-[68px] items-center gap-2 overflow-x-auto py-3 ${PAGE_X}`}>
-  {categories.map((c) => (
-    <button
-      key={c.id}
-      type="button"
-      onClick={() => scrollToCategory(c.id)}
-      className="whitespace-nowrap rounded-full border border-navy/10 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-navy/80 transition-colors hover:border-gold hover:bg-gold/10 hover:text-navy"
-    >
-      {c.label}
-    </button>
-  ))}
-</div>
-</section>
-)}
+      {/* CATEGORY NAV */}
+      {/*
+        Sticky (not fixed) so it always occupies real space in the document
+        flow. Combined with `scroll-mt-[...]` on each category section below,
+        this removes the gap/jump that happened when the bar was `fixed` and
+        conditionally unmounted after a click.
+      */}
+      <section
+        id="catalog"
+        className="sticky top-[80px] z-40 border-y border-border bg-white shadow-sm"
+      >
+        <div className={`flex min-h-[68px] items-center gap-2 overflow-x-auto py-3 ${PAGE_X}`}>
+          {categories.map((c) => (
+            <button
+              key={c.id}
+              type="button"
+              onClick={() => scrollToCategory(c.id)}
+              className="whitespace-nowrap rounded-full border border-navy/10 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-navy/80 transition-colors hover:border-gold hover:bg-gold/10 hover:text-navy"
+            >
+              {c.label}
+            </button>
+          ))}
+        </div>
+      </section>
+
       {/* CATEGORIES */}
-{/* CATEGORIES */}
-{categories.map((cat, idx) => (
-  <CategoryBlock key={cat.id} category={cat} index={idx} />
-))}
+      {categories.map((cat, idx) => (
+        <CategoryBlock key={cat.id} category={cat} index={idx} />
+      ))}
 
       {/* WHY LEGACY */}
       <section className="relative overflow-hidden bg-background py-28">
@@ -525,12 +521,13 @@ export function Services() {
 function CategoryBlock({ category, index }: { category: Category; index: number }) {
   const alt = index % 2 === 1;
   return (
-   <section
-  id={category.id}
-  className={`relative isolate  overflow-hidden pt-0 pb-24 ${
-    alt ? "bg-slate-50/60" : "bg-background"
-  }`}
->
+    <section
+      id={category.id}
+      className={`relative isolate overflow-hidden pt-0 pb-24 scroll-mt-[${CATEGORY_SCROLL_OFFSET}px] ${
+        alt ? "bg-slate-50/60" : "bg-background"
+      }`}
+      style={{ scrollMarginTop: CATEGORY_SCROLL_OFFSET }}
+    >
       <div
         aria-hidden
         className="absolute inset-0 -z-10 bg-gradient-to-br from-slate-50 via-white to-slate-100"
