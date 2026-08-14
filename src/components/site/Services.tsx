@@ -214,7 +214,7 @@ Key Capabilities
 ];
 
 const highlights = [
-  { icon: Award, k: "20+", label: "Years of excellence", hint: "Trusted since 2004" },
+  { icon: Award, k: "20+", label: "Years of excellence", hint: "Trusted since 2005" },
   { icon: Clock, k: "24×7×365", label: "Always-on operations", hint: "Follow-the-sun delivery" },
   { icon: Globe2, k: "3", label: "Continents", hint: "Global delivery centers" },
   { icon: Sparkles, k: "98%", label: "Client retention", hint: "Outcome-first partnerships" },
@@ -236,7 +236,7 @@ const categoryFeature: Record<string, { image: string; caption: string; sub: str
   recruitment: {
     image:
       "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1600&q=80",
-    caption: "Global sourcing pods, engineered for velocity",
+    caption: "Global sourcing pods, crafted for velocity",
     sub: "Requisition to onboarding in a single pipeline",
   },
   growth: {
@@ -458,7 +458,7 @@ export function Services() {
             {[
               {
                 icon: Award,
-                title: "20+ years of engineered rigor",
+                title: "20+ years of created rigor",
                 body: "A partner that has scaled operations across cycles, geographies and platforms since 2005.",
               },
               {
