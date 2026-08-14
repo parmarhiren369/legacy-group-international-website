@@ -351,7 +351,7 @@ export function Services() {
                 One operating partner.
               </span>
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#071330]">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#071330] text-justify">
               From talent and growth to data, marketing and technology — Legacy engineers the outsourced
               operating layer that lets enterprises move faster without breaking.
             </p>
@@ -448,7 +448,7 @@ export function Services() {
             <h2 className="mt-4 font-display text-4xl font-semibold leading-tight text-black sm:text-5xl">
               Two decades of quiet, relentless execution.
             </h2>
-            <p className="mt-6 text-xl font-medium leading-relaxed text-black">
+            <p className="mt-6 text-xl font-medium leading-relaxed text-black text-justify">
               We're the operators behind the operators — measured, methodical and available every hour of
               every day the business needs us.
             </p>
@@ -490,7 +490,7 @@ export function Services() {
                     <f.icon className="h-5 w-5" />
                   </div>
                   <h3 className="mt-6 font-sans font-semibold text-xl text-navy-deep">{f.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{f.body}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground text-justify">{f.body}</p>
                 </div>
               </motion.div>
             ))}
@@ -518,7 +518,7 @@ export function Services() {
                 <h3 className="mt-3 max-w-xl font-display text-3xl leading-tight text-navy-deep sm:text-4xl">
                   Design the outsourced operating layer for your next chapter.
                 </h3>
-                <p className="mt-4 max-w-lg text-sm text-muted-foreground">
+                <p className="mt-4 max-w-lg text-sm text-muted-foreground text-justify">
                   A 30-minute working session with our solution architects — no slides, just a look at what
                   we'd change first.
                 </p>
@@ -671,7 +671,7 @@ function ServiceCard({ service, delay }: { service: Service; delay: number }) {
         </div>
 
         <h3 className="mt-6 font-display text-2xl text-navy"><TitleWithAmpersand title={service.title} /></h3>
-        <p className="mt-3 whitespace-pre-line text-sm leading-relaxed text-muted-foreground">{service.short}</p>
+        <p className="mt-3 whitespace-pre-line text-sm leading-relaxed text-muted-foreground text-justify">{service.short}</p>
 
         <div className="mt-auto">
           <button
