@@ -56,7 +56,7 @@ export function Industries() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8, ease }}
-              className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground"
+              className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground text-justify"
             >
               At Legacy India, we serve a range of industries with expertise and commitment. From
               recruitment and market research outsourcing to business process support, we tailor our
@@ -142,7 +142,7 @@ export function Industries() {
               Delivering Results Across Every Sector
             </h2>
 
-            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-600">
+            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-600 text-justify">
               From engineering and manufacturing to healthcare, finance,
               energy and technology, Legacy Group International helps
               organizations build stronger teams and accelerate business growth.
