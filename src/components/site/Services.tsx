@@ -271,12 +271,20 @@ export function Services() {
   const yOrb = useTransform(scrollYProgress, [0, 1], [0, 150]);
 
   const scrollToCategory = (id: string) => {
-    const el = document.getElementById(id);
-    if (!el) return;
-    const yOffset = -140;
-    const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
-    window.scrollTo({ top: y, behavior: "smooth" });
-  };
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  const navHeight = 80;
+  const categoryNavHeight = 68;
+  const offset = navHeight + categoryNavHeight;
+
+  const y = el.getBoundingClientRect().top + window.scrollY - offset;
+
+  window.scrollTo({
+    top: y,
+    behavior: "smooth",
+  });
+};
 
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-background text-foreground">
@@ -510,7 +518,7 @@ function CategoryBlock({ category, index }: { category: Category; index: number 
   return (
     <section
       id={category.id}
-      className={`relative isolate scroll-mt-[156px] overflow-hidden pt-2 pb-24 ${
+      className={`relative isolate scroll-mt-[148px] overflow-hidden pt-0 pb-24 ${
         alt ? "bg-slate-50/60" : "bg-background"
       }`}
     >
