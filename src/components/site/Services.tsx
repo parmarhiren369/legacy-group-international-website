@@ -263,6 +263,8 @@ const SERVICE_ROUTES: Record<string, string> = {
 };
 
 export function Services() {
+  const [categorySelected, setCategorySelected] = useState(false);
+
   const heroRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -274,18 +276,22 @@ export function Services() {
   const el = document.getElementById(id);
   if (!el) return;
 
-  const navHeight = 80;
-  const categoryNavHeight = 68;
-  const offset = navHeight + categoryNavHeight;
+  // Hide the category navigation
+  setCategorySelected(true);
 
-  const y = el.getBoundingClientRect().top + window.scrollY - offset;
+  // Main navbar height
+  const headerHeight = 80;
+
+  const y =
+    el.getBoundingClientRect().top +
+    window.scrollY -
+    headerHeight;
 
   window.scrollTo({
     top: y,
     behavior: "smooth",
   });
 };
-
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-background text-foreground">
       <Nav />
@@ -375,30 +381,31 @@ export function Services() {
       </section>
 
      {/* CATEGORY NAV */}
+      
+{!categorySelected && (
 <section
   id="catalog"
   className="fixed left-0 right-0 top-[80px] z-40 border-y border-border bg-white shadow-sm"
 >
-  <div className={`flex h-[68px] items-center gap-2 overflow-x-auto ${PAGE_X}`}>
-    {categories.map((c) => (
-      <button
-        key={c.id}
-        type="button"
-        onClick={() => scrollToCategory(c.id)}
-        className="whitespace-nowrap rounded-full border border-navy/10 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-navy/80 transition-colors hover:border-gold hover:bg-gold/10 hover:text-navy"
-      >
-        {c.label}
-      </button>
-    ))}
-  </div>
-</section>
-
-      {/* CATEGORIES */}
-<div className="pt-[68px]">
-  {categories.map((cat, idx) => (
-    <CategoryBlock key={cat.id} category={cat} index={idx} />
+ <div className={`flex min-h-[68px] items-center gap-2 overflow-x-auto py-3 ${PAGE_X}`}>
+  {categories.map((c) => (
+    <button
+      key={c.id}
+      type="button"
+      onClick={() => scrollToCategory(c.id)}
+      className="whitespace-nowrap rounded-full border border-navy/10 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-navy/80 transition-colors hover:border-gold hover:bg-gold/10 hover:text-navy"
+    >
+      {c.label}
+    </button>
   ))}
 </div>
+</section>
+)}
+      {/* CATEGORIES */}
+{/* CATEGORIES */}
+{categories.map((cat, idx) => (
+  <CategoryBlock key={cat.id} category={cat} index={idx} />
+))}
 
       {/* WHY LEGACY */}
       <section className="relative overflow-hidden bg-background py-28">
@@ -520,7 +527,7 @@ function CategoryBlock({ category, index }: { category: Category; index: number 
   return (
    <section
   id={category.id}
-  className={`relative isolate scroll-mt-[148px] overflow-hidden pt-0 pb-24 ${
+  className={`relative isolate  overflow-hidden pt-0 pb-24 ${
     alt ? "bg-slate-50/60" : "bg-background"
   }`}
 >
