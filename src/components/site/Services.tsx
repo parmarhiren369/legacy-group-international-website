@@ -265,13 +265,14 @@ const SERVICE_ROUTES: Record<string, string> = {
 
 // Height of the main site Nav (px). Adjust if your Nav's actual height differs.
 const MAIN_NAV_HEIGHT = 80;
-// Height of the sticky category pill bar below the main Nav (px).
-const CATEGORY_BAR_HEIGHT = 68;
-// Combined offset used for scroll-margin-top on each category section,
-// so scrollIntoView() lands flush under both bars with no gap.
-const CATEGORY_SCROLL_OFFSET = MAIN_NAV_HEIGHT + CATEGORY_BAR_HEIGHT;
+// Extra breathing room between the fixed nav and the top of whatever
+// section is scrolled into view (applies whether or not the category
+// pill bar is currently showing).
+const SCROLL_BREATHING_ROOM = 24;
 
 export function Services() {
+  const [categorySelected, setCategorySelected] = useState(false);
+
   const heroRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -282,7 +283,21 @@ export function Services() {
   const scrollToCategory = (id: string) => {
     const el = document.getElementById(id);
     if (!el) return;
-    el.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    // Hide the pill bar first. It's `fixed`, so it never occupies space in
+    // the document flow — hiding it does NOT shift where `el` sits. That
+    // means we only ever need to offset by the main Nav's real height, not
+    // a hardcoded guess, and not the (now irrelevant) bar height. This is
+    // what prevents the leftover blank gap after the bar disappears.
+    setCategorySelected(true);
+
+    const navEl = document.querySelector("nav") as HTMLElement | null;
+    const headerHeight = navEl?.getBoundingClientRect().height || MAIN_NAV_HEIGHT;
+
+    const y =
+      el.getBoundingClientRect().top + window.scrollY - headerHeight;
+
+    window.scrollTo({ top: y, behavior: "smooth" });
   };
 
   return (
@@ -375,28 +390,31 @@ export function Services() {
 
       {/* CATEGORY NAV */}
       {/*
-        Sticky (not fixed) so it always occupies real space in the document
-        flow. Combined with `scroll-mt-[...]` on each category section below,
-        this removes the gap/jump that happened when the bar was `fixed` and
-        conditionally unmounted after a click.
+        Fixed, and only rendered until the user picks a category — once they
+        do, it unmounts entirely so it never lingers over content. Because it
+        is `fixed`, unmounting it doesn't reflow anything below, so there's
+        no jump; the scroll offset in `scrollToCategory` already accounts for
+        this by only ever measuring the real Nav height.
       */}
-      <section
-        id="catalog"
-        className="sticky top-[80px] z-40 border-y border-border bg-white shadow-sm"
-      >
-        <div className={`flex min-h-[68px] items-center gap-2 overflow-x-auto py-3 ${PAGE_X}`}>
-          {categories.map((c) => (
-            <button
-              key={c.id}
-              type="button"
-              onClick={() => scrollToCategory(c.id)}
-              className="whitespace-nowrap rounded-full border border-navy/10 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-navy/80 transition-colors hover:border-gold hover:bg-gold/10 hover:text-navy"
-            >
-              {c.label}
-            </button>
-          ))}
-        </div>
-      </section>
+      {!categorySelected && (
+        <section
+          id="catalog"
+          className="fixed left-0 right-0 top-[80px] z-40 border-y border-border bg-white shadow-sm"
+        >
+          <div className={`flex min-h-[68px] items-center gap-2 overflow-x-auto py-3 ${PAGE_X}`}>
+            {categories.map((c) => (
+              <button
+                key={c.id}
+                type="button"
+                onClick={() => scrollToCategory(c.id)}
+                className="whitespace-nowrap rounded-full border border-navy/10 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-navy/80 transition-colors hover:border-gold hover:bg-gold/10 hover:text-navy"
+              >
+                {c.label}
+              </button>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* CATEGORIES */}
       {categories.map((cat, idx) => (
@@ -523,10 +541,18 @@ function CategoryBlock({ category, index }: { category: Category; index: number 
   return (
     <section
       id={category.id}
-      className={`relative isolate overflow-hidden pt-0 pb-24 scroll-mt-[${CATEGORY_SCROLL_OFFSET}px] ${
+      className={`relative isolate overflow-hidden pb-24 ${
         alt ? "bg-slate-50/60" : "bg-background"
       }`}
-      style={{ scrollMarginTop: CATEGORY_SCROLL_OFFSET }}
+      style={{
+        // Real padding (not scroll-margin) so the space is part of the
+        // section's own background — it reads as intentional breathing
+        // room, not a blank gap. Covers both cases: the pill bar sitting
+        // fixed on top of this section pre-selection, and general
+        // clearance under the main Nav once the bar is gone.
+        paddingTop: MAIN_NAV_HEIGHT + SCROLL_BREATHING_ROOM,
+        scrollMarginTop: MAIN_NAV_HEIGHT,
+      }}
     >
       <div
         aria-hidden
