@@ -335,7 +335,7 @@ xl:h-[640px]
                     lets us scale without breaking."
                   </p>
                   <div className="mt-6 text-sm text-white/70">
-                    — VP Operations, Global Fortune 500 client
+                    — VP Operations,  P3 printing and packaging industry
                   </div>
                 </div>
               </motion.div>
