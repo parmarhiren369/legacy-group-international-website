@@ -374,29 +374,31 @@ export function Services() {
         </div>
       </section>
 
-      {/* CATEGORY NAV - STICKY */}
-      <section
-        id="catalog"
-        className="sticky top-[80px] z-40 border-y border-border bg-white/95 backdrop-blur-xl shadow-sm"
+     {/* CATEGORY NAV */}
+<section
+  id="catalog"
+  className="fixed left-0 right-0 top-[80px] z-40 border-y border-border bg-white shadow-sm"
+>
+  <div className={`flex h-[68px] items-center gap-2 overflow-x-auto ${PAGE_X}`}>
+    {categories.map((c) => (
+      <button
+        key={c.id}
+        type="button"
+        onClick={() => scrollToCategory(c.id)}
+        className="whitespace-nowrap rounded-full border border-navy/10 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-navy/80 transition-colors hover:border-gold hover:bg-gold/10 hover:text-navy"
       >
-        <div className={`flex min-h-[68px] items-center gap-2 overflow-x-auto py-3 ${PAGE_X}`}>
-          {categories.map((c) => (
-            <button
-              key={c.id}
-              type="button"
-              onClick={() => scrollToCategory(c.id)}
-              className="whitespace-nowrap rounded-full border border-navy/10 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-navy/80 transition-colors hover:border-gold hover:bg-gold/10 hover:text-navy"
-            >
-              {c.label}
-            </button>
-          ))}
-        </div>
-      </section>
+        {c.label}
+      </button>
+    ))}
+  </div>
+</section>
 
       {/* CATEGORIES */}
-      {categories.map((cat, idx) => (
-        <CategoryBlock key={cat.id} category={cat} index={idx} />
-      ))}
+<div className="pt-[68px]">
+  {categories.map((cat, idx) => (
+    <CategoryBlock key={cat.id} category={cat} index={idx} />
+  ))}
+</div>
 
       {/* WHY LEGACY */}
       <section className="relative overflow-hidden bg-background py-28">
@@ -516,12 +518,12 @@ export function Services() {
 function CategoryBlock({ category, index }: { category: Category; index: number }) {
   const alt = index % 2 === 1;
   return (
-    <section
-      id={category.id}
-      className={`relative isolate scroll-mt-[148px] overflow-hidden pt-0 pb-24 ${
-        alt ? "bg-slate-50/60" : "bg-background"
-      }`}
-    >
+   <section
+  id={category.id}
+  className={`relative isolate scroll-mt-[148px] overflow-hidden pt-0 pb-24 ${
+    alt ? "bg-slate-50/60" : "bg-background"
+  }`}
+>
       <div
         aria-hidden
         className="absolute inset-0 -z-10 bg-gradient-to-br from-slate-50 via-white to-slate-100"
