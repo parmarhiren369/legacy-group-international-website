@@ -92,12 +92,12 @@ export function Contact() {
         <section className="py-20 bg-white w-full">
           <div className={PAGE_X}>
             <div className="grid gap-6 md:grid-cols-2 xl:gap-8">
-              {contactLocations.map((location, index) => {
+                          {contactLocations.map((location, index) => {
                 const Icon = location.icon;
 
                 return (
                   <motion.div
-                    key={location.title}
+                    key={location.country}
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{
@@ -121,40 +121,25 @@ export function Contact() {
                       className="absolute inset-x-0 top-0 h-[3px] origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100"
                       style={{ background: "#EE8021" }}
                     />
-<div className="relative flex items-center gap-5">
-  {/* Location Icon */}
-  <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl bg-[#377589] text-white shadow-lg transition-all duration-500 group-hover:scale-110">
-    <Icon className="h-8 w-8" />
-  </div>
 
-  {/* Location Information */}
-  <div className="min-w-0">
-    <h3 className="text-xl font-semibold text-[#071330]">
-      {location.company} - {location.country}
-    </h3>
+                    <div className="relative flex items-center gap-5">
+                      {/* Location Icon */}
+                      <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl bg-[#377589] text-white shadow-lg transition-all duration-500 group-hover:scale-110">
+                        <Icon className="h-8 w-8" />
+                      </div>
 
-    <div className="mt-3 text-base leading-7 text-gray-600">
-      <p>{location.addressLine1}</p>
-      <p>{location.addressLine2}</p>
-    </div>
-  </div>
-</div>
+                      {/* Location Information */}
+                      <div className="min-w-0">
+                        <h3 className="text-xl font-semibold text-[#071330]">
+                          {location.company} - {location.country}
+                        </h3>
 
-  {/* Location Information */}
-  <div className="pt-1">
-    <h3 className="text-xl font-semibold text-[#071330]">
-      {location.title}
-    </h3>
-
-    <p className="mt-1 text-sm font-medium text-gray-500">
-      Legacy Group International
-    </p>
-
-    <p className="mt-4 text-base leading-7 text-gray-600 text-justify">
-      {location.address}
-    </p>
-  </div>
-</div>
+                        <div className="mt-3 text-base leading-7 text-gray-600">
+                          <p>{location.addressLine1}</p>
+                          <p>{location.addressLine2}</p>
+                        </div>
+                      </div>
+                    </div>
                   </motion.div>
                 );
               })}
