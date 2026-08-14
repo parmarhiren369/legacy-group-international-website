@@ -446,7 +446,7 @@ Contact Us
       <footer className="border-t border-border py-10 w-full">
         <div className={`flex flex-col items-center gap-2 text-center text-sm text-muted-foreground sm:flex-row sm:justify-between sm:text-left ${PAGE_X}`}>
           <div>© {new Date().getFullYear()} Legacy Group International</div>
-          <div>Built for enterprise growth</div>
+         
         </div>
       </footer>
 
