@@ -22,7 +22,6 @@ const links: NavLink[] = [
   { label: "Industries", href: "", route: "/industries" },
   { label: "Testimonials", href: "", route: "/testimonials" },
   { label: "Contact", href: "", route: "/contact" },
-  { label: "Agreements", href: "", route: "/agreements" },
 ];
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
