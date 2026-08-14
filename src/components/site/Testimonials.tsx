@@ -96,7 +96,7 @@ export function Testimonials() {
 
             <motion.p
               variants={fadeUp}
-              className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground"
+              className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground text-justify"
             >
               Hear directly from organizations that have partnered with Legacy
               Group International for recruitment, research, technology
@@ -177,7 +177,7 @@ export function Testimonials() {
         Genuine Experiences.
       </h2>
 
-      <p className="mx-auto mt-8 max-w-3xl text-lg text-muted-foreground">
+      <p className="mx-auto mt-8 max-w-3xl text-lg text-muted-foreground text-justify">
         Our clients' success stories speak louder than words.
         Discover why organizations continue to choose
         Legacy Group International.
@@ -257,14 +257,14 @@ export function Testimonials() {
         Trusted by Businesses Worldwide
       </h2>
 
-      <p className="mt-8 text-lg leading-8 text-muted-foreground">
+      <p className="mt-8 text-lg leading-8 text-muted-foreground text-justify">
         For over <strong>20 years</strong>, Legacy Group International has
         delivered business intelligence and outsourcing solutions that help
         organizations improve performance, reduce operational costs, and
         accelerate sustainable growth.
       </p>
 
-      <p className="mt-6 text-lg leading-8 text-muted-foreground">
+      <p className="mt-6 text-lg leading-8 text-muted-foreground text-justify">
         Our expertise spans recruitment, market research, knowledge process
         outsourcing, technical support, and business process outsourcing,
         delivering measurable results for organizations around the world.
@@ -406,7 +406,7 @@ Ready to be our next
 success story?
 </h2>
 
-<p className="relative mx-auto mt-8 max-w-3xl text-lg text-white/80">
+<p className="relative mx-auto mt-8 max-w-3xl text-lg text-white/80 text-justify">
 
 Partner with Legacy Group International
 to build smarter teams,
