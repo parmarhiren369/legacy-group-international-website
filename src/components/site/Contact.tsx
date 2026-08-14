@@ -11,15 +11,13 @@ const ease = [0.22, 1, 0.36, 1] as const;
 const contactLocations = [
   {
     title: "USA",
-    address: "1252 Turnbury Lane, 
-      North Wales, PA 19477",
+    address: "1252 Turnbury Lane, North Wales, PA 19477",
     icon: MapPin,
   },
   {
     title: "India",
     address:
-      "210, Brij Industries Complex, Makarpura GIDC,
-      Vadsar Road, Vadodara - 390010",
+      "210, Brij Industries Complex, Makarpura GIDC, Vadsar Road, Vadodara - 390010",
     icon: MapPin,
   },
 ];
@@ -50,7 +48,7 @@ export function Contact() {
                   a Conversation.
                 </h1>
 
-                <p className="mt-8 max-w-xl text-lg leading-8 text-gray-600">
+                <p className="mt-8 max-w-xl text-lg leading-8 text-gray-600 text-justify">
                   Whether you are looking for recruitment, outsourcing, research, technical support, or business solutions, our team is ready to help.
                 </p>
 
@@ -137,7 +135,7 @@ export function Contact() {
       Legacy Group International
     </p>
 
-    <p className="mt-4 text-base leading-7 text-gray-600">
+    <p className="mt-4 text-base leading-7 text-gray-600 text-justify">
       {location.address}
     </p>
   </div>
@@ -166,7 +164,7 @@ export function Contact() {
                 Something Great.
               </h2>
 
-              <p className="mt-6 max-w-xl text-lg leading-8 text-gray-600">
+              <p className="mt-6 max-w-xl text-lg leading-8 text-gray-600 text-justify">
                 Whether you are looking for recruitment, outsourcing, research, or technology solutions, our specialists are ready to help you find the right solution.
               </p>
 
@@ -243,7 +241,7 @@ export function Contact() {
 
                       <div className="relative">
                         <h3 className="text-lg font-semibold text-[#071330]">{item.title}</h3>
-                        <p className="mt-1 text-gray-600">{item.description}</p>
+                        <p className="mt-1 text-gray-600 text-justify">{item.description}</p>
                       </div>
                     </motion.div>
                   );
@@ -270,7 +268,7 @@ export function Contact() {
                 Your Business?
               </h2>
 
-              <p className="relative mx-auto mt-8 max-w-3xl text-xl text-gray-300">
+              <p className="relative mx-auto mt-8 max-w-3xl text-xl text-gray-300 text-justify">
                 Partner with Legacy Group International to build smarter teams, stronger operations, and sustainable business growth.
               </p>
 
