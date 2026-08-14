@@ -23,8 +23,8 @@ const fadeUp = {
 
 const stats = [
   { value: 20, suffix: "+", label: "Years of excellence" },
-  { value: 250, suffix: "+", label: "Enterprise clients" },
-  { value: 40, suffix: "M+", label: "Interactions delivered" },
+  { value: 40000, suffix: "+", label: "projects delivered" },
+  { value: 2, suffix: "M+", label: "tasks delivered" },
   { value: 98, suffix: "%", label: "Client retention" },
 ];
 
