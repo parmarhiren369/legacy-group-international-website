@@ -11,13 +11,15 @@ const ease = [0.22, 1, 0.36, 1] as const;
 const contactLocations = [
   {
     title: "USA",
-    address: "1252 Turnbury Lane, North Wales, PA 19477",
+    address: "1252 Turnbury Lane, 
+      North Wales, PA 19477",
     icon: MapPin,
   },
   {
     title: "India",
     address:
-      "210, Brij Industries Complex, Makarpura GIDC, Vadsar Road, Vadodara - 390010",
+      "210, Brij Industries Complex, Makarpura GIDC,
+      Vadsar Road, Vadodara - 390010",
     icon: MapPin,
   },
 ];
