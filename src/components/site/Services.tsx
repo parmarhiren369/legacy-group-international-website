@@ -204,7 +204,7 @@ Key Capabilities
         icon: Headphones,
         tint: "from-sky-400/20 to-sky-200/5",
         bullets: [
-          "24×7×365 follow-the-sun coverage",
+          "24× 7× 365 follow-the-sun coverage",
           "Knowledge-base & CSAT loop",
           "Escalation to engineering swarms",
         ],
