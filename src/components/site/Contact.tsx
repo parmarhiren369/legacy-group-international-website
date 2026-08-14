@@ -122,9 +122,9 @@ export function Contact() {
                       style={{ background: "#EE8021" }}
                     />
 
-                    <div className="relative flex items-center gap-5">
+                    <div className="relative flex items-start gap-5">
                       {/* Location Icon */}
-                      <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl bg-[#377589] text-white shadow-lg transition-all duration-500 group-hover:scale-110">
+                      <div className="mt-1 flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl bg-[#377589] text-white shadow-lg transition-all duration-500 group-hover:scale-110">
                         <Icon className="h-8 w-8" />
                       </div>
 
