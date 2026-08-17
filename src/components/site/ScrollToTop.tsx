@@ -21,7 +21,7 @@ export function ScrollToTop() {
           exit={{ opacity: 0, y: 20 }}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           aria-label="Go to top"
-          className="fixed bottom-6 right-6 z-50 inline-flex h-12 w-12 items-center justify-center rounded-full text-navy-deep shadow-(--shadow-gold) transition-transform hover:-translate-y-1"
+          className="fixed bottom-6 right-6 z-50 inline-flex h-12 w-12 items-center justify-center rounded-full text-white shadow-(--shadow-gold) transition-transform hover:-translate-y-1"
           style={{ backgroundImage: "var(--gradient-gold)" }}
         >
           <ArrowUp className="h-5 w-5" />
