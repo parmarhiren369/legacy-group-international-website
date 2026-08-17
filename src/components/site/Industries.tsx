@@ -264,15 +264,16 @@ export function Industries() {
                   We adapt our operating layer to your sector.
                 </h3>
               </div>
-              <Link
-                to="/"
-                hash="contact"
+              <a
+  href="https://calendly.com/raj-kapoor"
+  target="_blank"
+  rel="noopener noreferrer"
                 className="group inline-flex shrink-0 items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white shadow-(--shadow-gold) transition-transform hover:-translate-y-0.5"
                 style={{ backgroundImage: "var(--gradient-gold)" }}
               >
                 Talk to our team
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
+              </a>
             </div>
           </div>
         </div>
