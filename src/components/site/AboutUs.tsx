@@ -104,7 +104,7 @@ export function AboutUs() {
               />
 
               <div className="absolute -bottom-6 -right-4 max-w-[75%] rounded-2xl bg-[#377589] p-5 text-white shadow-xl sm:-bottom-8 sm:-right-8 sm:max-w-none sm:rounded-3xl sm:p-8">
-                <div className="text-2xl font-bold text-[#EE7F23] sm:text-4xl">Since 2005</div>
+                <div className="text-2xl font-bold text-white] sm:text-4xl">Since 2005</div>
                 <p className="mt-2 text-sm text-white/80 sm:text-base">
                   Delivering business excellence worldwide.
                 </p>
