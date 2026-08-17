@@ -267,7 +267,7 @@ export function Industries() {
               <Link
                 to="/"
                 hash="contact"
-                className="group inline-flex shrink-0 items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-navy-deep shadow-(--shadow-gold) transition-transform hover:-translate-y-0.5"
+                className="group inline-flex shrink-0 items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white shadow-(--shadow-gold) transition-transform hover:-translate-y-0.5"
                 style={{ backgroundImage: "var(--gradient-gold)" }}
               >
                 Talk to our team
