@@ -180,71 +180,71 @@ export function Industries() {
         <div className="flex whitespace-nowrap">
           <div className="animate-[marquee_28s_linear_infinite] flex items-center gap-12 text-lg font-semibold uppercase tracking-[0.25em] text-white">
             <span>Automotive</span>
-            <span className="text-[#E8A62C]">✦</span>
+            <span className="text-white">✦</span>
 
             <span>Chemical</span>
-            <span className="text-[#E8A62C]">✦</span>
+            <span className="text-white">✦</span>
 
             <span>Construction</span>
-            <span className="text-[#E8A62C]">✦</span>
+            <span className="text-white">✦</span>
 
             <span>Cybersecurity</span>
-            <span className="text-[#E8A62C]">✦</span>
+            <span className="text-white">✦</span>
 
             <span>Energy</span>
-            <span className="text-[#E8A62C]">✦</span>
+            <span className="text-white">✦</span>
 
             <span>Engineering</span>
-            <span className="text-[#E8A62C]">✦</span>
+            <span className="text-white">✦</span>
 
             <span>Finance</span>
-            <span className="text-[#E8A62C]">✦</span>
+            <span className="text-white">✦</span>
 
             <span>Healthcare</span>
-            <span className="text-[#E8A62C]">✦</span>
+            <span className="text-white">✦</span>
 
             <span>Insurance</span>
-            <span className="text-[#E8A62C]">✦</span>
+            <span className="text-white">✦</span>
 
             <span>Legal</span>
-            <span className="text-[#E8A62C]">✦</span>
+            <span className="text-white">✦</span>
 
             <span>Manufacturing</span>
-            <span className="text-[#E8A62C]">✦</span>
+            <span className="text-white">✦</span>
 
             <span>Oil & Gas</span>
-            <span className="text-[#E8A62C]">✦</span>
+            <span className="text-white">✦</span>
 
             <span>Printing</span>
-            <span className="text-[#E8A62C]">✦</span>
+            <span className="text-white">✦</span>
 
             <span>Sales</span>
-            <span className="text-[#E8A62C]">✦</span>
+            <span className="text-white">✦</span>
 
             <span>Service Industry</span>
-            <span className="text-[#E8A62C]">✦</span>
+            <span className="text-white">✦</span>
 
             <span>Solar Energy</span>
-            <span className="text-[#E8A62C]">✦</span>
+            <span className="text-white">✦</span>
 
             <span>Steel</span>
-            <span className="text-[#E8A62C]">✦</span>
+            <span className="text-white">✦</span>
 
             {/* Duplicate for seamless looping */}
             <span>Automotive</span>
-            <span className="text-[#E8A62C]">✦</span>
+            <span className="text-white">✦</span>
 
             <span>Chemical</span>
-            <span className="text-[#E8A62C]">✦</span>
+            <span className="text-white">✦</span>
 
             <span>Construction</span>
-            <span className="text-[#E8A62C]">✦</span>
+            <span className="text-white">✦</span>
 
             <span>Cybersecurity</span>
-            <span className="text-[#E8A62C]">✦</span>
+            <span className="text-white">✦</span>
 
             <span>Energy</span>
-            <span className="text-[#E8A62C]">✦</span>
+            <span className="text-white">✦</span>
 
             <span>Engineering</span>
           </div>
