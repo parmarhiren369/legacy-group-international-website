@@ -430,10 +430,12 @@ and sustainable business growth.
   Schedule a Demo
   <ArrowRight className="h-4 w-4 text-white transition-transform duration-300 group-hover:translate-x-1" />
 </a>
-<button className="rounded-full border border-white px-8 py-4 font-semibold transition-colors duration-300 hover:bg-white hover:text-navy">
-Contact Us
-</button>
-
+<a
+  href="/contact"
+  className="rounded-full border border-white px-8 py-4 font-semibold transition-colors duration-300 hover:bg-white hover:text-navy"
+>
+  Contact Us
+</a>
 </div>
 
 </motion.div>
