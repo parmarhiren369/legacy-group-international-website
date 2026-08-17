@@ -327,9 +327,9 @@ xl:h-[640px]
               >
                 
                 <div className="relative">
-                  <div className="text-xs uppercase tracking-[0.28em] text-gold">
-                    Since 2005 · 20+ Years
-                  </div>
+                  <div className="text-xs uppercase tracking-[0.28em] text-white">
+  Since 2005 · 20+ Years
+</div>
                   <p className="mt-4 font-display text-2xl leading-snug">
                     "Legacy doesn't just deliver headcount — they engineer the operating layer that
                     lets us scale without breaking."
