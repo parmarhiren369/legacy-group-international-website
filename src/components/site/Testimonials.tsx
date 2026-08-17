@@ -396,7 +396,7 @@ export function Testimonials() {
   className="relative overflow-hidden rounded-[36px] bg-[#377589] p-20 text-center text-white"
 >
 
-<div className="relative text-sm uppercase tracking-[0.3em] text-gold">
+<div className="relative text-sm uppercase tracking-[0.3em] text-white">
 Let's Build Together
 </div>
 
