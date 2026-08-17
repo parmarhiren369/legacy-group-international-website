@@ -260,7 +260,7 @@ export function Contact() {
               transition={{ duration: 0.7, ease }}
               className="relative overflow-hidden rounded-[40px] bg-[#377589] px-8 py-20 md:px-16 text-center text-white"
             >
-              <p className="relative text-sm uppercase tracking-[0.35em] text-[#EE8021]">LET US BUILD TOGETHER</p>
+              <p className="relative text-sm uppercase tracking-[0.35em] text-white">LET US BUILD TOGETHER</p>
 
               <h2 className="relative mt-6 text-3xl font-bold sm:text-4xl lg:text-5xl">
                 Ready to Transform
